@@ -35,7 +35,7 @@ void  rb_example_tests_rb_define_const(VALUE self, VALUE name, VALUE val);
 import "C"
 
 import (
-	"github.com/sue445/go-gem-wrapper/ruby"
+	"github.com/ruby-go-gem/go-gem-wrapper/ruby"
 )
 
 //export rb_example_tests_nop_rb_define_method_id

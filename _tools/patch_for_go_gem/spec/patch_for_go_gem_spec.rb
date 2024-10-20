@@ -68,7 +68,7 @@ RSpec.describe "patch_for_go_gem.rb" do
         import "C"
 
         import (
-        \t"github.com/sue445/go-gem-wrapper/ruby"
+        \t"github.com/ruby-go-gem/go-gem-wrapper/ruby"
         )
       GO
     end

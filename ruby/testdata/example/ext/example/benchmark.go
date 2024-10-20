@@ -9,7 +9,7 @@ VALUE rb_example_benchmark_tarai_goroutine(VALUE self, VALUE x, VALUE y, VALUE z
 import "C"
 
 import (
-	"github.com/sue445/go-gem-wrapper/ruby"
+	"github.com/ruby-go-gem/go-gem-wrapper/ruby"
 	"sync"
 )
 

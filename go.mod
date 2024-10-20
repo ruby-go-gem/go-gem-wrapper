@@ -1,4 +1,4 @@
-module github.com/sue445/go-gem-wrapper
+module github.com/ruby-go-gem/go-gem-wrapper
 
 go 1.23
 

@@ -43,7 +43,7 @@ func goobj_free(obj unsafe.Pointer) {
 //	import "C"
 //
 //	import (
-//		"github.com/sue445/go-gem-wrapper/ruby"
+//		"github.com/ruby-go-gem/go-gem-wrapper/ruby"
 //		"unsafe"
 //	)
 //

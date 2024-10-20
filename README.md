@@ -1,11 +1,11 @@
 # go-gem-wrapper
 `go-gem-wrapper` is a wrapper for creating Ruby native extension in [Go](https://go.dev/)
 
-[![GitHub Tag](https://img.shields.io/github/v/tag/sue445/go-gem-wrapper)](https://github.com/sue445/go-gem-wrapper/releases)
-[![build](https://github.com/sue445/go-gem-wrapper/actions/workflows/build.yml/badge.svg)](https://github.com/sue445/go-gem-wrapper/actions/workflows/build.yml)
-[![Coverage Status](https://coveralls.io/repos/github/sue445/go-gem-wrapper/badge.svg)](https://coveralls.io/github/sue445/go-gem-wrapper)
-[![Go Report Card](https://goreportcard.com/badge/github.com/sue445/go-gem-wrapper)](https://goreportcard.com/report/github.com/sue445/go-gem-wrapper)
-[![Go Reference](https://pkg.go.dev/badge/github.com/sue445/go-gem-wrapper.svg)](https://pkg.go.dev/github.com/sue445/go-gem-wrapper)
+[![GitHub Tag](https://img.shields.io/github/v/tag/ruby-go-gem/go-gem-wrapper)](https://github.com/ruby-go-gem/go-gem-wrapper/releases)
+[![build](https://github.com/ruby-go-gem/go-gem-wrapper/actions/workflows/build.yml/badge.svg)](https://github.com/ruby-go-gem/go-gem-wrapper/actions/workflows/build.yml)
+[![Coverage Status](https://coveralls.io/repos/github/ruby-go-gem/go-gem-wrapper/badge.svg)](https://coveralls.io/github/ruby-go-gem/go-gem-wrapper)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ruby-go-gem/go-gem-wrapper)](https://goreportcard.com/report/github.com/ruby-go-gem/go-gem-wrapper)
+[![Go Reference](https://pkg.go.dev/badge/github.com/ruby-go-gem/go-gem-wrapper.svg)](https://pkg.go.dev/github.com/ruby-go-gem/go-gem-wrapper)
 
 ## Requirements
 * Go
@@ -97,7 +97,7 @@ go install golang.org/x/tools/cmd/godoc@latest
 godoc
 ```
 
-open http://localhost:6060/pkg/github.com/sue445/go-gem-wrapper/
+open http://localhost:6060/pkg/github.com/ruby-go-gem/go-gem-wrapper/
 
 ## Coverage
 We provide auto-generated bindings for (almost) all CRuby functions available when including `ruby.h` :muscle:
@@ -110,8 +110,8 @@ See below for details.
 * [_tools/ruby_h_to_go/](_tools/ruby_h_to_go/)
 
 ## Reference
-* Go: https://pkg.go.dev/github.com/sue445/go-gem-wrapper
-* Ruby: https://sue445.github.io/go-gem-wrapper/
+* Go: https://pkg.go.dev/github.com/ruby-go-gem/go-gem-wrapper
+* Ruby: https://ruby-go-gem.github.io/go-gem-wrapper/
 
 ## Original idea
 [Ruby meets Go - RubyKaigi 2015](https://rubykaigi.org/2015/presentations/mmasaki/)

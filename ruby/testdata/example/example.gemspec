@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "This is example gem for go-gem-wrapper test"
   spec.description = "This is example gem for go-gem-wrapper test"
-  spec.homepage = "https://github.com/sue445/go-gem-wrapper"
+  spec.homepage = "https://github.com/ruby-go-gem/go-gem-wrapper"
   spec.required_ruby_version = ">= 3.3.0"
 
   spec.metadata["allowed_push_host"] = "https://do-not-push-this-gem.example.com"

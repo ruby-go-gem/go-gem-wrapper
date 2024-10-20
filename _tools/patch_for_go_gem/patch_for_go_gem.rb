@@ -77,7 +77,7 @@ class GemPatcher # rubocop:disable Metrics/ClassLength
       import "C"
 
       import (
-      \t"github.com/sue445/go-gem-wrapper/ruby"
+      \t"github.com/ruby-go-gem/go-gem-wrapper/ruby"
       )
 
       //export Init_#{gem_name}
