@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/ruby-go-gem/go-gem-wrapper/ruby"
 	"github.com/stretchr/testify/assert"
-	"github.com/sue445/go-gem-wrapper/ruby"
 )
 
 func TestBool2Int(t *testing.T) {

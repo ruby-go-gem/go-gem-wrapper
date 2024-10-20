@@ -41,7 +41,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/sue445/go-gem-wrapper.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ruby-go-gem/go-gem-wrapper.
 
 ## License
 
