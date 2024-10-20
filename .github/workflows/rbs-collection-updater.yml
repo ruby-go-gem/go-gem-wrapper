@@ -31,7 +31,7 @@ jobs:
           committer: GitHub <noreply@github.com>
           title: "Update rbs_collection.lock.yaml"
           commit-message: "Run `bundle exe rbs collection update`"
-          labels:
+          labels: rbs-collection-updater
 
       - name: Slack Notification
         uses: act10ns/slack@v2
