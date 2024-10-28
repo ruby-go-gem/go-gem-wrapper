@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # @return [Hash<String, String>]
 def env_vars
   ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 namespace :go_gem do
   desc "Run go_gem test"
   task :test do
