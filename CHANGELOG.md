@@ -1,4 +1,22 @@
 # [Unreleased]
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.2...HEAD
+
+# [v0.2.2](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.2.2) - 2024-11-02
+## Go
+* No changes
+
+## Ruby
+* No changes
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Bugfixes
+* Fix release workflow by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/199
+
+### Other changes
+
 **Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.1...HEAD
 
 # [v0.2.1](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.2.1) - 2024-11-02
