@@ -23,6 +23,7 @@ jobs:
       - name: Generate changelog
         run: |
           bundle exec rake changelog[,${TAG_NAME}] > /tmp/changelog.md
+          cat /tmp/changelog.md
         env:
           TAG_NAME: ${{ github.ref_name }}
 
