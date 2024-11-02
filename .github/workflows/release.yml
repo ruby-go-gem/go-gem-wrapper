@@ -31,3 +31,11 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           body_path: /tmp/changelog.md
+
+      - name: Slack Notification (not success)
+        uses: act10ns/slack@v2
+        if: "! success()"
+        continue-on-error: true
+        with:
+          status: ${{ job.status }}
+          webhook-url: ${{ secrets.SLACK_WEBHOOK }}
