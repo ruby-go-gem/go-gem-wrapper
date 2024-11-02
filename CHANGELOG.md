@@ -1,7 +1,7 @@
 # [Unreleased]
 **Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.3.alpha1...HEAD
 
-# [v0.2.2.alpha1](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.2.2.alpha1) - 2024-11-02
+# [v0.2.3.alpha1](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.2.3.alpha1) - 2024-11-02
 ## Go
 * No changes
 
