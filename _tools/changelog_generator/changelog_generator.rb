@@ -80,7 +80,7 @@ def generate_category_changelog(prs) # rubocop:disable Metrics/AbcSize,Metrics/C
     end
 
     label_prs.each do |pr|
-      lines < generate_changelog_line(pr)
+      lines << generate_changelog_line(pr)
       found_pr_numbers << pr["number"]
     end
 
