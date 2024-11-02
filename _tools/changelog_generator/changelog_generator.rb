@@ -5,7 +5,9 @@ require "json"
 
 # @return [String]
 def search_git_tags
-  `git tag`.each_line.map(&:strip).sort_by { |tag| Gem::Version.create(tag.delete_prefix("v")) }.reverse
+  releases = JSON.parse(`gh release list --json tagName`)
+  tag_names = releases.map { |release| release["tagName"] }
+  tag_names.sort_by { |tag| Gem::Version.create(tag.delete_prefix("v")) }.reverse
 end
 
 # @param before [String]
