@@ -1,5 +1,5 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.3...HEAD
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.3...main
 
 # [v0.2.3](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.2.3) - 2024-11-02
 ## Go
