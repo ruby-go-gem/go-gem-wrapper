@@ -4,8 +4,8 @@ require "optparse"
 require "json"
 
 # @return [String]
-def latest_tag
-  `git tag`.each_line.map(&:strip).max_by { |tag| Gem::Version.create(tag.delete_prefix("v")) }
+def search_git_tags
+  `git tag`.each_line.map(&:strip).sort_by { |tag| Gem::Version.create(tag.delete_prefix("v")) }.reverse
 end
 
 # @param before [String]
@@ -29,8 +29,26 @@ opt.on("--after=AFTER", "After tag or sha1 (default: HEAD)") { |v| after = v }
 
 opt.parse!(ARGV)
 
-before ||= latest_tag
 after ||= "HEAD"
+
+unless before
+  git_tags = search_git_tags
+
+  if after == "HEAD"
+    # Use latest tag
+    before = git_tags[0]
+  else
+    index = git_tags.index(after)
+    before =
+      if index
+        # Use 1 previous tag of index
+        git_tags[index + 1]
+      else
+        # Use latest tag
+        git_tags[0]
+      end
+  end
+end
 
 pr_numbers = search_pr_numbers(before:, after:)
 all_prs = pr_numbers.map do |pr_number|
