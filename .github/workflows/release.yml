@@ -1,0 +1,29 @@
+name: Create releases
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ruby
+          bundler-cache: true
+
+      - name: Generate changelog
+        run: |
+          bundle exec rake changelog[,${TAG_NAME}] > /tmp/changelog.md
+        env:
+          TAG_NAME: ${{ github.ref_name }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: /tmp/changelog.md
