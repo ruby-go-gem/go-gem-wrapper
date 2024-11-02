@@ -60,7 +60,7 @@ end
 # @param prs [Array<Hash>]
 #
 # @return [String]
-def generate_category_changelog(prs)
+def generate_category_changelog(prs) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
   lines = []
   found_pr_numbers = []
   prs = prs.dup
@@ -107,13 +107,13 @@ def generate_category_changelog(prs)
   "#{lines.join("\n")}\n"
 end
 
-# @param pr [Hash]
+# @param pull_request [Hash]
 #
 # @return [String]
-def generate_changelog_line(pr)
-  author = pr["author"]["login"].delete_prefix("app/")
+def generate_changelog_line(pull_request)
+  author = pull_request["author"]["login"].delete_prefix("app/")
 
-  "* #{pr["title"]} by @#{author} in #{pr["url"]}"
+  "* #{pull_request["title"]} by @#{author} in #{pull_request["url"]}"
 end
 
 changelog_body = +""
