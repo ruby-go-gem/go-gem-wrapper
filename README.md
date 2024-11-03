@@ -101,7 +101,7 @@ CRuby methods are mapped to Go methods based on the following rules
 
 * No lowercase letters included (`/^[A-Z0-9_]+$/`)
   * No changes
-  * e.g. `RB_NUM2UINT`
+  * e.g. `RB_NUM2UINT` (CRuby) -> `ruby.RB_NUM2UINT` (Go)
 * Lowercase letters included
   * Converted to CamelCase
   * e.g. `rb_define_method` (CRuby) -> `ruby.RbDefineMethod` (Go)
