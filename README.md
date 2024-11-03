@@ -85,6 +85,38 @@ See also
 * [ruby/testdata/example/ext/example/example.go](ruby/testdata/example/ext/example/example.go)
 * [ruby/testdata/example/ext/example/tests.go](ruby/testdata/example/ext/example/tests.go)
 
+## Coverage
+We provide auto-generated bindings for (almost) all CRuby functions available when including `ruby.h` :muscle:
+
+See below for details.
+
+* [ruby/enum_generated.go](ruby/enum_generated.go)
+* [ruby/function_generated.go](ruby/function_generated.go)
+* [ruby/type_generated.go](ruby/type_generated.go)
+* [_tools/ruby_h_to_go/](_tools/ruby_h_to_go/)
+
+## Specification
+### Method name mapping from CRuby to Go
+CRuby methods are mapped to Go methods based on the following rules
+
+* No lowercase letters included (`/^[A-Z0-9_]+$/`)
+  * No changes
+  * e.g. `RB_NUM2UINT`
+* Lowercase letters included
+  * Converted to CamelCase
+  * e.g. `rb_define_method` (CRuby) -> `ruby.RbDefineMethod` (Go)
+
+### Limitation
+Most of the methods defined in `ruby.h` are automatically generated and defined in [ruby/function_generated.go](ruby/function_generated.go).
+
+However, some of the methods listed below are not supported.
+
+1. deprecated or internal methods
+    * See `function.exclude_name` in https://github.com/ruby-go-gem/ruby_header_parser/blob/main/config/default.yml
+2. Methods with variable-length arguments
+    * Because Go's variable-length arguments couldn't be passed directly to C.
+    * However, it is possible to execute functions with variable length arguments in CRuby from Go with a hack like `RbRaise` in [ruby/ruby_internal_error.go](ruby/ruby_internal_error.go)
+
 ## Developing
 ### Build
 Run `rake ruby:build_example`. (`bundle exec` is not required)
@@ -98,16 +130,6 @@ godoc
 ```
 
 open http://localhost:6060/pkg/github.com/ruby-go-gem/go-gem-wrapper/
-
-## Coverage
-We provide auto-generated bindings for (almost) all CRuby functions available when including `ruby.h` :muscle:
-
-See below for details.
-
-* [ruby/enum_generated.go](ruby/enum_generated.go)
-* [ruby/function_generated.go](ruby/function_generated.go)
-* [ruby/type_generated.go](ruby/type_generated.go)
-* [_tools/ruby_h_to_go/](_tools/ruby_h_to_go/)
 
 ## Reference
 * Go: https://pkg.go.dev/github.com/ruby-go-gem/go-gem-wrapper
