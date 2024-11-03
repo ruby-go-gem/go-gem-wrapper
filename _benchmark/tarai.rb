@@ -6,6 +6,7 @@ gemfile do
 end
 
 require "benchmark/ips"
+require "fiber"
 
 # Build native extension before running benchmark
 Dir.chdir(File.join(__dir__, "..", "ruby", "testdata", "example")) do
@@ -36,6 +37,13 @@ Benchmark.ips do |x|
     4.times.map do
       Ractor.new { tarai(14, 7, 0) }
     end.each(&:take)
+  }
+
+  # parallel version (with Fiber)
+  x.report("parallel (Fiber)"){
+    4.times.map do
+      Fiber.new { tarai(14, 7, 0) }
+    end.each(&:resume)
   }
 
   # parallel version (with goroutine)
