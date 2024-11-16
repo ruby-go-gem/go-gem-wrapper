@@ -23,4 +23,4 @@ group :test do
   gem "test-unit"
 end
 
-gemspec path: "./gem/"
+gemspec path: "./_gem/"

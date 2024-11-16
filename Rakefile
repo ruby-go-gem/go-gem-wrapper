@@ -5,11 +5,11 @@ def repo_root
   __dir__
 end
 
-Dir["#{__dir__}/tasks/*.rake"].each { |f| load f }
+Dir["#{__dir__}/_tasks/*.rake"].each { |f| load f }
 
 desc "Release package"
 task :release do
-  Dir.chdir(File.join(__dir__, "gem")) do
+  Dir.chdir(File.join(__dir__, "_gem")) do
     sh "rake release"
   end
 end

@@ -1,5 +1,5 @@
 PATH
-  remote: gem
+  remote: _gem
   specs:
     go_gem (0.2.3)
 

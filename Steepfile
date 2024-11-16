@@ -4,7 +4,7 @@
 
 target :lib do
   signature "ruby/testdata/example/sig"
-  signature "gem/sig"
+  signature "_gem/sig"
 
   check "ruby/testdata/example/lib" # Directory name
   # check "Gemfile"                   # File name
