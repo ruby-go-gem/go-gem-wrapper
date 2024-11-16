@@ -3,7 +3,7 @@
 --hide-void-return
 _tools/ruby_h_to_go/*.rb
 _tools/ruby_h_to_go/lib/**/*.rb
-gem/**/*.rb
+_gem/**/*.rb
 -
 CHANGELOG.md
 LICENSE
