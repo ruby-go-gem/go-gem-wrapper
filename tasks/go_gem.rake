@@ -3,7 +3,7 @@
 namespace :go_gem do
   desc "Run go_gem test"
   task :test do
-    Dir.chdir(File.join(repo_root, "gem")) do
+    Dir.chdir(File.join(repo_root, "_gem")) do
       sh "rspec"
     end
   end

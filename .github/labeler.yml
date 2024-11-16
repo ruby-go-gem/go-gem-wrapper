@@ -4,7 +4,7 @@ go:
 
 ruby:
   - changed-files:
-      - any-glob-to-any-file: "gem/**/*"
+      - any-glob-to-any-file: "_gem/**/*"
 
 ruby_h_to_go:
   - changed-files:
