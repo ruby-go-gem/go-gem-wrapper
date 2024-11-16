@@ -5,7 +5,7 @@ def repo_root
   __dir__
 end
 
-Dir["#{__dir__}/tasks/*.rake"].each { |f| load f }
+Dir["#{__dir__}/_tasks/*.rake"].each { |f| load f }
 
 desc "Release package"
 task :release do
