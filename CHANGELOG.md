@@ -1,5 +1,27 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.3...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.4...main
+
+# [v0.2.4](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.2.4) - 2024-11-16
+## Go
+* No changes
+
+## Ruby
+### Other changes
+* Strictly `source_code_uri` for rubygems.org by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/209
+* Rename directories not related to Go build by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/208
+* Bump rspec-its from 1.3.1 to 2.0.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/207
+* Bump rubocop from 1.67.0 to 1.68.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/206
+* Bump steep from 1.8.2 to 1.8.3 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/205
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Other changes
+* Tweak doc by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/204
+* Write doc by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/203
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.3...v0.2.4
 
 # [v0.2.3](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.2.3) - 2024-11-02
 ## Go
