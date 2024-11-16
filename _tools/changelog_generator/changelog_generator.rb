@@ -3,6 +3,8 @@
 require "optparse"
 require "json"
 
+REPO_NAME = "ruby-go-gem/go-gem-wrapper"
+
 # @return [String]
 def search_git_tags
   releases = JSON.parse(`gh release list --json tagName`)
@@ -14,11 +16,12 @@ end
 # @param after [String]
 # @return [Array<Integer>]
 def search_pr_numbers(before:, after:)
-  commits = `git rev-list --merges --right-only #{before}...#{after}`.each_line.map(&:strip)
-  commits.map do |commit|
-    commit_message = `git show -q #{commit}`
-    commit_message =~ /Merge pull request #([0-9]+)/
-    Regexp.last_match(1).to_i
+  endpoint = "/repos/#{REPO_NAME}/compare/#{before}...#{after}"
+  res = JSON.parse(`gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" #{endpoint}`)
+  res["commits"].filter_map do |commit|
+    commit_message = commit["commit"]["message"]
+
+    Regexp.last_match(1).to_i if commit_message =~ /Merge pull request #([0-9]+)/
   end
 end
 
