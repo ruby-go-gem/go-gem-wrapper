@@ -33,6 +33,42 @@ require "go_gem/mkmf" # Append this
 create_go_makefile("example/example")
 ```
 
+### `GoGem::RakeTask`
+Provides rake tasks for `go test` with CRuby
+
+#### Example (Without config)
+```ruby
+# Rakefile
+require "go_gem/rake_task"
+
+GoGem::RakeTask.new("gem_name")
+```
+
+Following tasks are generated
+
+* `rake go:test`
+
+#### Example (With config)
+```ruby
+# Rakefile
+require "go_gem/rake_task"
+
+GoGem::RakeTask.new("gem_name") do |config|
+  config.task_namespace = "go5"
+  config.go_bin_path = "/path/to/go"
+  config.go_test_args = "#{GoGem::RakeTask::DEFAULT_GO_TEST_ARGS} -race"
+end
+```
+
+Following tasks are generated
+
+* `rake go5:test`
+
+#### Available configurations
+* `task_namespace` : task namespace (default: `:go`)
+* `go_bin_path` : path to go binary (default: `"go"`)
+* `go_test_args` : argument passed to `go test` (default: `"-mod=readonly -count=1"`)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
