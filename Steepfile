@@ -6,7 +6,9 @@ target :lib do
   signature "ruby/testdata/example/sig"
   signature "_gem/sig"
 
-  check "ruby/testdata/example/lib" # Directory name
+  check "ruby/testdata/example/lib"
+  check "_gem/lib"
+
   # check "Gemfile"                   # File name
   # check "app/models/**/*.rb"        # Glob
   # ignore "lib/templates/*.rb"
