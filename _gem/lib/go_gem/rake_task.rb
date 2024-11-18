@@ -20,6 +20,12 @@ module GoGem
   #     config.go_test_args = "#{GoGem::RakeTask::DEFAULT_GO_TEST_ARGS} -race"
   #   end
   class RakeTask < ::Rake::TaskLib
+    DEFAULT_TASK_NAMESPACE = :go
+
+    DEFAULT_GO_BIN_PATH = "go"
+
+    DEFAULT_GO_TEST_ARGS = "-mod=readonly -count=1"
+
     # @!attribute [r] gem_name
     # @return [String]
     attr_reader :gem_name
@@ -44,9 +50,9 @@ module GoGem
 
       @gem_name = gem_name
 
-      @task_namespace = :go
-      @go_bin_path = "go"
-      @go_test_args = "-mod=readonly -count=1"
+      @task_namespace = DEFAULT_TASK_NAMESPACE
+      @go_bin_path = DEFAULT_GO_BIN_PATH
+      @go_test_args = DEFAULT_GO_TEST_ARGS
 
       yield(self) if block_given?
 
