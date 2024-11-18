@@ -2,6 +2,7 @@
 
 require "go_gem"
 require "go_gem/mkmf"
+require "go_gem/rake_task"
 
 require "tmpdir"
 require "serverspec"
