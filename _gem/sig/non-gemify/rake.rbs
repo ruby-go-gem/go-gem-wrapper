@@ -1,0 +1,4 @@
+module FileUtils
+  def sh: (Hash[String, String] env, *String cmd, **untyped options) ?{ (bool, Process::Status) -> void } -> void
+    | ...
+end
