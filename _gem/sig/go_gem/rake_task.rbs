@@ -1,52 +1,35 @@
 module GoGem
-  # Provides rake tasks for `go test` with CRuby
   class RakeTask < ::Rake::TaskLib
-    @gem_name: untyped
+    @gem_name: String
 
-    @task_namespace: untyped
+    @task_namespace: Symbol
 
-    @go_bin_path: untyped
+    @go_bin_path: String
 
-    @go_test_args: untyped
+    @go_test_args: String
 
-    DEFAULT_TASK_NAMESPACE: :go
+    DEFAULT_TASK_NAMESPACE: Symbol
 
-    DEFAULT_GO_BIN_PATH: "go"
+    DEFAULT_GO_BIN_PATH: String
 
-    DEFAULT_GO_TEST_ARGS: "-mod=readonly -count=1"
+    DEFAULT_GO_TEST_ARGS: String
 
-    # @!attribute [r] gem_name
-    # @return [String]
-    attr_reader gem_name: untyped
+    attr_reader gem_name: String
 
-    # @!attribute task_namespace
-    #   @return [Symbol] task namespace (default: `:go`)
-    attr_accessor task_namespace: untyped
+    attr_accessor task_namespace: Symbol
 
-    # @!attribute go_bin_path
-    #   @return [String] path to go binary (default: `"go"`)
-    attr_accessor go_bin_path: untyped
+    attr_accessor go_bin_path: String
 
-    # @!attribute go_test_args
-    #   @return [String] argument passed to `go test` (default: `"-mod=readonly -count=1"`)
-    attr_accessor go_test_args: untyped
+    attr_accessor go_test_args: String
 
-    # @param gem_name [String]
-    # @yield configuration of {RakeTask}
-    # @yieldparam config [RakeTask]
-    def initialize: (untyped gem_name) ?{ (untyped) -> untyped } -> void
+    def initialize: (String gem_name) ?{ (RakeTask) -> void } -> void
 
-    # Generate environment variables for go build with CRuby
-    #
-    # @return [Hash<String, String>]
-    def self.build_env_vars: () -> { "CGO_CFLAGS" => untyped, "CGO_LDFLAGS" => untyped, "LD_LIBRARY_PATH" => untyped }
+    def self.build_env_vars: () -> { "CGO_CFLAGS" => String, "CGO_LDFLAGS" => String, "LD_LIBRARY_PATH" => String }
 
     private
 
-    # @yield
-    def within_ext_dir: () { () -> untyped } -> untyped
+    def within_ext_dir: () { () -> void } -> void
 
-    # @return [String]
-    def ext_dir: () -> untyped
+    def ext_dir: () -> String
   end
 end
