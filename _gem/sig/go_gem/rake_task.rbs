@@ -1,0 +1,52 @@
+module GoGem
+  # Provides rake tasks for `go test` with CRuby
+  class RakeTask < ::Rake::TaskLib
+    @gem_name: untyped
+
+    @task_namespace: untyped
+
+    @go_bin_path: untyped
+
+    @go_test_args: untyped
+
+    DEFAULT_TASK_NAMESPACE: :go
+
+    DEFAULT_GO_BIN_PATH: "go"
+
+    DEFAULT_GO_TEST_ARGS: "-mod=readonly -count=1"
+
+    # @!attribute [r] gem_name
+    # @return [String]
+    attr_reader gem_name: untyped
+
+    # @!attribute task_namespace
+    #   @return [Symbol] task namespace (default: `:go`)
+    attr_accessor task_namespace: untyped
+
+    # @!attribute go_bin_path
+    #   @return [String] path to go binary (default: `"go"`)
+    attr_accessor go_bin_path: untyped
+
+    # @!attribute go_test_args
+    #   @return [String] argument passed to `go test` (default: `"-mod=readonly -count=1"`)
+    attr_accessor go_test_args: untyped
+
+    # @param gem_name [String]
+    # @yield configuration of {RakeTask}
+    # @yieldparam config [RakeTask]
+    def initialize: (untyped gem_name) ?{ (untyped) -> untyped } -> void
+
+    # Generate environment variables for go build with CRuby
+    #
+    # @return [Hash<String, String>]
+    def self.build_env_vars: () -> { "CGO_CFLAGS" => untyped, "CGO_LDFLAGS" => untyped, "LD_LIBRARY_PATH" => untyped }
+
+    private
+
+    # @yield
+    def within_ext_dir: () { () -> untyped } -> untyped
+
+    # @return [String]
+    def ext_dir: () -> untyped
+  end
+end
