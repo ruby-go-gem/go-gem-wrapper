@@ -26,7 +26,7 @@ module GoGem
 
       create_makefile(target, srcprefix)
 
-      case `#{CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
+      case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
       when /Free Software Foundation/
         ldflags = "-Wl,--unresolved-symbols=ignore-all"
       when /clang/
