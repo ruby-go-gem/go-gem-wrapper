@@ -1,5 +1,7 @@
 module GoGem
   module Mkmf
-    def create_go_makefile: (String, String? nil) -> void
+    $objs: Array[untyped]
+
+    def create_go_makefile: (String target, String? srcprefix) -> void
   end
 end

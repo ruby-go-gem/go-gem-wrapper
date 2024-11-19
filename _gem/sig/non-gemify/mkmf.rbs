@@ -1,4 +1,6 @@
 module Kernel
+  def include: (*untyped) -> void
+
   def find_executable: (String bin, ?String path) -> String?
 
   def create_makefile: (String target, String? srcprefix) -> void
