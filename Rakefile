@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "_gem/lib/go_gem/rake_task"
+
 # @return [String]
 def repo_root
   __dir__
