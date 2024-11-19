@@ -105,7 +105,7 @@ module GoGem
 
     # @yield
     def within_ext_dir
-      Dir.chdir(ext_dir) do
+      Dir.chdir(ext_dir) do # rubocop:disable Style/ExplicitBlockArgument
         yield
       end
     end
