@@ -87,8 +87,8 @@ module GoGem
         "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
       ].join(" ")
 
-      # FIXME: Workaround for GitHub Actions
-      if ENV["GITHUB_ACTIONS"]
+      # FIXME: Workaround for Ubuntu (GitHub Actions)
+      if RUBY_PLATFORM =~ /linux/i
         cflags.gsub!("-Wno-self-assign", "")
         cflags.gsub!("-Wno-parentheses-equality", "")
         cflags.gsub!("-Wno-constant-logical-operand", "")
