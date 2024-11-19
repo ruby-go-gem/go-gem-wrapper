@@ -81,7 +81,11 @@ module GoGem
         ldflags << " -undefined dynamic_lookup"
       end
 
-      cflags = "#{RbConfig::CONFIG["CFLAGS"]} -I#{RbConfig::CONFIG["rubyarchhdrdir"]} -I#{RbConfig::CONFIG["rubyhdrdir"]}"
+      cflags = [
+        RbConfig::CONFIG["CFLAGS"],
+        "-I#{RbConfig::CONFIG["rubyarchhdrdir"]}",
+        "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
+      ].join(" ")
 
       # FIXME: Workaround for GitHub Actions
       if ENV["GITHUB_ACTIONS"]
