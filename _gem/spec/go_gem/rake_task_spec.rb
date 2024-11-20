@@ -16,5 +16,18 @@ RSpec.describe GoGem::RakeTask do
 
       it { should be_task_defined("go:test") }
     end
+
+    context "with params" do
+      let(:gem_name) { "my_gem" }
+
+      subject do
+        GoGem::RakeTask.new(gem_name) do |config|
+          config.task_namespace = :go5
+        end
+        Rake::Task
+      end
+
+      it { should be_task_defined("go5:test") }
+    end
   end
 end
