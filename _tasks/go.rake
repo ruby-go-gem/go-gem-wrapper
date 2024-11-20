@@ -1,21 +1,11 @@
 # frozen_string_literal: true
 
+GoGem::RakeTask.new("") do |t|
+  t.target_dir = repo_root
+  t.go_test_args = "#{GoGem::RakeTask::DEFAULT_GO_TEST_ARGS} #{ENV["GO_TEST_ARGS"]}"
+end
+
 namespace :go do
-  desc "Run go test"
-  task :test do
-    sh GoGem::RakeTask.build_env_vars, "go test -mod=readonly -count=1 #{ENV["GO_TEST_ARGS"]} ./..."
-  end
-
-  desc "Run go test -race"
-  task :testrace do
-    sh GoGem::RakeTask.build_env_vars, "go test -mod=readonly -count=1 #{ENV["GO_TEST_ARGS"]} -race  ./..."
-  end
-
-  desc "Run go fmt"
-  task :fmt do
-    sh "go fmt ./..."
-  end
-
   desc "Run golangci-lint"
   task :lint do
     sh "which golangci-lint" do |ok, _|
