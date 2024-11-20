@@ -65,21 +65,21 @@ module GoGem
       yield(self) if block_given?
 
       namespace(task_namespace) do
-        desc "Run go test"
+        desc "Run #{go_bin_path} test"
         task(:test) do
           within_target_dir do
             sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} ./..."
           end
         end
 
-        desc "Run go test -race"
+        desc "Run #{go_bin_path} test -race"
         task(:testrace) do
           within_target_dir do
             sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} -race ./..."
           end
         end
 
-        desc "Run go fmt"
+        desc "Run #{go_bin_path} fmt"
         task(:fmt) do
           within_target_dir do
             sh "#{go_bin_path} fmt ./..."
