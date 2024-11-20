@@ -32,6 +32,12 @@ module GoGem
 
     private
 
+    def define_go_test_task: () -> void
+
+    def define_go_testrace_task: () -> void
+
+    def define_go_fmt_task: () -> void
+
     def within_target_dir: () { () -> void } -> void
 
     def ext_dir: () -> String

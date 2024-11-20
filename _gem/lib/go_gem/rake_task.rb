@@ -65,26 +65,9 @@ module GoGem
       yield(self) if block_given?
 
       namespace(task_namespace) do
-        desc "Run #{go_bin_path} test"
-        task(:test) do
-          within_target_dir do
-            sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} ./..."
-          end
-        end
-
-        desc "Run #{go_bin_path} test -race"
-        task(:testrace) do
-          within_target_dir do
-            sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} -race ./..."
-          end
-        end
-
-        desc "Run #{go_bin_path} fmt"
-        task(:fmt) do
-          within_target_dir do
-            sh "#{go_bin_path} fmt ./..."
-          end
-        end
+        define_go_test_task
+        define_go_testrace_task
+        define_go_fmt_task
       end
     end
 
@@ -128,6 +111,33 @@ module GoGem
     end
 
     private
+
+    def define_go_test_task
+      desc "Run #{go_bin_path} test"
+      task(:test) do
+        within_target_dir do
+          sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} ./..."
+        end
+      end
+    end
+
+    def define_go_testrace_task
+      desc "Run #{go_bin_path} test -race"
+      task(:testrace) do
+        within_target_dir do
+          sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} -race ./..."
+        end
+      end
+    end
+
+    def define_go_fmt_task
+      desc "Run #{go_bin_path} fmt"
+      task(:fmt) do
+        within_target_dir do
+          sh "#{go_bin_path} fmt ./..."
+        end
+      end
+    end
 
     # @yield
     def within_target_dir
