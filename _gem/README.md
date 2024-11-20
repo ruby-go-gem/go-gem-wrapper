@@ -54,11 +54,11 @@ Following tasks are generated
 # Rakefile
 require "go_gem/rake_task"
 
-GoGem::RakeTask.new("gem_name") do |config|
-  config.task_namespace = "go5"
-  config.go_bin_path = "/path/to/go"
-  config.go_test_args = "#{GoGem::RakeTask::DEFAULT_GO_TEST_ARGS} -race"
-  config.target_dir = "/dir/to/go-mod/"
+GoGem::RakeTask.new("gem_name") do |t|
+  t.task_namespace = "go5"
+  t.go_bin_path = "/path/to/go"
+  t.go_test_args = "-mod=readonly"
+  t.target_dir = "/dir/to/go-mod/"
 end
 ```
 
