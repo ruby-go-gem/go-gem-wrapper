@@ -78,6 +78,13 @@ module GoGem
             sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} -race ./..."
           end
         end
+
+        desc "Run go fmt"
+        task(:fmt) do
+          within_target_dir do
+            sh "#{go_bin_path} fmt ./..."
+          end
+        end
       end
     end
 

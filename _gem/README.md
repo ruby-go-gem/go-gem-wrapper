@@ -48,6 +48,7 @@ Following tasks are generated
 
 * `rake go:test`
 * `rake go:testrace`
+* `rake go:fmt`
 
 #### Example (With config)
 ```ruby
@@ -66,6 +67,7 @@ Following tasks are generated
 
 * `rake go5:test`
 * `rake go5:testrace`
+* `rake go5:fmt`
 
 #### Available configurations
 * `task_namespace` : task namespace (default: `:go`)
