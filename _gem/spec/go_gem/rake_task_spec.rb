@@ -15,6 +15,7 @@ RSpec.describe GoGem::RakeTask do
       end
 
       it { should be_task_defined("go:test") }
+      it { should be_task_defined("go:testrace") }
     end
 
     context "with params" do
@@ -28,6 +29,7 @@ RSpec.describe GoGem::RakeTask do
       end
 
       it { should be_task_defined("go5:test") }
+      it { should be_task_defined("go5:testrace") }
     end
   end
 end

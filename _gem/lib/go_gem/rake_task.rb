@@ -65,6 +65,13 @@ module GoGem
             sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} ./..."
           end
         end
+
+        desc "Run go test -race"
+        task(:testrace) do
+          within_ext_dir do
+            sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} -race ./..."
+          end
+        end
       end
     end
 

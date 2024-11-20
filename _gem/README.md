@@ -47,6 +47,7 @@ GoGem::RakeTask.new("gem_name")
 Following tasks are generated
 
 * `rake go:test`
+* `rake go:testrace`
 
 #### Example (With config)
 ```ruby
@@ -63,6 +64,7 @@ end
 Following tasks are generated
 
 * `rake go5:test`
+* `rake go5:testrace`
 
 #### Available configurations
 * `task_namespace` : task namespace (default: `:go`)
