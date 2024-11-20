@@ -20,6 +20,7 @@ module GoGem
   #     config.task_namespace = "go5"
   #     config.go_bin_path = "/path/to/go"
   #     config.go_test_args = "#{GoGem::RakeTask::DEFAULT_GO_TEST_ARGS} -race"
+  #     config.target_dir = "/dir/to/go-mod/"
   #   end
   class RakeTask < ::Rake::TaskLib
     DEFAULT_TASK_NAMESPACE = :go
@@ -44,6 +45,10 @@ module GoGem
     #   @return [String] argument passed to `go test` (default: `"-mod=readonly -count=1"`)
     attr_accessor :go_test_args
 
+    # @!attribute cwd
+    #   @return [String] directory when executing go commands. (default: `"ext/#{gem_name}"`)
+    attr_accessor :target_dir
+
     # @param gem_name [String]
     # @yield configuration of {RakeTask}
     # @yieldparam config [RakeTask]
@@ -55,20 +60,21 @@ module GoGem
       @task_namespace = DEFAULT_TASK_NAMESPACE
       @go_bin_path = DEFAULT_GO_BIN_PATH
       @go_test_args = DEFAULT_GO_TEST_ARGS
+      @target_dir = ext_dir
 
       yield(self) if block_given?
 
       namespace(task_namespace) do
         desc "Run go test"
         task(:test) do
-          within_ext_dir do
+          within_target_dir do
             sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} ./..."
           end
         end
 
         desc "Run go test -race"
         task(:testrace) do
-          within_ext_dir do
+          within_target_dir do
             sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} -race ./..."
           end
         end
@@ -117,8 +123,8 @@ module GoGem
     private
 
     # @yield
-    def within_ext_dir
-      Dir.chdir(ext_dir) do # rubocop:disable Style/ExplicitBlockArgument
+    def within_target_dir
+      Dir.chdir(target_dir) do # rubocop:disable Style/ExplicitBlockArgument
         yield
       end
     end

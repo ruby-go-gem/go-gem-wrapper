@@ -58,6 +58,7 @@ GoGem::RakeTask.new("gem_name") do |config|
   config.task_namespace = "go5"
   config.go_bin_path = "/path/to/go"
   config.go_test_args = "#{GoGem::RakeTask::DEFAULT_GO_TEST_ARGS} -race"
+  config.target_dir = "/dir/to/go-mod/"
 end
 ```
 
@@ -70,6 +71,7 @@ Following tasks are generated
 * `task_namespace` : task namespace (default: `:go`)
 * `go_bin_path` : path to go binary (default: `"go"`)
 * `go_test_args` : argument passed to `go test` (default: `"-mod=readonly -count=1"`)
+* `target_dir` : directory when executing go commands. (default: `"ext/#{gem_name}"`)
 
 ## Development
 

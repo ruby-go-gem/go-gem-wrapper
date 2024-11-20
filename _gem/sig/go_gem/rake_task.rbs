@@ -8,6 +8,8 @@ module GoGem
 
     @go_test_args: String
 
+    @target_dir: String
+
     DEFAULT_TASK_NAMESPACE: Symbol
 
     DEFAULT_GO_BIN_PATH: String
@@ -22,13 +24,15 @@ module GoGem
 
     attr_accessor go_test_args: String
 
+    attr_accessor target_dir: String
+
     def initialize: (String gem_name) ?{ (RakeTask) -> void } -> void
 
     def self.build_env_vars: () -> { "CGO_CFLAGS" => String, "CGO_LDFLAGS" => String, "LD_LIBRARY_PATH" => String }
 
     private
 
-    def within_ext_dir: () { () -> void } -> void
+    def within_target_dir: () { () -> void } -> void
 
     def ext_dir: () -> String
   end
