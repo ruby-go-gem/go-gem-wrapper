@@ -1,5 +1,27 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.4...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.3.0...main
+
+# [v0.2.4](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.3.0) - 2024-11-21
+## Go
+* No changes
+
+## Ruby
+### New Features
+* Add rbs to `go_gem` gem by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/215
+* Add rake task helper for go by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/214
+
+### Other changes
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Bugfixes
+* Fix changelog_generator on CI by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/212
+
+### Other changes
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.4...v0.3.0
 
 # [v0.2.4](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.2.4) - 2024-11-16
 ## Go
