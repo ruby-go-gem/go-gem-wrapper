@@ -17,6 +17,26 @@ RSpec.describe GoGem::RakeTask do
       it { should be_task_defined("go:test") }
       it { should be_task_defined("go:testrace") }
       it { should be_task_defined("go:fmt") }
+
+      describe "Add additional tasks" do
+        include Rake::DSL
+
+        subject do
+          t = GoGem::RakeTask.new(gem_name)
+
+          namespace :go do
+            task :test2 do
+              t.within_target_dir do
+                sh "go test"
+              end
+            end
+          end
+
+          Rake::Task
+        end
+
+        it { should be_task_defined("go:test2") }
+      end
     end
 
     context "with params" do

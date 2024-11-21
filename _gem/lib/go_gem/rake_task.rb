@@ -22,6 +22,24 @@ module GoGem
   #     t.go_test_args = "-mod=readonly"
   #     t.target_dir = "/dir/to/go-mod/"
   #   end
+  #
+  # @example additional tasks
+  #   # Rakefile
+  #   require "go_gem/rake_task"
+  #
+  #   t = GoGem::RakeTask.new("gem_name")
+  #
+  #   namespace :go do
+  #     desc "Run golangci-lint"
+  #     task :lint do
+  #       t.within_target_dir do
+  #         sh "which golangci-lint" do |ok, _|
+  #           raise "golangci-lint isn't installed. See. https://golangci-lint.run/welcome/install/" unless ok
+  #         end
+  #         sh GoGem::RakeTask.build_env_vars, "golangci-lint run"
+  #       end
+  #     end
+  #   end
   class RakeTask < ::Rake::TaskLib
     DEFAULT_TASK_NAMESPACE = :go
 
@@ -110,6 +128,18 @@ module GoGem
       }
     end
 
+    # @yield
+    def within_target_dir
+      Dir.chdir(target_dir) do # rubocop:disable Style/ExplicitBlockArgument
+        yield
+      end
+    end
+
+    # @return [String]
+    def ext_dir
+      File.join("ext", gem_name)
+    end
+
     private
 
     def define_go_test_task
@@ -137,18 +167,6 @@ module GoGem
           sh "#{go_bin_path} fmt ./..."
         end
       end
-    end
-
-    # @yield
-    def within_target_dir
-      Dir.chdir(target_dir) do # rubocop:disable Style/ExplicitBlockArgument
-        yield
-      end
-    end
-
-    # @return [String]
-    def ext_dir
-      File.join("ext", gem_name)
     end
   end
 end
