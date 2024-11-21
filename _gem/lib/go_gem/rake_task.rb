@@ -34,7 +34,7 @@ module GoGem
     attr_reader :gem_name
 
     # @!attribute task_namespace
-    #   @return [Symbol] task namespace (default: `:go`)
+    #   @return [Symbol,String] task namespace (default: `:go`)
     attr_accessor :task_namespace
 
     # @!attribute go_bin_path

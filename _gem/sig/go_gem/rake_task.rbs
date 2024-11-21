@@ -2,7 +2,7 @@ module GoGem
   class RakeTask < ::Rake::TaskLib
     @gem_name: String
 
-    @task_namespace: Symbol
+    @task_namespace: Symbol | String
 
     @go_bin_path: String
 
@@ -18,7 +18,7 @@ module GoGem
 
     attr_reader gem_name: String
 
-    attr_accessor task_namespace: Symbol
+    attr_accessor task_namespace: Symbol | String
 
     attr_accessor go_bin_path: String
 
