@@ -33,6 +33,68 @@ require "go_gem/mkmf" # Append this
 create_go_makefile("example/example")
 ```
 
+### `GoGem::RakeTask`
+Provides rake tasks for `go test` with CRuby
+
+#### Example (Without config)
+```ruby
+# Rakefile
+require "go_gem/rake_task"
+
+GoGem::RakeTask.new("gem_name")
+```
+
+Following tasks are generated
+
+* `rake go:test`
+* `rake go:testrace`
+* `rake go:fmt`
+
+#### Example (With config)
+```ruby
+# Rakefile
+require "go_gem/rake_task"
+
+GoGem::RakeTask.new("gem_name") do |t|
+  t.task_namespace = "go5"
+  t.go_bin_path = "/path/to/go"
+  t.go_test_args = "-mod=readonly"
+  t.target_dir = "/dir/to/go-mod/"
+end
+```
+
+Following tasks are generated
+
+* `rake go5:test`
+* `rake go5:testrace`
+* `rake go5:fmt`
+
+#### Example (Add additional tasks)
+```ruby
+# Rakefile
+require "go_gem/rake_task"
+
+go_task = GoGem::RakeTask.new("gem_name")
+
+namespace :go do
+  desc "Run golangci-lint"
+  task :lint do
+    go_task.within_target_dir do
+      sh "which golangci-lint" do |ok, _|
+        raise "golangci-lint isn't installed. See. https://golangci-lint.run/welcome/install/" unless ok
+      end
+      sh GoGem::RakeTask.build_env_vars, "golangci-lint run"
+    end
+  end
+end
+```
+
+#### Available configurations
+* `task_namespace` : task namespace (default: `:go`)
+* `go_bin_path` : path to go binary (default: `"go"`)
+* `go_test_args` : argument passed to `go test` (default: `"-mod=readonly -count=1"`)
+* `target_dir` : directory when executing go commands. (default: `"ext/#{gem_name}"`)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

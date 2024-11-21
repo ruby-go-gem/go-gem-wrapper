@@ -1,60 +1,19 @@
 # frozen_string_literal: true
 
-# @return [Hash<String, String>]
-def env_vars
-  ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"
-
-  case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
-  when /Free Software Foundation/
-    ldflags << " -Wl,--unresolved-symbols=ignore-all"
-  when /clang/
-    ldflags << " -undefined dynamic_lookup"
-  end
-
-  cflags = "#{RbConfig::CONFIG["CFLAGS"]} -I#{RbConfig::CONFIG["rubyarchhdrdir"]} -I#{RbConfig::CONFIG["rubyhdrdir"]}"
-
-  # FIXME: Workaround for GitHub Actions
-  if ENV["GITHUB_ACTIONS"]
-    cflags.gsub!("-Wno-self-assign", "")
-    cflags.gsub!("-Wno-parentheses-equality", "")
-    cflags.gsub!("-Wno-constant-logical-operand", "")
-    cflags.gsub!("-Wsuggest-attribute=format", "")
-    cflags.gsub!("-Wold-style-definition", "")
-    cflags.gsub!("-Wsuggest-attribute=noreturn", "")
-    ldflags.gsub!("-Wl,--unresolved-symbols=ignore-all", "")
-  end
-
-  ld_library_path = RbConfig::CONFIG["libdir"]
-
-  {
-    "CGO_CFLAGS"      => cflags,
-    "CGO_LDFLAGS"     => ldflags,
-    "LD_LIBRARY_PATH" => ld_library_path,
-  }
+go_task = GoGem::RakeTask.new("") do |t|
+  t.target_dir = repo_root
+  t.go_test_args = "#{GoGem::RakeTask::DEFAULT_GO_TEST_ARGS} #{ENV["GO_TEST_ARGS"]}"
 end
 
 namespace :go do
-  desc "Run go test"
-  task :test do
-    sh env_vars, "go test -mod=readonly -count=1 #{ENV["GO_TEST_ARGS"]} ./..."
-  end
-
-  desc "Run go test -race"
-  task :testrace do
-    sh env_vars, "go test -mod=readonly -count=1 #{ENV["GO_TEST_ARGS"]} -race  ./..."
-  end
-
-  desc "Run go fmt"
-  task :fmt do
-    sh "go fmt ./..."
-  end
-
   desc "Run golangci-lint"
   task :lint do
-    sh "which golangci-lint" do |ok, _|
-      raise "golangci-lint isn't installed. See. https://golangci-lint.run/welcome/install/" unless ok
+    go_task.within_target_dir do
+      sh "which golangci-lint" do |ok, _|
+        raise "golangci-lint isn't installed. See. https://golangci-lint.run/welcome/install/" unless ok
+      end
+      sh GoGem::RakeTask.build_env_vars, "golangci-lint run"
     end
-    sh env_vars, "golangci-lint run"
   end
 
   desc "Run all build tasks in go"
