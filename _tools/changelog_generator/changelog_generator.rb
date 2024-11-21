@@ -100,12 +100,14 @@ def generate_category_changelog(prs) # rubocop:disable Metrics/AbcSize,Metrics/C
     found_pr_numbers.include?(pr["number"]) || pr["label_names"].include?("chore")
   end
 
-  lines << "### Other changes"
-  other_prs.each do |pr|
-    lines << generate_changelog_line(pr)
+  unless other_prs.empty?
+    lines << "### Other changes"
+    other_prs.each do |pr|
+      lines << generate_changelog_line(pr)
+    end
+    found_pr_numbers.push(*other_prs.map { |pr| pr["number"] })
+    lines << ""
   end
-  found_pr_numbers.push(*other_prs.map { |pr| pr["number"] })
-  lines << ""
 
   return "* No changes\n\n" if found_pr_numbers.empty?
 

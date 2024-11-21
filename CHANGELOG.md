@@ -10,16 +10,12 @@
 * Add rbs to `go_gem` gem by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/215
 * Add rake task helper for go by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/214
 
-### Other changes
-
 ## ruby_h_to_go
 * No changes
 
 ## Other
 ### Bugfixes
 * Fix changelog_generator on CI by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/212
-
-### Other changes
 
 **Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.2.4...v0.3.0
 
