@@ -7,6 +7,12 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/ruby-go-gem/go-gem-wrapper)](https://goreportcard.com/report/github.com/ruby-go-gem/go-gem-wrapper)
 [![Go Reference](https://pkg.go.dev/badge/github.com/ruby-go-gem/go-gem-wrapper.svg)](https://pkg.go.dev/github.com/ruby-go-gem/go-gem-wrapper)
 
+## Overview
+| Directory        | Name                                                  | API Reference                                            |
+|------------------|-------------------------------------------------------|----------------------------------------------------------|
+| [/](/)           | `github.com/ruby-go-gem/go-gem-wrapper` (Go module)   | https://pkg.go.dev/github.com/ruby-go-gem/go-gem-wrapper |
+| [/_gem/](/_gem/) | [go_gem](https://rubygems.org/gems/go_gem) (Ruby gem) | https://ruby-go-gem.github.io/go-gem-wrapper/            |
+
 ## Requirements
 * Go
 * Ruby
@@ -119,9 +125,9 @@ However, some of the methods listed below are not supported.
 
 ## Developing
 ### Build
-Run `rake ruby:build_example`. (`bundle exec` is not required)
+Run `bundle exec rake ruby:example:build`.
 
-See `rake -T` for more tasks.
+See `bundle exec rake -T` for more tasks.
 
 ### See `godoc` in local
 ```bash
@@ -129,11 +135,7 @@ go install golang.org/x/tools/cmd/godoc@latest
 godoc
 ```
 
-open http://localhost:6060/pkg/github.com/ruby-go-gem/go-gem-wrapper/
-
-## Reference
-* Go: https://pkg.go.dev/github.com/ruby-go-gem/go-gem-wrapper
-* Ruby: https://ruby-go-gem.github.io/go-gem-wrapper/
+open http://localhost:6060/pkg/github.com/ruby-go-gem/go-gem-wrapper/ruby/
 
 ## Original idea
 [Ruby meets Go - RubyKaigi 2015](https://rubykaigi.org/2015/presentations/mmasaki/)
