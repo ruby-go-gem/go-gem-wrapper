@@ -14,6 +14,42 @@ import (
 	"unsafe"
 )
 
+// RARRAY_ASET calls `RARRAY_ASET` in C
+//
+// Original definition is following
+//
+//	RARRAY_ASET(VALUE ary, long i, VALUE v)
+func RARRAY_ASET(ary VALUE, i Long, v VALUE) {
+	C.RARRAY_ASET(C.VALUE(ary), C.long(i), C.VALUE(v))
+}
+
+// RARRAY_EMBED_LEN calls `RARRAY_EMBED_LEN` in C
+//
+// Original definition is following
+//
+//	RARRAY_EMBED_LEN(VALUE ary)
+func RARRAY_EMBED_LEN(ary VALUE) Long {
+	return Long(C.RARRAY_EMBED_LEN(C.VALUE(ary)))
+}
+
+// RARRAY_LENINT calls `RARRAY_LENINT` in C
+//
+// Original definition is following
+//
+//	RARRAY_LENINT(VALUE ary)
+func RARRAY_LENINT(ary VALUE) int {
+	return int(C.RARRAY_LENINT(C.VALUE(ary)))
+}
+
+// RARRAY_PTR calls `RARRAY_PTR` in C
+//
+// Original definition is following
+//
+//	RARRAY_PTR(VALUE ary)
+func RARRAY_PTR(ary VALUE) *VALUE {
+	return (*VALUE)(C.RARRAY_PTR(C.VALUE(ary)))
+}
+
 // RB_BUILTIN_TYPE calls `RB_BUILTIN_TYPE` in C
 //
 // Original definition is following
