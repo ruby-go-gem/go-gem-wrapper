@@ -1,5 +1,26 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.3.0...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.4.0...main
+
+# [v0.4.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.4.0) - 2024-11-24
+## Go
+### New Features
+* Add `RARRAY_` functions by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/219
+
+## Ruby
+* No changes
+
+## ruby_h_to_go
+### Bugfixes
+* Fix cannot load such file -- ruby_h_to_go/cli (LoadError) in `rake ruby_h_to_go` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/218
+
+## Other
+### Bugfixes
+* Suppress empty content in CHANGELOG by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/216
+
+### Other changes
+* Tweak doc by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/217
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.3.0...v0.4.0
 
 # [v0.3.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.3.0) - 2024-11-21
 ## Go
