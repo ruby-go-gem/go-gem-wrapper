@@ -17,6 +17,7 @@ RSpec.describe GoGem::RakeTask do
       it { should be_task_defined("go:test") }
       it { should be_task_defined("go:testrace") }
       it { should be_task_defined("go:fmt") }
+      it { should be_task_defined("go:build_envs") }
 
       describe "Add additional tasks" do
         include Rake::DSL

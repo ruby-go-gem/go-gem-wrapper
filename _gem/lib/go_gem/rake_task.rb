@@ -86,6 +86,7 @@ module GoGem
         define_go_test_task
         define_go_testrace_task
         define_go_fmt_task
+        define_go_build_envs_task
       end
     end
 
@@ -165,6 +166,20 @@ module GoGem
       task(:fmt) do
         within_target_dir do
           sh "#{go_bin_path} fmt ./..."
+        end
+      end
+    end
+
+    def define_go_build_envs_task
+      desc "Print build envs for `go build`"
+      task(:build_envs, [:env_name]) do |_, args|
+        if args[:env_name]
+          value = RakeTask.build_env_vars[args[:env_name]]
+          puts "#{args[:env_name]}=#{value}"
+        else
+          RakeTask.build_env_vars.each do |name, value|
+            puts "#{name}=#{value}"
+          end
         end
       end
     end
