@@ -1,5 +1,25 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.4.0...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.5.0...main
+
+# [v0.5.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.5.0) - 2024-11-26
+## Go
+### Other changes
+* Bump github.com/stretchr/testify from 1.9.0 to 1.10.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/221
+
+## Ruby
+### New Features
+* Define `build_envs` task at `GoGem::RakeTask` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/222
+
+### Other changes
+* Bump test-unit from 3.6.2 to 3.6.3 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/220
+
+## ruby_h_to_go
+* No changes
+
+## Other
+* No changes
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.4.0...v0.5.0
 
 # [v0.4.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.4.0) - 2024-11-24
 ## Go
