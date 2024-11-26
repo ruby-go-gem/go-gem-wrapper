@@ -99,9 +99,19 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ruby
+          bundler-cache: false
 
-      - name: export CGO_CFLAGS
-        run: ruby -e "puts %Q(CGO_CFLAGS=-I#{RbConfig::CONFIG['rubyarchhdrdir']} -I#{RbConfig::CONFIG['rubyhdrdir']})" >> $GITHUB_ENV
+      # FIXME: setup-go installs cache in `vendor/` and setup-ruby installs cache in `vendor/bundle/`
+      #        If we use the cache in setup-go and setup-ruby at the same time, this doesn't work well because they use the same directory.
+      #        Therefore, the installation location needs to be changed from the setup-ruby default.
+      - name: bundle install
+        run: |
+          set -xe
+          bundle config --local path ruby-vendor/bundle
+          bundle install --jobs 4
+
+      - name: export CGO_CFLAGS for golangci-lint
+        run: bundle exec rake go:build_envs[CGO_CFLAGS] >> $GITHUB_ENV
 
       - run: echo $CGO_CFLAGS
 
