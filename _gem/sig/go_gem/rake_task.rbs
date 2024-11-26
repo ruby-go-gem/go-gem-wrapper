@@ -38,6 +38,8 @@ module GoGem
 
     def define_go_fmt_task: () -> void
 
+    def define_go_build_envs_task: () -> void
+
     def within_target_dir: () { () -> void } -> void
 
     def ext_dir: () -> String
