@@ -1,3 +1,24 @@
+# Monkey path to https://github.com/ruby/gem_rbs_collection/blob/main/gems/rake/13.0/rake.rbs
+
+module Rake
+  class Task
+  end
+
+  class TaskArguments
+    include Enumerable[untyped]
+
+    def []: (untyped index) -> untyped
+    def each: () ?{ (untyped, untyped) -> void } -> void
+  end
+
+  module DSL
+    private
+
+    def task: (*untyped args) ?{ (Rake::Task, Rake::TaskArguments) -> void } -> void
+      | ...
+  end
+end
+
 module FileUtils
   def sh: (Hash[String, String] env, *String cmd, **untyped options) ?{ (bool, Process::Status) -> void } -> void
     | ...
