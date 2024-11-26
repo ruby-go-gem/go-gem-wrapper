@@ -49,6 +49,7 @@ Following tasks are generated
 * `rake go:test`
 * `rake go:testrace`
 * `rake go:fmt`
+* `rake go:build_envs`
 
 #### Example (With config)
 ```ruby
@@ -68,6 +69,7 @@ Following tasks are generated
 * `rake go5:test`
 * `rake go5:testrace`
 * `rake go5:fmt`
+* `rake go5:build_envs`
 
 #### Example (Add additional tasks)
 ```ruby
@@ -87,6 +89,24 @@ namespace :go do
     end
   end
 end
+```
+
+#### Example (Use [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action))
+```yml
+jobs:
+  go-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+      - uses: ruby/setup-ruby@v1
+
+      - name: export CGO_CFLAGS for golangci-lint
+        run: bundle exec rake go:build_envs[CGO_CFLAGS] >> $GITHUB_ENV
+
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v6
 ```
 
 #### Available configurations
