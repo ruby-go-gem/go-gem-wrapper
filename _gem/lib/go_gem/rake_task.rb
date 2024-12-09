@@ -120,7 +120,7 @@ module GoGem
         ldflags.gsub!("-Wl,--unresolved-symbols=ignore-all", "")
       end
 
-      ld_library_path = RbConfig::CONFIG["libdir"]
+      ld_library_path = RbConfig::CONFIG["libdir"].to_s
 
       {
         "CGO_CFLAGS"      => cflags,
