@@ -4049,9 +4049,7 @@ func RbGcMarkMovable(obj VALUE) {
 //
 //	void rb_gc_register_address(VALUE *valptr)
 func RbGcRegisterAddress(valptr *VALUE) {
-	var cValptr C.VALUE
-	C.rb_gc_register_address(&cValptr)
-	*valptr = VALUE(cValptr)
+	C.rb_gc_register_address((*C.VALUE)(valptr))
 }
 
 // RbGcRegisterMarkObject calls `rb_gc_register_mark_object` in C
@@ -4087,9 +4085,7 @@ func RbGcStat(key_or_buf VALUE) SizeT {
 //
 //	void rb_gc_unregister_address(VALUE *valptr)
 func RbGcUnregisterAddress(valptr *VALUE) {
-	var cValptr C.VALUE
-	C.rb_gc_unregister_address(&cValptr)
-	*valptr = VALUE(cValptr)
+	C.rb_gc_unregister_address((*C.VALUE)(valptr))
 }
 
 // RbGcUpdateTblRefs calls `rb_gc_update_tbl_refs` in C
