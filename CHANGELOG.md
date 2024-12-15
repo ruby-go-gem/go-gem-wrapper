@@ -1,5 +1,26 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.5.0...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.5.1...main
+
+# [v0.5.1](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.5.1) - 2024-12-15
+## Go
+### Other changes
+* Change arg of `rb_gc_register_address` and `rb_gc_unregister_address` to in_ref by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/228
+
+## Ruby
+### Other changes
+* Bump test-unit from 3.6.3 to 3.6.4 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/225
+* Bump rubocop from 1.68.0 to 1.69.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/224
+* Bump rubocop from 1.69.0 to 1.69.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/227
+* Bump steep from 1.8.3 to 1.9.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/226
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Other changes
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/223
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.5.0...v0.5.1
 
 # [v0.5.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.5.0) - 2024-11-26
 ## Go
