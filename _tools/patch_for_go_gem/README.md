@@ -1,6 +1,10 @@
 # patch_for_go_gem
 Patch to make a gem into a Go gem right after `bundle gem`
 
+## Requirements
+* Go 1.23+
+* Ruby 3.3+
+
 ## Usage
 1. Download [patch_for_go_gem.rb](patch_for_go_gem.rb)
 2. Run `bundle gem <GEM_NAME> --ext=c`

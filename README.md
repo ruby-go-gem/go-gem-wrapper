@@ -14,8 +14,8 @@
 | [/_gem/](/_gem/) | [go_gem](https://rubygems.org/gems/go_gem) (Ruby gem) | https://ruby-go-gem.github.io/go-gem-wrapper/            |
 
 ## Requirements
-* Go
-* Ruby
+* Go 1.23+
+* Ruby 3.3+
 
 ## Getting started
 At first, patch to make a gem into a Go gem right after `bundle gem`
