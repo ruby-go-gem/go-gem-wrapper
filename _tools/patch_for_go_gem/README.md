@@ -1,6 +1,11 @@
 # patch_for_go_gem
 Patch to make a gem into a Go gem right after `bundle gem`
 
+> [!NOTE]
+> This is a temporary tool until `bundle gem --ext=go` is added to the bundler
+>
+> c.f. https://github.com/rubygems/rubygems/pull/8183
+
 ## Requirements
 * Go 1.23+
 * Ruby 3.3+
