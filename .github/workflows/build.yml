@@ -87,7 +87,16 @@ jobs:
           matrix: ${{ toJson(matrix) }}
 
   go-lint:
+    name: "go-lint (Ruby ${{ matrix.ruby }})"
+
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        ruby:
+          - "3.3"
 
     steps:
       - uses: actions/checkout@v4
@@ -98,7 +107,7 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ruby
+          ruby-version: ${{ matrix.ruby }}
           bundler-cache: false
 
       # FIXME: setup-go installs cache in `vendor/` and setup-ruby installs cache in `vendor/bundle/`
