@@ -23,28 +23,38 @@ env:
   TEST_GEM_DIR: ruby/testdata/example/
 
 jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: set-matrix
+        run: echo "matrix=$(cat matrix.json | jq -c)" >> $GITHUB_OUTPUT
+        working-directory: .github/workflows/
+
   test:
-    name: "test (Go ${{ matrix.golang }}, Ruby ${{ matrix.ruby }})"
+    name: "test (Go ${{ matrix.go }}, Ruby ${{ matrix.ruby }})"
+
+    needs:
+      - generate-matrix
 
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
 
-      matrix:
-        golang:
-          # TODO: Enable after repo is published
-          # - "1.22"
-          - "1.23"
-        ruby:
-          - "3.3"
+      matrix: ${{ fromJSON(needs.generate-matrix.outputs.matrix) }}
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-go@v5
         with:
-          go-version: ${{ matrix.golang }}
+          go-version: ${{ matrix.go }}
 
       - uses: ruby/setup-ruby@v1
         with:
@@ -89,14 +99,16 @@ jobs:
   go-lint:
     name: "go-lint (Ruby ${{ matrix.ruby }})"
 
+    needs:
+      - generate-matrix
+
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
 
       matrix:
-        ruby:
-          - "3.3"
+        ruby: ${{ fromJSON(needs.generate-matrix.outputs.matrix).ruby }}
 
     steps:
       - uses: actions/checkout@v4
@@ -184,14 +196,16 @@ jobs:
   go_gem:
     name: "go_gem (Ruby ${{ matrix.ruby }})"
 
+    needs:
+      - generate-matrix
+
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
 
       matrix:
-        ruby:
-          - "3.3"
+        ruby: ${{ fromJSON(needs.generate-matrix.outputs.matrix).ruby }}
 
     steps:
       - uses: actions/checkout@v4
