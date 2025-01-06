@@ -102,7 +102,7 @@ module RubyHToGo
 
     # Clean all generated files in dist/
     def clean_generated_files
-      FileUtils.rm_f(Dir.glob(File.join(dist_dir, "*_#{GoUtil.ruby_minor_version_build_tag}_generated.go")))
+      FileUtils.rm_f(Dir.glob(File.join(dist_dir, "*_#{GoGem::Util.ruby_minor_version_build_tag}_generated.go")))
     end
 
     def copy_go_files
