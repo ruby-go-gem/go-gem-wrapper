@@ -2314,15 +2314,6 @@ func RbDataObjectGet(obj VALUE) unsafe.Pointer {
 	return unsafe.Pointer(C.rb_data_object_get(C.VALUE(obj)))
 }
 
-// RbDataObjectMake calls `rb_data_object_make` in C
-//
-// Original definition is following
-//
-//	rb_data_object_make(VALUE klass, RUBY_DATA_FUNC mark_func, RUBY_DATA_FUNC free_func, void **data/;"
-func RbDataObjectMake(klass VALUE, mark_func unsafe.Pointer, free_func unsafe.Pointer, datap *unsafe.Pointer, size SizeT) VALUE {
-	return VALUE(C.rb_data_object_make(C.VALUE(klass), toCFunctionPointer(mark_func), toCFunctionPointer(free_func), datap, C.size_t(size)))
-}
-
 // RbDataObjectWrap calls `rb_data_object_wrap` in C
 //
 // Original definition is following
@@ -5759,24 +5750,6 @@ func RbNeedBlock() {
 	C.rb_need_block()
 }
 
-// RbNewobj calls `rb_newobj` in C
-//
-// Original definition is following
-//
-//	VALUE rb_newobj(void)
-func RbNewobj() VALUE {
-	return VALUE(C.rb_newobj())
-}
-
-// RbNewobjOf calls `rb_newobj_of` in C
-//
-// Original definition is following
-//
-//	VALUE rb_newobj_of(VALUE klass, VALUE flags)
-func RbNewobjOf(klass VALUE, flags VALUE) VALUE {
-	return VALUE(C.rb_newobj_of(C.VALUE(klass), C.VALUE(flags)))
-}
-
 // RbNotimplement calls `rb_notimplement` in C
 //
 // Original definition is following
@@ -7383,20 +7356,6 @@ func RbStHashUint32(h StIndexT, i Uint32T) StIndexT {
 	return StIndexT(C.rb_st_hash_uint32(C.st_index_t(h), C.uint32_t(i)))
 }
 
-// RbStInitExistingTableWithSize calls `rb_st_init_existing_table_with_size` in C
-//
-// Original definition is following
-//
-//	st_table *rb_st_init_existing_table_with_size(st_table *tab, const struct st_hash_type *type, st_index_t size)
-func RbStInitExistingTableWithSize(tab *StTable, t *StHashType, size StIndexT) *StTable {
-	var cTab C.st_table
-	var cT C.struct_st_hash_type
-	ret := (*StTable)(C.rb_st_init_existing_table_with_size(&cTab, &cT, C.st_index_t(size)))
-	*tab = StTable(cTab)
-	*t = StHashType(cT)
-	return ret
-}
-
 // RbStInitNumtable calls `rb_st_init_numtable` in C
 //
 // Original definition is following
@@ -7599,20 +7558,6 @@ func RbStNumcmp(arg1 StDataT, arg2 StDataT) int {
 //	__attribute__((__const__)) st_index_t rb_st_numhash(st_data_t)
 func RbStNumhash(arg1 StDataT) StIndexT {
 	return StIndexT(C.rb_st_numhash(C.st_data_t(arg1)))
-}
-
-// RbStReplace calls `rb_st_replace` in C
-//
-// Original definition is following
-//
-//	st_table *rb_st_replace(st_table *new_tab, st_table *old_tab)
-func RbStReplace(new_tab *StTable, old_tab *StTable) *StTable {
-	var cNewTab C.st_table
-	var cOldTab C.st_table
-	ret := (*StTable)(C.rb_st_replace(&cNewTab, &cOldTab))
-	*new_tab = StTable(cNewTab)
-	*old_tab = StTable(cOldTab)
-	return ret
 }
 
 // RbStShift calls `rb_st_shift` in C
