@@ -8999,15 +8999,6 @@ func RbUndefMethod(klass VALUE, name string) {
 	C.rb_undef_method(C.VALUE(klass), char)
 }
 
-// RbUndefineFinalizer calls `rb_undefine_finalizer` in C
-//
-// Original definition is following
-//
-//	VALUE rb_undefine_finalizer(VALUE obj)
-func RbUndefineFinalizer(obj VALUE) VALUE {
-	return VALUE(C.rb_undefine_finalizer(C.VALUE(obj)))
-}
-
 // RbUnexpectedType calls `rb_unexpected_type` in C
 //
 // Original definition is following
