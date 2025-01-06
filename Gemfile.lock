@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/ruby-go-gem/ruby_header_parser.git
+  revision: b7254b499b3f495272e45dc65f1424e14295532d
+  branch: fix_github_actions
+  specs:
+    ruby_header_parser (0.4.0)
+
 PATH
   remote: _gem
   specs:
@@ -113,7 +120,6 @@ GEM
     rubocop_auto_corrector (0.5.0)
       rubocop (>= 1.30.0)
     ruby-progressbar (1.13.0)
-    ruby_header_parser (0.4.0)
     securerandom (0.4.1)
     serverspec (2.42.3)
       multi_json
@@ -171,7 +177,7 @@ DEPENDENCIES
   rspec-temp_dir
   rubocop
   rubocop_auto_corrector
-  ruby_header_parser (>= 0.4.0)
+  ruby_header_parser!
   serverspec
   steep
   test-unit
