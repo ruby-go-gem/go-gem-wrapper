@@ -96,22 +96,8 @@ module GoGem
     #
     # @return [Hash<String, String>]
     def self.build_env_vars
-      goflags = "-tags=#{GoGem::Util.ruby_minor_version_build_tag}"
-
-      ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"
-
-      case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
-      when /Free Software Foundation/
-        ldflags << " -Wl,--unresolved-symbols=ignore-all"
-      when /clang/
-        ldflags << " -undefined dynamic_lookup"
-      end
-
-      cflags = [
-        RbConfig::CONFIG["CFLAGS"],
-        "-I#{RbConfig::CONFIG["rubyarchhdrdir"]}",
-        "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
-      ].join(" ")
+      ldflags = generate_ldflags
+      cflags = generate_cflags
 
       # FIXME: Workaround for Ubuntu (GitHub Actions)
       if RUBY_PLATFORM =~ /linux/i
@@ -127,12 +113,43 @@ module GoGem
       ld_library_path = RbConfig::CONFIG["libdir"].to_s
 
       {
-        "GOFLAGS"         => goflags,
+        "GOFLAGS"         => generate_goflags,
         "CGO_CFLAGS"      => cflags,
         "CGO_LDFLAGS"     => ldflags,
         "LD_LIBRARY_PATH" => ld_library_path,
       }
     end
+
+    # @return [String]
+    def self.generate_goflags
+      "-tags=#{GoGem::Util.ruby_minor_version_build_tag}"
+    end
+    private_class_method :generate_goflags
+
+    # @return [String]
+    def self.generate_ldflags
+      ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"
+
+      case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
+      when /Free Software Foundation/
+        ldflags << " -Wl,--unresolved-symbols=ignore-all"
+      when /clang/
+        ldflags << " -undefined dynamic_lookup"
+      end
+
+      ldflags
+    end
+    private_class_method :generate_ldflags
+
+    # @return [String]
+    def self.generate_cflags
+      [
+        RbConfig::CONFIG["CFLAGS"],
+        "-I#{RbConfig::CONFIG["rubyarchhdrdir"]}",
+        "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
+      ].join(" ")
+    end
+    private_class_method :generate_cflags
 
     # @yield
     def within_target_dir

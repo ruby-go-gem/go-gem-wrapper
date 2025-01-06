@@ -30,6 +30,12 @@ module GoGem
 
     def self.build_env_vars: () -> { "GOFLAGS" => String, "CGO_CFLAGS" => String, "CGO_LDFLAGS" => String, "LD_LIBRARY_PATH" => String }
 
+    def self.generate_goflags: () -> String
+
+    def self.generate_ldflags: () -> String
+
+    def self.generate_cflags: () -> String
+
     private
 
     def define_go_test_task: () -> void
