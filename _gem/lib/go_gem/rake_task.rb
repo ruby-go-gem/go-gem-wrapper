@@ -38,7 +38,9 @@ module GoGem
   #         sh "which golangci-lint" do |ok, _|
   #           raise "golangci-lint isn't installed. See. https://golangci-lint.run/welcome/install/" unless ok
   #         end
-  #         sh GoGem::RakeTask.build_env_vars, "golangci-lint run"
+  #
+  #         build_tag = GoGem::Util.ruby_minor_version_build_tag
+  #         sh GoGem::RakeTask.build_env_vars, "golangci-lint run --build-tags #{build_tag}"
   #       end
   #     end
   #   end
