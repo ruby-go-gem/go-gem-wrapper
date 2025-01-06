@@ -17,6 +17,8 @@
 * Go 1.23+
 * Ruby 3.3+
 
+See [.github/workflows/matrix.json](.github/workflows/matrix.json) for details
+
 ## Getting started
 At first, patch to make a gem into a Go gem right after `bundle gem`
 
