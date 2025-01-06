@@ -85,7 +85,9 @@ namespace :go do
       sh "which golangci-lint" do |ok, _|
         raise "golangci-lint isn't installed. See. https://golangci-lint.run/welcome/install/" unless ok
       end
-      sh GoGem::RakeTask.build_env_vars, "golangci-lint run"
+
+      build_tag = GoGem::Util.ruby_minor_version_build_tag
+      sh GoGem::RakeTask.build_env_vars, "golangci-lint run --build-tags #{build_tag}"
     end
   end
 end
@@ -101,12 +103,28 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
       - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: false
+
+      # FIXME: setup-go installs cache in `vendor/` and setup-ruby installs cache in `vendor/bundle/`
+      #        If we use the cache in setup-go and setup-ruby at the same time, this doesn't work well because they use the same directory.
+      #        Therefore, the installation location needs to be changed from the setup-ruby default.
+      - name: bundle install
+        run: |
+          set -xe
+          bundle config --local path ruby-vendor/bundle
+          bundle install --jobs 4
 
       - name: export CGO_CFLAGS for golangci-lint
         run: bundle exec rake go:build_envs[CGO_CFLAGS] >> $GITHUB_ENV
 
+      - name: export BUILD_TAG for golangci-lint
+        run: echo "BUILD_TAG=$(bundle exec rake go:build_tag)" >> $GITHUB_ENV
+
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v6
+        with:
+          args: --build-tags ${{ env.BUILD_TAG }}
 ```
 
 #### Available configurations
