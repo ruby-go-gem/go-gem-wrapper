@@ -42,8 +42,6 @@ Metrics/BlockLength:
     - "**/*_spec.rb"
 
 Metrics/ClassLength:
-  Max: 112
-
   Exclude:
     - "**/*_test.rb"
 

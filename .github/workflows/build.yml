@@ -136,10 +136,16 @@ jobs:
 
       - run: echo $CGO_CFLAGS
 
+      - name: export BUILD_TAG for golangci-lint
+        run: echo "BUILD_TAG=$(bundle exec rake go:build_tag)" >> $GITHUB_ENV
+
+      - run: echo $BUILD_TAG
+
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
           version: v1.60
+          args: --build-tags ${{ env.BUILD_TAG }}
 
       - name: Slack Notification (not success)
         uses: act10ns/slack@v2

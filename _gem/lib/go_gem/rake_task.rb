@@ -42,7 +42,7 @@ module GoGem
   #       end
   #     end
   #   end
-  class RakeTask < ::Rake::TaskLib
+  class RakeTask < ::Rake::TaskLib # rubocop:disable Metrics/ClassLength
     DEFAULT_TASK_NAMESPACE = :go
 
     DEFAULT_GO_BIN_PATH = "go"
@@ -89,6 +89,7 @@ module GoGem
         define_go_testrace_task
         define_go_fmt_task
         define_go_build_envs_task
+        define_go_build_tag_task
       end
     end
 
@@ -203,6 +204,13 @@ module GoGem
             puts "#{name}=#{value}"
           end
         end
+      end
+    end
+
+    def define_go_build_tag_task
+      desc "Print build tag"
+      task(:build_tag) do
+        puts GoGem::Util.ruby_minor_version_build_tag
       end
     end
   end
