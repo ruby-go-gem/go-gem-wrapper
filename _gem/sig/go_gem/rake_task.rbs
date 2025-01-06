@@ -28,7 +28,7 @@ module GoGem
 
     def initialize: (String gem_name) ?{ (RakeTask) -> void } -> void
 
-    def self.build_env_vars: () -> { "CGO_CFLAGS" => String, "CGO_LDFLAGS" => String, "LD_LIBRARY_PATH" => String }
+    def self.build_env_vars: () -> { "GOFLAGS" => String, "CGO_CFLAGS" => String, "CGO_LDFLAGS" => String, "LD_LIBRARY_PATH" => String }
 
     private
 

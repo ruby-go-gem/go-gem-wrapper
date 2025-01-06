@@ -3,6 +3,8 @@
 require "rake"
 require "rake/tasklib"
 
+require_relative "util"
+
 module GoGem
   # Provides rake tasks for `go test` with CRuby
   #
@@ -94,6 +96,8 @@ module GoGem
     #
     # @return [Hash<String, String>]
     def self.build_env_vars
+      goflags = "-tags=#{GoGem::Util.ruby_minor_version_build_tag}"
+
       ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"
 
       case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
@@ -123,6 +127,7 @@ module GoGem
       ld_library_path = RbConfig::CONFIG["libdir"].to_s
 
       {
+        "GOFLAGS"         => goflags,
         "CGO_CFLAGS"      => cflags,
         "CGO_LDFLAGS"     => ldflags,
         "LD_LIBRARY_PATH" => ld_library_path,
