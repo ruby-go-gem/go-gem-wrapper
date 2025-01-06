@@ -3,6 +3,8 @@
 require "rake"
 require "rake/tasklib"
 
+require_relative "util"
+
 module GoGem
   # Provides rake tasks for `go test` with CRuby
   #
@@ -40,7 +42,7 @@ module GoGem
   #       end
   #     end
   #   end
-  class RakeTask < ::Rake::TaskLib
+  class RakeTask < ::Rake::TaskLib # rubocop:disable Metrics/ClassLength
     DEFAULT_TASK_NAMESPACE = :go
 
     DEFAULT_GO_BIN_PATH = "go"
@@ -87,6 +89,7 @@ module GoGem
         define_go_testrace_task
         define_go_fmt_task
         define_go_build_envs_task
+        define_go_build_tag_task
       end
     end
 
@@ -94,20 +97,8 @@ module GoGem
     #
     # @return [Hash<String, String>]
     def self.build_env_vars
-      ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"
-
-      case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
-      when /Free Software Foundation/
-        ldflags << " -Wl,--unresolved-symbols=ignore-all"
-      when /clang/
-        ldflags << " -undefined dynamic_lookup"
-      end
-
-      cflags = [
-        RbConfig::CONFIG["CFLAGS"],
-        "-I#{RbConfig::CONFIG["rubyarchhdrdir"]}",
-        "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
-      ].join(" ")
+      ldflags = generate_ldflags
+      cflags = generate_cflags
 
       # FIXME: Workaround for Ubuntu (GitHub Actions)
       if RUBY_PLATFORM =~ /linux/i
@@ -123,11 +114,43 @@ module GoGem
       ld_library_path = RbConfig::CONFIG["libdir"].to_s
 
       {
+        "GOFLAGS"         => generate_goflags,
         "CGO_CFLAGS"      => cflags,
         "CGO_LDFLAGS"     => ldflags,
         "LD_LIBRARY_PATH" => ld_library_path,
       }
     end
+
+    # @return [String]
+    def self.generate_goflags
+      "-tags=#{GoGem::Util.ruby_minor_version_build_tag}"
+    end
+    private_class_method :generate_goflags
+
+    # @return [String]
+    def self.generate_ldflags
+      ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"
+
+      case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
+      when /Free Software Foundation/
+        ldflags << " -Wl,--unresolved-symbols=ignore-all"
+      when /clang/
+        ldflags << " -undefined dynamic_lookup"
+      end
+
+      ldflags
+    end
+    private_class_method :generate_ldflags
+
+    # @return [String]
+    def self.generate_cflags
+      [
+        RbConfig::CONFIG["CFLAGS"],
+        "-I#{RbConfig::CONFIG["rubyarchhdrdir"]}",
+        "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
+      ].join(" ")
+    end
+    private_class_method :generate_cflags
 
     # @yield
     def within_target_dir
@@ -181,6 +204,13 @@ module GoGem
             puts "#{name}=#{value}"
           end
         end
+      end
+    end
+
+    def define_go_build_tag_task
+      desc "Print build tag"
+      task(:build_tag) do
+        puts GoGem::Util.ruby_minor_version_build_tag
       end
     end
   end

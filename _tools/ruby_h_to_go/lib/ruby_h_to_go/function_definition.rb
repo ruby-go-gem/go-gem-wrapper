@@ -25,7 +25,7 @@ module RubyHToGo
     # Write definition as go file
     # @param [String] dist_dir
     def write_go_file(dist_dir)
-      go_file_path = File.join(dist_dir, "function_generated.go")
+      go_file_path = File.join(dist_dir, "function_#{GoGem::Util.ruby_minor_version_build_tag}_generated.go")
 
       GoUtil.generate_initial_go_file(go_file_path)
 

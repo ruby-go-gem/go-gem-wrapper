@@ -2,6 +2,7 @@
 
 require "forwardable"
 require "ruby_header_parser"
+require "go_gem/util"
 
 require_relative "ruby_h_to_go/type_helper"
 

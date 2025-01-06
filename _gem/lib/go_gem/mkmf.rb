@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "util"
+
 module GoGem
   # Helper module for creating Go Makefiles
   module Mkmf
@@ -35,11 +37,13 @@ module GoGem
 
       current_dir = File.expand_path(".")
 
+      goflags = "-tags=#{GoGem::Util.ruby_minor_version_build_tag}"
+
       File.open("Makefile", "a") do |f|
         f.write <<~MAKEFILE.gsub(/^ {8}/, "\t")
           $(DLLIB): Makefile $(srcdir)/*.go
                   cd $(srcdir); \
-                  CGO_CFLAGS='$(INCFLAGS)' CGO_LDFLAGS='#{ldflags}' \
+                  CGO_CFLAGS='$(INCFLAGS)' CGO_LDFLAGS='#{ldflags}' GOFLAGS='#{goflags}' \
                     go build -p 4 -buildmode=c-shared -o #{current_dir}/$(DLLIB)
         MAKEFILE
       end
