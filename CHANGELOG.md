@@ -1,5 +1,33 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.5.1...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.6.0...main
+
+# [v0.6.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.6.0) - 2025-01-07
+## Go
+### New Features
+* Support Ruby 3.4 by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/244
+
+## Ruby
+### New Features
+* Support Ruby 3.4 by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/244
+
+### Other changes
+* Bump test-unit from 3.6.4 to 3.6.5 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/229
+* Bump steep from 1.9.0 to 1.9.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/231
+* Bump rubocop from 1.69.1 to 1.69.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/230
+* Bump test-unit from 3.6.5 to 3.6.7 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/237
+* Bump steep from 1.9.1 to 1.9.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/238
+* Bump steep from 1.9.2 to 1.9.3 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/240
+* Bump rake-compiler from 1.2.8 to 1.2.9 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/243
+
+## ruby_h_to_go
+### New Features
+* Support Ruby 3.4 by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/244
+
+## Other
+### Other changes
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/242
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.5.1...HEAD
 
 # [v0.5.1](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.5.1) - 2024-12-15
 ## Go
