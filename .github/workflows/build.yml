@@ -36,8 +36,8 @@ jobs:
         run: echo "matrix=$(cat matrix.json | jq -c)" >> $GITHUB_OUTPUT
         working-directory: .github/workflows/
 
-  test:
-    name: "test (Go ${{ matrix.go }}, Ruby ${{ matrix.ruby }})"
+  build-and-test:
+    name: "build-and-test (Go ${{ matrix.go }}, Ruby ${{ matrix.ruby }})"
 
     needs:
       - generate-matrix
@@ -234,7 +234,7 @@ jobs:
 
   notify:
     needs:
-      - test
+      - build-and-test
       - go-lint
       - ruby-lint
       - ruby-rbs
