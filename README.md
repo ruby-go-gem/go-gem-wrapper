@@ -98,9 +98,9 @@ We provide auto-generated bindings for (almost) all CRuby functions available wh
 
 See below for details.
 
-* [ruby/enum_generated.go](ruby/enum_generated.go)
-* [ruby/function_generated.go](ruby/function_generated.go)
-* [ruby/type_generated.go](ruby/type_generated.go)
+* [ruby/enum_ruby_3_3_generated.go](ruby/enum_ruby_3_3_generated.go)
+* [ruby/function_ruby_3_3_generated.go](ruby/function_ruby_3_3_generated.go)
+* [ruby/type_ruby_3_3_generated.go](ruby/type_ruby_3_3_generated.go)
 * [_tools/ruby_h_to_go/](_tools/ruby_h_to_go/)
 
 ## Specification
@@ -115,7 +115,7 @@ CRuby methods are mapped to Go methods based on the following rules
   * e.g. `rb_define_method` (CRuby) -> `ruby.RbDefineMethod` (Go)
 
 ### Limitation
-Most of the methods defined in `ruby.h` are automatically generated and defined in [ruby/function_generated.go](ruby/function_generated.go).
+Most of the methods defined in `ruby.h` are automatically generated and defined in [ruby/function_ruby_3_3_generated.go](ruby/function_ruby_3_3_generated.go).
 
 However, some of the methods listed below are not supported.
 
