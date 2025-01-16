@@ -127,7 +127,7 @@ However, some of the methods listed below are not supported.
 
 ## Developing
 ### Build
-Run `bundle exec rake ruby:example:build`.
+Run `bundle exec rake build_all`.
 
 See `bundle exec rake -T` for more tasks.
 
