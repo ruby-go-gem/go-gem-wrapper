@@ -110,7 +110,6 @@ module GoGem
         cflags.gsub!("-Wsuggest-attribute=format", "")
         cflags.gsub!("-Wold-style-definition", "")
         cflags.gsub!("-Wsuggest-attribute=noreturn", "")
-        ldflags.gsub!("-Wl,--unresolved-symbols=ignore-all", "")
       end
 
       ld_library_path = RbConfig::CONFIG["libdir"].to_s
