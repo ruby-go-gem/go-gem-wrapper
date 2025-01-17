@@ -99,7 +99,7 @@ module GoGem
     #
     # @return [Hash<String, String>]
     def self.build_env_vars
-      ldflags = generate_ldflags
+      ldflags = GoGem::Util.generate_ldflags
       cflags = generate_cflags
 
       # FIXME: Workaround for Ubuntu (GitHub Actions)
@@ -128,21 +128,6 @@ module GoGem
       "-tags=#{GoGem::Util.ruby_minor_version_build_tag}"
     end
     private_class_method :generate_goflags
-
-    # @return [String]
-    def self.generate_ldflags
-      ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"
-
-      case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
-      when /Free Software Foundation/
-        ldflags << " -Wl,--unresolved-symbols=ignore-all"
-      when /clang/
-        ldflags << " -undefined dynamic_lookup"
-      end
-
-      ldflags
-    end
-    private_class_method :generate_ldflags
 
     # @return [String]
     def self.generate_cflags

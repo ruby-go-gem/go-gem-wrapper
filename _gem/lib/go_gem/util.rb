@@ -14,5 +14,19 @@ module GoGem
     def self.ruby_minor_version_build_tag(ruby_version = RUBY_VERSION)
       "ruby_#{ruby_version.to_f.to_s.gsub(".", "_")}"
     end
+
+    # @return [String]
+    def self.generate_ldflags
+      ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"
+
+      case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
+      when /Free Software Foundation/
+        ldflags << " -Wl,--unresolved-symbols=ignore-all"
+      when /clang/
+        ldflags << " -undefined dynamic_lookup"
+      end
+
+      ldflags
+    end
   end
 end

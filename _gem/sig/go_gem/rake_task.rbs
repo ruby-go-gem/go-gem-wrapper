@@ -32,8 +32,6 @@ module GoGem
 
     def self.generate_goflags: () -> String
 
-    def self.generate_ldflags: () -> String
-
     def self.generate_cflags: () -> String
 
     private

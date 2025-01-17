@@ -1,5 +1,7 @@
 module GoGem
   module Util
     def self.ruby_minor_version_build_tag: (?String ruby_version) -> String
+
+    def self.generate_ldflags: () -> String
   end
 end
