@@ -102,16 +102,6 @@ module GoGem
       ldflags = GoGem::Util.generate_ldflags
       cflags = generate_cflags
 
-      # FIXME: Workaround for Ubuntu (GitHub Actions)
-      if RUBY_PLATFORM =~ /linux/i
-        cflags.gsub!("-Wno-self-assign", "")
-        cflags.gsub!("-Wno-parentheses-equality", "")
-        cflags.gsub!("-Wno-constant-logical-operand", "")
-        cflags.gsub!("-Wsuggest-attribute=format", "")
-        cflags.gsub!("-Wold-style-definition", "")
-        cflags.gsub!("-Wsuggest-attribute=noreturn", "")
-      end
-
       ld_library_path = RbConfig::CONFIG["libdir"].to_s
 
       {
@@ -130,11 +120,27 @@ module GoGem
 
     # @return [String]
     def self.generate_cflags
-      [
-        RbConfig::CONFIG["CFLAGS"],
-        "-I#{RbConfig::CONFIG["rubyarchhdrdir"]}",
-        "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
-      ].join(" ")
+      cflags =
+        [
+          RbConfig::CONFIG["CFLAGS"],
+          "-I#{RbConfig::CONFIG["rubyarchhdrdir"]}",
+          "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
+        ].join(" ")
+
+      # FIXME: Workaround for Ubuntu (GitHub Actions)
+      if RUBY_PLATFORM =~ /linux/i
+        cflags.gsub!("-Wno-self-assign", "")
+        cflags.gsub!("-Wno-parentheses-equality", "")
+        cflags.gsub!("-Wno-constant-logical-operand", "")
+        cflags.gsub!("-Wsuggest-attribute=format", "")
+        cflags.gsub!("-Wold-style-definition", "")
+        cflags.gsub!("-Wsuggest-attribute=noreturn", "")
+      end
+
+      # FIXME: Workaround for Alpine
+      cflags.gsub!("-Wpointer-arith", "") if RUBY_PLATFORM =~ /linux-musl/i
+
+      cflags
     end
     private_class_method :generate_cflags
 
