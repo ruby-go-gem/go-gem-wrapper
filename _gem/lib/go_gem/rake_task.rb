@@ -140,7 +140,7 @@ module GoGem
       # FIXME: Workaround for Alpine
       cflags.gsub!("-Wpointer-arith", "") if RUBY_PLATFORM =~ /linux-musl/i
 
-      cflags
+      cflags.strip
     end
     private_class_method :generate_cflags
 

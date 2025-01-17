@@ -29,7 +29,7 @@ module GoGem
       # FIXME: Workaround for Ubuntu (GitHub Actions)
       ldflags.gsub!("-Wl,--unresolved-symbols=ignore-all", "") if RUBY_PLATFORM =~ /linux/i
 
-      ldflags
+      ldflags.strip
     end
   end
 end
