@@ -100,49 +100,17 @@ module GoGem
     # @return [Hash<String, String>]
     def self.build_env_vars
       ldflags = GoGem::Util.generate_ldflags
-      cflags = generate_cflags
+      cflags = GoGem::Util.generate_cflags
 
       ld_library_path = RbConfig::CONFIG["libdir"].to_s
 
       {
-        "GOFLAGS"         => generate_goflags,
+        "GOFLAGS"         => GoGem::Util.generate_goflags,
         "CGO_CFLAGS"      => cflags,
         "CGO_LDFLAGS"     => ldflags,
         "LD_LIBRARY_PATH" => ld_library_path,
       }
     end
-
-    # @return [String]
-    def self.generate_goflags
-      "-tags=#{GoGem::Util.ruby_minor_version_build_tag}"
-    end
-    private_class_method :generate_goflags
-
-    # @return [String]
-    def self.generate_cflags
-      cflags =
-        [
-          RbConfig::CONFIG["CFLAGS"],
-          "-I#{RbConfig::CONFIG["rubyarchhdrdir"]}",
-          "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
-        ].join(" ")
-
-      # FIXME: Workaround for Ubuntu (GitHub Actions)
-      if RUBY_PLATFORM =~ /linux/i
-        cflags.gsub!("-Wno-self-assign", "")
-        cflags.gsub!("-Wno-parentheses-equality", "")
-        cflags.gsub!("-Wno-constant-logical-operand", "")
-        cflags.gsub!("-Wsuggest-attribute=format", "")
-        cflags.gsub!("-Wold-style-definition", "")
-        cflags.gsub!("-Wsuggest-attribute=noreturn", "")
-      end
-
-      # FIXME: Workaround for Alpine
-      cflags.gsub!("-Wpointer-arith", "") if RUBY_PLATFORM =~ /linux-musl/i
-
-      cflags.strip
-    end
-    private_class_method :generate_cflags
 
     # @yield
     def within_target_dir
