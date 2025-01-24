@@ -44,7 +44,7 @@ module GoGem
   #       end
   #     end
   #   end
-  class RakeTask < ::Rake::TaskLib # rubocop:disable Metrics/ClassLength
+  class RakeTask < ::Rake::TaskLib
     DEFAULT_TASK_NAMESPACE = :go
 
     DEFAULT_GO_BIN_PATH = "go"
