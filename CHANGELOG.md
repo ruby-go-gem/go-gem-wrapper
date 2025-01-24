@@ -1,5 +1,27 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.6.0...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.0...main
+
+# [v0.7.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.7.0) - 2025-01-24
+## Go
+* No changes
+
+## Ruby
+### New Features
+* Add `go_build_args` to `GoGem::Mkmf#create_go_makefile` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/260
+
+### Other changes
+* Update example for golangci-lint  by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/246
+* Bump rubocop from 1.69.2 to 1.70.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/251
+* Refactor go_gem by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/259
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Other changes
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/248
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.6.0...v0.7.0
 
 # [v0.6.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.6.0) - 2025-01-07
 ## Go
