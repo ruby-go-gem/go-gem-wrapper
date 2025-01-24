@@ -8,7 +8,7 @@ RSpec.describe GoGem::Mkmf do
       @temp_dir = Dir.mktmpdir
 
       Dir.chdir(@temp_dir) do
-        create_go_makefile("#{gem_name}/#{gem_name}")
+        create_go_makefile("#{gem_name}/#{gem_name}", go_build_args: "-gcflags='all=-N -l'")
       end
     end
 
