@@ -17,7 +17,7 @@ module GoGem
     #   # Use create_go_makefile instead of create_makefile
     #   # create_makefile("example/example")
     #   create_go_makefile("example/example")
-    def create_go_makefile(target, srcprefix = nil)
+    def create_go_makefile(target, srcprefix: nil)
       find_executable("go")
 
       # rubocop:disable Style/GlobalVars
