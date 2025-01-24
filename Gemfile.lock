@@ -1,7 +1,7 @@
 PATH
   remote: _gem
   specs:
-    go_gem (0.6.0)
+    go_gem (0.7.0)
 
 GEM
   remote: https://rubygems.org/
