@@ -9,6 +9,7 @@ module GoGem
     #
     # @param target [String]
     # @param srcprefix [String,nil]
+    # @param go_build_args [String,nil] Arguments passed to `go build`
     #
     # @example
     #   require "mkmf"
@@ -17,7 +18,10 @@ module GoGem
     #   # Use create_go_makefile instead of create_makefile
     #   # create_makefile("example/example")
     #   create_go_makefile("example/example")
-    def create_go_makefile(target, srcprefix = nil)
+    #
+    # @example Pass debug flags to `go build`
+    #   create_go_makefile("example/example", go_build_args: "-gcflags='all=-N -l'")
+    def create_go_makefile(target, srcprefix: nil, go_build_args: nil)
       find_executable("go")
 
       # rubocop:disable Style/GlobalVars
@@ -38,7 +42,7 @@ module GoGem
           $(DLLIB): Makefile $(srcdir)/*.go
                   cd $(srcdir); \
                   CGO_CFLAGS='$(INCFLAGS)' CGO_LDFLAGS='#{ldflags}' GOFLAGS='#{goflags}' \
-                    go build -p 4 -buildmode=c-shared -o #{current_dir}/$(DLLIB)
+                    go build -p 4 -buildmode=c-shared -o #{current_dir}/$(DLLIB) #{go_build_args}
         MAKEFILE
       end
     end
