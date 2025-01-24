@@ -28,13 +28,7 @@ module GoGem
 
       create_makefile(target, srcprefix)
 
-      case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
-      when /Free Software Foundation/
-        ldflags = "-Wl,--unresolved-symbols=ignore-all"
-      when /clang/
-        ldflags = "-undefined dynamic_lookup"
-      end
-
+      ldflags = GoGem::Util.generate_ldflags
       current_dir = File.expand_path(".")
 
       goflags = "-tags=#{GoGem::Util.ruby_minor_version_build_tag}"

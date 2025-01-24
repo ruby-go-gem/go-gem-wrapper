@@ -44,7 +44,7 @@ module GoGem
   #       end
   #     end
   #   end
-  class RakeTask < ::Rake::TaskLib # rubocop:disable Metrics/ClassLength
+  class RakeTask < ::Rake::TaskLib
     DEFAULT_TASK_NAMESPACE = :go
 
     DEFAULT_GO_BIN_PATH = "go"
@@ -99,60 +99,18 @@ module GoGem
     #
     # @return [Hash<String, String>]
     def self.build_env_vars
-      ldflags = generate_ldflags
-      cflags = generate_cflags
-
-      # FIXME: Workaround for Ubuntu (GitHub Actions)
-      if RUBY_PLATFORM =~ /linux/i
-        cflags.gsub!("-Wno-self-assign", "")
-        cflags.gsub!("-Wno-parentheses-equality", "")
-        cflags.gsub!("-Wno-constant-logical-operand", "")
-        cflags.gsub!("-Wsuggest-attribute=format", "")
-        cflags.gsub!("-Wold-style-definition", "")
-        cflags.gsub!("-Wsuggest-attribute=noreturn", "")
-        ldflags.gsub!("-Wl,--unresolved-symbols=ignore-all", "")
-      end
+      ldflags = GoGem::Util.generate_ldflags
+      cflags = GoGem::Util.generate_cflags
 
       ld_library_path = RbConfig::CONFIG["libdir"].to_s
 
       {
-        "GOFLAGS"         => generate_goflags,
+        "GOFLAGS"         => GoGem::Util.generate_goflags,
         "CGO_CFLAGS"      => cflags,
         "CGO_LDFLAGS"     => ldflags,
         "LD_LIBRARY_PATH" => ld_library_path,
       }
     end
-
-    # @return [String]
-    def self.generate_goflags
-      "-tags=#{GoGem::Util.ruby_minor_version_build_tag}"
-    end
-    private_class_method :generate_goflags
-
-    # @return [String]
-    def self.generate_ldflags
-      ldflags = "-L#{RbConfig::CONFIG["libdir"]} -l#{RbConfig::CONFIG["RUBY_SO_NAME"]}"
-
-      case `#{RbConfig::CONFIG["CC"]} --version` # rubocop:disable Lint/LiteralAsCondition
-      when /Free Software Foundation/
-        ldflags << " -Wl,--unresolved-symbols=ignore-all"
-      when /clang/
-        ldflags << " -undefined dynamic_lookup"
-      end
-
-      ldflags
-    end
-    private_class_method :generate_ldflags
-
-    # @return [String]
-    def self.generate_cflags
-      [
-        RbConfig::CONFIG["CFLAGS"],
-        "-I#{RbConfig::CONFIG["rubyarchhdrdir"]}",
-        "-I#{RbConfig::CONFIG["rubyhdrdir"]}",
-      ].join(" ")
-    end
-    private_class_method :generate_cflags
 
     # @yield
     def within_target_dir
