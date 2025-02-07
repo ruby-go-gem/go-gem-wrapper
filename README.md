@@ -131,6 +131,19 @@ Run `bundle exec rake build_all`.
 
 See `bundle exec rake -T` for more tasks.
 
+### Build in docker container
+e.g.
+
+```bash
+docker build --file=_dockerfiles/alpine.dockerfile -t go-gem-wrappper .
+# or
+docker build --file=_dockerfiles/alpine.dockerfile -t go-gem-wrappper --build-arg GO_VERSION=1.23 --build-arg RUBY_VERSION=3.4 .
+
+docker run --rm -it go-gem-wrappper sh
+```
+
+Run `bundle exec rake build_all` in container.
+
 ### See `godoc` in local
 ```bash
 go install golang.org/x/tools/cmd/godoc@latest
