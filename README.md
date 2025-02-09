@@ -16,6 +16,9 @@
 ## Requirements
 * Go 1.23+
 * Ruby 3.3+
+* glibc
+  * musl (often used in alpine) isn't supported
+  * See. https://github.com/ruby-go-gem/go-gem-wrapper/issues/253
 
 See [.github/workflows/matrix.json](.github/workflows/matrix.json) for details
 
