@@ -40,17 +40,22 @@ jobs:
         working-directory: .github/workflows/
 
   build-and-test:
-    name: "build-and-test (Go ${{ matrix.go }}, Ruby ${{ matrix.ruby }})"
+    name: "build-and-test (Go ${{ matrix.go }}, Ruby ${{ matrix.ruby }}, Runner ${{ matrix.runner }})"
 
     needs:
       - generate-matrix
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runner }}
 
     strategy:
       fail-fast: false
 
-      matrix: ${{ fromJSON(needs.generate-matrix.outputs.matrix) }}
+      matrix:
+        go: ${{ fromJSON(needs.generate-matrix.outputs.matrix).go }}
+        ruby: ${{ fromJSON(needs.generate-matrix.outputs.matrix).ruby }}
+        runner:
+          - ubuntu-latest
+          - macos-latest
 
     steps:
       - uses: actions/checkout@v4
