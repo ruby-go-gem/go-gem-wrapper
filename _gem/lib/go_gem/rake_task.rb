@@ -6,6 +6,8 @@ require "rake/tasklib"
 require_relative "util"
 
 module GoGem
+  # rubocop:disable Layout/LineLength
+
   # Provides rake tasks for `go test` with CRuby
   #
   # @example Without config
@@ -45,6 +47,8 @@ module GoGem
   #     end
   #   end
   class RakeTask < ::Rake::TaskLib
+    # rubocop:enable Layout/LineLength
+
     DEFAULT_TASK_NAMESPACE = :go
 
     DEFAULT_GO_BIN_PATH = "go"
