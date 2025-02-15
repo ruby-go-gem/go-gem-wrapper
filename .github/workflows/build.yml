@@ -139,7 +139,7 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: ${{ env.GOLANGCI_LINT_VERSION }}
-          args: --build-tags ${{ env.BUILD_TAG }}
+          args: --build-tags ${{ env.BUILD_TAG }} --modules-download-mode=readonly
 
       - name: Slack Notification (not success)
         uses: act10ns/slack@v2
