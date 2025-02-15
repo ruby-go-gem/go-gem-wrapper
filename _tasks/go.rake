@@ -14,7 +14,7 @@ namespace :go do
       end
 
       build_tag = GoGem::Util.ruby_minor_version_build_tag
-      sh GoGem::RakeTask.build_env_vars, "golangci-lint run --build-tags #{build_tag}"
+      sh GoGem::RakeTask.build_env_vars, "golangci-lint run --build-tags #{build_tag} --modules-download-mode=readonly"
     end
   end
 
