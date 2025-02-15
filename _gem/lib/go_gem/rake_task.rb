@@ -40,7 +40,7 @@ module GoGem
   #         end
   #
   #         build_tag = GoGem::Util.ruby_minor_version_build_tag
-  #         sh GoGem::RakeTask.build_env_vars, "golangci-lint run --build-tags #{build_tag}"
+  #         sh GoGem::RakeTask.build_env_vars, "golangci-lint run --build-tags #{build_tag} --modules-download-mode=readonly"
   #       end
   #     end
   #   end
@@ -112,6 +112,8 @@ module GoGem
       }
     end
 
+    # Change current working dir inside `ext/<GEM_NAME>/`
+    #
     # @yield
     def within_target_dir
       Dir.chdir(target_dir) do # rubocop:disable Style/ExplicitBlockArgument
@@ -119,7 +121,7 @@ module GoGem
       end
     end
 
-    # @return [String]
+    # @return [String] ext dir name (e.g.`ext/<GEM_NAME>/`)
     def ext_dir
       File.join("ext", gem_name)
     end
