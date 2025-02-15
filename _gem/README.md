@@ -104,16 +104,7 @@ jobs:
       - uses: actions/setup-go@v5
       - uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: false
-
-      # FIXME: setup-go installs cache in `vendor/` and setup-ruby installs cache in `vendor/bundle/`
-      #        If we use the cache in setup-go and setup-ruby at the same time, this doesn't work well because they use the same directory.
-      #        Therefore, the installation location needs to be changed from the setup-ruby default.
-      - name: bundle install
-        run: |
-          set -xe
-          bundle config --local path ruby-vendor/bundle
-          bundle install --jobs 4
+          bundler-cache: true
 
       - name: export CGO_CFLAGS for golangci-lint
         run: bundle exec rake go:build_envs[CGO_CFLAGS] >> $GITHUB_ENV
@@ -124,7 +115,7 @@ jobs:
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
-          args: --build-tags ${{ env.BUILD_TAG }}
+          args: --build-tags ${{ env.BUILD_TAG }} --modules-download-mode=readonly
 ```
 
 #### Available configurations
