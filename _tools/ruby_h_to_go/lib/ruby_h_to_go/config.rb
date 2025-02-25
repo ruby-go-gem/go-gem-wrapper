@@ -3,7 +3,7 @@
 module RubyHToGo
   class Config
     def initialize
-      @config = YAML.load(File.read(File.expand_path("../../config.yml", __dir__)))
+      @config = YAML.load_file(File.expand_path("../../config.yml", __dir__))
     end
 
     # @return [String]
