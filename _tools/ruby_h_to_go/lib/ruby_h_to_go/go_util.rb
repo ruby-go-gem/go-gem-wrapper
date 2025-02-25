@@ -13,7 +13,7 @@ module RubyHToGo
 
     # Generate initial go file whether not exists
     # @param go_file_path [String]
-    def self.generate_initial_go_file(go_file_path)
+    def self.generate_initial_go_file(go_file_path) # rubocop:disable Metrics/MethodLength
       return if File.exist?(go_file_path)
 
       header = +<<~GO
