@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module RubyHToGo
+  # Manage config.yml
   class Config
     def initialize
       @config = YAML.load_file(File.expand_path("../../config.yml", __dir__))
