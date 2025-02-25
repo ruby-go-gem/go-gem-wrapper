@@ -1,5 +1,32 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.0...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.1...main
+
+# [v0.7.1](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.7.1) - 2025-02-26
+## Go
+### Bugfixes
+* Fixed https://pkg.go.dev/ didn't generate documentation for auto-generated code by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/276
+
+### Other changes
+* Bump rubocop from 1.71.2 to 1.72.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/274
+
+## Ruby
+### Other changes
+* Bump rubocop from 1.70.0 to 1.71.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/261
+* Bump rubocop from 1.71.0 to 1.71.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/263
+* Bump steep from 1.9.3 to 1.9.4 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/267
+* Bump rubocop from 1.71.1 to 1.71.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/268
+* Bump rubocop from 1.71.2 to 1.72.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/274
+* Bump rubocop from 1.72.1 to 1.72.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/275
+
+## ruby_h_to_go
+### Bugfixes
+* Fixed https://pkg.go.dev/ didn't generate documentation for auto-generated code by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/276
+
+## Other
+### Other changes
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/262
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.0...v0.7.1
 
 # [v0.7.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.7.0) - 2025-01-24
 ## Go
