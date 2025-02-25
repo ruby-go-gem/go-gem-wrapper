@@ -2,7 +2,7 @@
 
 module RubyHToGo
   # helper methods for generating go code
-  module GoUtil
+  module GoUtil # rubocop:disable Metrics/ModuleLength
     # @param str [String]
     # @return [String]
     def self.snake_to_camel(str)
