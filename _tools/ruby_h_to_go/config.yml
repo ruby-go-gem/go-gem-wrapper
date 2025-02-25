@@ -1,0 +1,6 @@
+# This tag appears in https://pkg.go.dev/github.com/ruby-go-gem/go-gem-wrapper/ruby
+default_tag: ruby_3_3
+
+available_tags:
+  - ruby_3_3
+  - ruby_3_4
