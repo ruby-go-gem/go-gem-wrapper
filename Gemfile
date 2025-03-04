@@ -21,6 +21,7 @@ group :test do
   gem "rake-compiler"
   gem "steep"
   gem "test-unit"
+  gem "uri", ">= 1.0.3"
 end
 
 gemspec path: "./_gem/"
