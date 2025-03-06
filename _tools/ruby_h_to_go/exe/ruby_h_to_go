@@ -49,4 +49,6 @@ include_paths ||= DEFAULT_INCLUDE_PATHS
 dist_dir ||= DEFAULT_DIST_DIR
 dist_preprocessed_header_file ||= DEFAULT_DIST_PREPROCESSED_HEADER_FILE
 
+FileUtils.rm_f(dist_preprocessed_header_file)
+
 RubyHToGo::Cli.new(header_file:, include_paths:, dist_dir:, dist_preprocessed_header_file:).perform
