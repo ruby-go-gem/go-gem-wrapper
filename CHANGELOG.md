@@ -1,5 +1,27 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.1...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.2...main
+
+# [v0.7.2](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.7.2) - 2025-03-07
+## Go
+### Bugfixes
+* Treat `RSTRING_END` return value as a `char*` instead of `string` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/281
+
+### Other changes
+* Fix typo in godoc by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/280
+
+## Ruby
+* No changes
+
+## ruby_h_to_go
+### Bugfixes
+* Treat `RSTRING_END` return value as a `char*` instead of `string` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/281
+
+## Other
+### Other changes
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/277
+* [CVE-2025-27221] Upgrade to uri 1.0.3 by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/278
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.1...v0.7.2
 
 # [v0.7.1](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.7.1) - 2025-02-26
 ## Go
