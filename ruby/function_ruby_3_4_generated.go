@@ -399,8 +399,8 @@ func RB_UNDEF_P(obj VALUE) Bool {
 // Original definition is following
 //
 //	RSTRING_END(VALUE str)
-func RSTRING_END(str VALUE) string {
-	return char2String(C.RSTRING_END(C.VALUE(str)))
+func RSTRING_END(str VALUE) *Char {
+	return (*Char)(C.RSTRING_END(C.VALUE(str)))
 }
 
 // RSTRING_LEN calls `RSTRING_LEN` in C
@@ -8378,9 +8378,9 @@ func RbSym2Id(obj VALUE) ID {
 //
 // Original definition is following
 //
-//	VALUE rb_sym2str(VALUE id)
-func RbSym2Str(id VALUE) VALUE {
-	return VALUE(C.rb_sym2str(C.VALUE(id)))
+//	VALUE rb_sym2str(VALUE symbol)
+func RbSym2Str(symbol VALUE) VALUE {
+	return VALUE(C.rb_sym2str(C.VALUE(symbol)))
 }
 
 // RbSymAllSymbols calls `rb_sym_all_symbols` in C

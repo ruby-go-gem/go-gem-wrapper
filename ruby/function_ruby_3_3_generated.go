@@ -401,8 +401,8 @@ func RB_UNDEF_P(obj VALUE) Bool {
 // Original definition is following
 //
 //	RSTRING_END(VALUE str)
-func RSTRING_END(str VALUE) string {
-	return char2String(C.RSTRING_END(C.VALUE(str)))
+func RSTRING_END(str VALUE) *Char {
+	return (*Char)(C.RSTRING_END(C.VALUE(str)))
 }
 
 // RSTRING_LEN calls `RSTRING_LEN` in C

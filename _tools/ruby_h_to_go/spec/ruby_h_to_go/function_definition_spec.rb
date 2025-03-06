@@ -304,7 +304,7 @@ RSpec.describe RubyHToGo::FunctionDefinition do
         RubyHeaderParser::FunctionDefinition.new(
           name:       "RSTRING_END",
           definition: "RSTRING_END(VALUE str)",
-          typeref:    typeref(type: "char", pointer: :ref),
+          typeref:    typeref(type: "char", pointer: :raw),
           args:       [
             argument(type: "VALUE", name: "str"),
           ],
@@ -318,8 +318,8 @@ RSpec.describe RubyHToGo::FunctionDefinition do
           // Original definition is following
           //
           //	RSTRING_END(VALUE str)
-          func RSTRING_END(str VALUE) string {
-          return char2String(C.RSTRING_END(C.VALUE(str)))
+          func RSTRING_END(str VALUE) *Char {
+          return (*Char)(C.RSTRING_END(C.VALUE(str)))
           }
 
         GO
