@@ -22,8 +22,8 @@ env:
   GO_TEST_ARGS: -coverprofile coverage.out -covermode atomic
   TEST_GEM_DIR: ruby/testdata/example/
 
-  # c.f. https://github.com/golangci/golangci-lint/blob/master/CHANGELOG.md
-  GOLANGCI_LINT_VERSION: v1.60
+  # c.f. https://github.com/golangci/golangci-lint/blob/main/CHANGELOG.md
+  GOLANGCI_LINT_VERSION: v2.0
 
 jobs:
   generate-matrix:
