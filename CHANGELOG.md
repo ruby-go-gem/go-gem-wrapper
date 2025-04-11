@@ -1,5 +1,30 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.2...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.3...main
+
+# [v0.7.3](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.7.3) - 2025-04-12
+## Go
+* No changes
+
+## Ruby
+### Other changes
+* Bump rubocop from 1.72.2 to 1.73.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/282
+* Bump json from 2.10.1 to 2.10.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/284
+* Bump rubocop from 1.73.2 to 1.74.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/285
+* Bump steep from 1.9.4 to 1.10.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/287
+* Bump rubocop from 1.74.0 to 1.75.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/289
+* Bump rubocop from 1.75.1 to 1.75.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/292
+* Bump test-unit from 3.6.7 to 3.6.8 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/293
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Other changes
+* Bump golangci/golangci-lint-action from 6 to 7 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/288
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/290
+* Bump actions/create-github-app-token from 1 to 2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/291
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.7.2...v0.7.3
 
 # [v0.7.2](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.7.2) - 2025-03-07
 ## Go
