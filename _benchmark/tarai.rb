@@ -29,25 +29,25 @@ $VERBOSE = nil
 system("go version", exception: true)
 
 Benchmark.ips do |x|
-  # sequential version
-  x.report("sequential"){ 4.times{ tarai(14, 7, 0) } }
+  # Ruby: sequential version
+  x.report("Ruby: sequential"){ 4.times{ tarai(14, 7, 0) } }
 
-  # parallel version (with Ractor)
-  x.report("parallel (Ractor)"){
+  # Ruby: parallel version (with Ractor)
+  x.report("Ruby: Ractor"){
     4.times.map do
       Ractor.new { tarai(14, 7, 0) }
     end.each(&:take)
   }
 
-  # parallel version (with Fiber)
-  x.report("parallel (Fiber)"){
+  # Ruby: parallel version (with Fiber)
+  x.report("Ruby: Fiber"){
     4.times.map do
       Fiber.new { tarai(14, 7, 0) }
     end.each(&:resume)
   }
 
-  # parallel version (with goroutine)
-  x.report("parallel (goroutine)"){ Example::Benchmark.tarai_goroutine(14, 7, 0, 4) }
+  # Go: parallel version (with goroutine)
+  x.report("Go: goroutine"){ Example::Benchmark.tarai_goroutine(14, 7, 0, 4) }
 
   x.compare!
 end
