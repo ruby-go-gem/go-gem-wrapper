@@ -142,5 +142,11 @@ godoc
 
 open http://localhost:6060/pkg/github.com/ruby-go-gem/go-gem-wrapper/ruby/
 
+### Release
+1. Run `bundle exec rake changelog`
+2. Add release note to [CHANGELOG.md](CHANGELOG.md)
+3. Update [_gem/lib/go_gem/version.rb](_gem/lib/go_gem/version.rb)
+4. Run `bundle exec rake release`
+
 ## Original idea
 [Ruby meets Go - RubyKaigi 2015](https://rubykaigi.org/2015/presentations/mmasaki/)
