@@ -46,6 +46,9 @@ Benchmark.ips do |x|
     end.each(&:resume)
   }
 
+  # Go: sequential version
+  x.report("Go: sequential"){ 4.times{ Example::Benchmark.tarai(14, 7, 0) } }
+
   # Go: parallel version (with goroutine)
   x.report("Go: goroutine"){ Example::Benchmark.tarai_goroutine(14, 7, 0, 4) }
 
