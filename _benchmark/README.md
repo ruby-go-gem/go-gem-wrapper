@@ -9,19 +9,22 @@ $ ruby tarai.rb
 go version go1.24.1 darwin/arm64
 ruby 3.4.2 (2025-02-15 revision d2930f8e7a) +PRISM [arm64-darwin24]
 Warming up --------------------------------------
-          sequential     1.000 i/100ms
-   parallel (Ractor)     1.000 i/100ms
-    parallel (Fiber)     1.000 i/100ms
-parallel (goroutine)     1.000 i/100ms
+    Ruby: sequential     1.000 i/100ms
+        Ruby: Ractor     1.000 i/100ms
+         Ruby: Fiber     1.000 i/100ms
+      Go: sequential     1.000 i/100ms
+       Go: goroutine     1.000 i/100ms
 Calculating -------------------------------------
-          sequential      0.018 (± 0.0%) i/s    (56.40 s/i) -      1.000 in  56.397748s
-   parallel (Ractor)      0.052 (± 0.0%) i/s    (19.39 s/i) -      1.000 in  19.394641s
-    parallel (Fiber)      0.018 (± 0.0%) i/s    (56.42 s/i) -      1.000 in  56.417936s
-parallel (goroutine)      1.581 (± 0.0%) i/s  (632.49 ms/i) -      9.000 in   5.743819s
+    Ruby: sequential      0.018 (± 0.0%) i/s    (56.43 s/i) -      1.000 in  56.434220s
+        Ruby: Ractor      0.052 (± 0.0%) i/s    (19.19 s/i) -      1.000 in  19.194061s
+         Ruby: Fiber      0.018 (± 0.0%) i/s    (56.57 s/i) -      1.000 in  56.574037s
+      Go: sequential      0.451 (± 0.0%) i/s     (2.22 s/i) -      3.000 in   6.650596s
+       Go: goroutine      1.645 (± 0.0%) i/s  (607.81 ms/i) -      9.000 in   5.473278s
 
 Comparison:
-parallel (goroutine):        1.6 i/s
-   parallel (Ractor):        0.1 i/s - 30.66x  slower
-          sequential:        0.0 i/s - 89.17x  slower
-    parallel (Fiber):        0.0 i/s - 89.20x  slower
+       Go: goroutine:        1.6 i/s
+      Go: sequential:        0.5 i/s - 3.65x  slower
+        Ruby: Ractor:        0.1 i/s - 31.58x  slower
+    Ruby: sequential:        0.0 i/s - 92.85x  slower
+         Ruby: Fiber:        0.0 i/s - 93.08x  slower
 ```
