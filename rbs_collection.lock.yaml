@@ -6,7 +6,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: cefa5dea1094880e2386c6d296c743d10eb0cf9d
+    revision: eb6867fdb70e82e3aac6b51623ed1b6760c3c072
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: base64
@@ -14,7 +14,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: cefa5dea1094880e2386c6d296c743d10eb0cf9d
+    revision: eb6867fdb70e82e3aac6b51623ed1b6760c3c072
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: binding_of_caller
@@ -22,7 +22,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: cefa5dea1094880e2386c6d296c743d10eb0cf9d
+    revision: eb6867fdb70e82e3aac6b51623ed1b6760c3c072
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: diff-lcs
@@ -30,7 +30,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: cefa5dea1094880e2386c6d296c743d10eb0cf9d
+    revision: eb6867fdb70e82e3aac6b51623ed1b6760c3c072
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: fileutils
@@ -54,7 +54,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: cefa5dea1094880e2386c6d296c743d10eb0cf9d
+    revision: eb6867fdb70e82e3aac6b51623ed1b6760c3c072
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: rake
@@ -62,7 +62,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: cefa5dea1094880e2386c6d296c743d10eb0cf9d
+    revision: eb6867fdb70e82e3aac6b51623ed1b6760c3c072
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: ripper
@@ -90,7 +90,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: cefa5dea1094880e2386c6d296c743d10eb0cf9d
+    revision: eb6867fdb70e82e3aac6b51623ed1b6760c3c072
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 gemfile_lock_path: Gemfile.lock
