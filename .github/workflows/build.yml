@@ -23,7 +23,7 @@ env:
   TEST_GEM_DIR: ruby/testdata/example/
 
   # c.f. https://github.com/golangci/golangci-lint/blob/main/CHANGELOG.md
-  GOLANGCI_LINT_VERSION: v2.0
+  GOLANGCI_LINT_VERSION: v2.1
 
 jobs:
   generate-matrix:
