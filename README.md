@@ -150,3 +150,6 @@ open http://localhost:6060/pkg/github.com/ruby-go-gem/go-gem-wrapper/ruby/
 
 ## Original idea
 [Ruby meets Go - RubyKaigi 2015](https://rubykaigi.org/2015/presentations/mmasaki/)
+
+## Presentation
+* [Road to Go gem](https://rubykaigi.org/2025/presentations/sue445.html) at [RubyKaigi 2025](https://rubykaigi.org/2025/) :gem:
