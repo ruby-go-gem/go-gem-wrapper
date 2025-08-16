@@ -31,11 +31,13 @@ VALUE rb_example_tests_rb_ary_shift(VALUE self, VALUE ary);
 VALUE rb_example_tests_rb_ary_unshift(VALUE self, VALUE ary, VALUE elem);
 void  rb_example_tests_rb_define_variable(VALUE self, VALUE name, VALUE v);
 void  rb_example_tests_rb_define_const(VALUE self, VALUE name, VALUE val);
+void  rb_example_tests_rb_gc_guard(VALUE self);
 */
 import "C"
 
 import (
 	"github.com/ruby-go-gem/go-gem-wrapper/ruby"
+	"unsafe"
 )
 
 //export rb_example_tests_nop_rb_define_method_id
@@ -269,6 +271,26 @@ func rb_example_tests_rb_define_const(self C.VALUE, name C.VALUE, val C.VALUE) {
 	ruby.RbDefineConst(ruby.VALUE(self), strName, ruby.VALUE(val))
 }
 
+//export rb_example_tests_rb_gc_guard
+func rb_example_tests_rb_gc_guard(_ C.VALUE) {
+	// c.f. https://docs.ruby-lang.org/en/master/extension_rdoc.html
+	s := ruby.RbStrNewCstr("hello world!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+	sptr := ruby.RSTRING_PTR(s)
+	newPtr := unsafe.Add(unsafe.Pointer(sptr), 6)
+	w := C.rb_str_new_cstr((*C.char)(newPtr))
+
+	ruby.RB_GC_GUARD(s)
+
+	newStr := ruby.Value2String((ruby.VALUE)(w))
+
+	expected := "world!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+	if newStr != expected {
+		ruby.RbRaise(ruby.VALUE(C.rb_eStandardError), "Expected is %s, but actual is %s", expected, newStr)
+	}
+}
+
 // defineMethodsToExampleTests define methods in Example::Tests
 func defineMethodsToExampleTests(rb_mExample ruby.VALUE) {
 	rb_cTests := ruby.RbDefineClassUnder(rb_mExample, "Tests", ruby.VALUE(C.rb_cObject))
@@ -303,4 +325,5 @@ func defineMethodsToExampleTests(rb_mExample ruby.VALUE) {
 	ruby.RbDefineSingletonMethod(rb_cTests, "rb_ary_unshift", C.rb_example_tests_rb_ary_unshift, 2)
 	ruby.RbDefineSingletonMethod(rb_cTests, "rb_define_variable", C.rb_example_tests_rb_define_variable, 2)
 	ruby.RbDefineSingletonMethod(rb_cTests, "rb_define_const", C.rb_example_tests_rb_define_const, 2)
+	ruby.RbDefineSingletonMethod(rb_cTests, "rb_gc_guard", C.rb_example_tests_rb_gc_guard, 0)
 }

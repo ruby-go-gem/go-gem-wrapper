@@ -188,5 +188,9 @@ module Example
         remove_const(:RB_DEFINE_CONST) if const_defined?(:RB_DEFINE_CONST, false)
       end
     end
+
+    test ".rb_gc_guard" do
+      Example::Tests.rb_gc_guard
+    end
   end
 end
