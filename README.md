@@ -122,11 +122,24 @@ Most of the methods defined in `ruby.h` are automatically generated and defined 
 
 However, some of the methods listed below are not supported.
 
-1. deprecated or internal methods
-    * See `function.exclude_name` in https://github.com/ruby-go-gem/ruby_header_parser/blob/main/config/default.yml
-2. Methods with variable-length arguments
-    * Because Go's variable-length arguments couldn't be passed directly to C.
-    * However, it is possible to execute functions with variable length arguments in CRuby from Go with a hack like `RbRaise` in [ruby/ruby_internal_error.go](ruby/ruby_internal_error.go)
+#### 1. deprecated or internal methods
+See `function.exclude_name` in https://github.com/ruby-go-gem/ruby_header_parser/blob/main/config/default.yml
+
+#### 2. Methods with variable-length arguments
+Because Go's variable-length arguments couldn't be passed directly to C.
+
+However, it is possible to execute functions with variable length arguments in CRuby from Go with a hack like `RbRaise` in [ruby/ruby_internal_error.go](ruby/ruby_internal_error.go)
+
+#### 3. Macro functions
+https://github.com/ruby-go-gem/ruby_header_parser parses the preprocessed `ruby.h`. [^preprocessed]
+
+[^preprocessed]: https://github.com/ruby-go-gem/ruby_header_parser/blob/v0.4.2/lib/ruby_header_parser/parser.rb#L166-L173
+
+Since preprocessed header files don't contain macro functions, they are not automatically generated.
+
+If you need a macro function, please implement it yourself and submit a patch.
+
+See https://github.com/ruby-go-gem/go-gem-wrapper/pull/323
 
 ## Developing
 ### Build
