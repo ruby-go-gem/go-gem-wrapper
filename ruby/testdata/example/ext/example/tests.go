@@ -37,6 +37,7 @@ import "C"
 
 import (
 	"github.com/ruby-go-gem/go-gem-wrapper/ruby"
+	"unsafe"
 )
 
 //export rb_example_tests_nop_rb_define_method_id
@@ -274,7 +275,20 @@ func rb_example_tests_rb_define_const(self C.VALUE, name C.VALUE, val C.VALUE) {
 func rb_example_tests_rb_gc_guard(_ C.VALUE) {
 	// c.f. https://docs.ruby-lang.org/en/master/extension_rdoc.html
 	s := ruby.RbStrNewCstr("hello world!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+	sptr := ruby.RSTRING_PTR(s)
+	newPtr := unsafe.Add(unsafe.Pointer(sptr), 6)
+	w := C.rb_str_new_cstr((*C.char)(newPtr))
+
 	ruby.RB_GC_GUARD(s)
+
+	newStr := ruby.Value2String((ruby.VALUE)(w))
+
+	expected := "world!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+	if newStr != expected {
+		ruby.RbRaise(ruby.VALUE(C.rb_eStandardError), "Expected is %s, but actual is %s", expected, newStr)
+	}
 }
 
 // defineMethodsToExampleTests define methods in Example::Tests
