@@ -149,6 +149,58 @@ jobs:
           status: ${{ job.status }}
           webhook-url: ${{ secrets.SLACK_WEBHOOK }}
 
+  go-govulncheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+          cache: true
+      - run: go install golang.org/x/vuln/cmd/govulncheck@latest
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ruby
+          bundler-cache: true
+
+      - name: export CGO_CFLAGS for govulncheck
+        run: bundle exec rake go:build_envs[CGO_CFLAGS] >> $GITHUB_ENV
+      - run: echo $CGO_CFLAGS
+
+      - name: export BUILD_TAG for govulncheck
+        run: echo "BUILD_TAG=$(bundle exec rake go:build_tag)" >> $GITHUB_ENV
+      - run: echo $BUILD_TAG
+
+      # FIXME: Workaround for following error
+      #
+      # govulncheck: loading packages: err: exit status 1: stderr: go: inconsistent vendoring in /home/runner/work/go-gem-wrapper/go-gem-wrapper:
+      #	github.com/stretchr/testify@v1.11.1: is explicitly required in go.mod, but not marked as explicit in vendor/modules.txt
+      #	github.com/davecgh/go-spew@v1.1.1: is explicitly required in go.mod, but not marked as explicit in vendor/modules.txt
+      #	github.com/pmezard/go-difflib@v1.0.0: is explicitly required in go.mod, but not marked as explicit in vendor/modules.txt
+      #	gopkg.in/yaml.v3@v3.0.1: is explicitly required in go.mod, but not marked as explicit in vendor/modules.txt
+      #
+      #	To ignore the vendor directory, use -mod=readonly or -mod=mod.
+      #	To sync the vendor directory, run:
+      #		go mod vendor
+      - run: rm -rf vendor/
+
+      # FIXME: golang/govulncheck-action@v1 doesn't support `-tags` arg
+      # - uses: golang/govulncheck-action@v1
+      #   with:
+      #     go-version-file: go.mod
+      - run: govulncheck -format text -tags "${BUILD_TAG}" ./...
+
+      - name: Slack Notification (not success)
+        uses: act10ns/slack@v2
+        if: "! success()"
+        continue-on-error: true
+        with:
+          status: ${{ job.status }}
+          webhook-url: ${{ secrets.SLACK_WEBHOOK }}
+
   ruby-lint:
     runs-on: ubuntu-latest
 
@@ -230,6 +282,7 @@ jobs:
     needs:
       - build-and-test
       - go-lint
+      - go-govulncheck
       - ruby-lint
       - ruby-rbs
       - go_gem
