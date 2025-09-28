@@ -1,5 +1,32 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.8.0...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.9.0...main
+
+# [v0.9.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.9.0) - 2025-09-28
+## Go
+### :bomb: Breaking changes
+* Requires Go 1.24+ by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/334
+
+### Other changes
+* Bump github.com/stretchr/testify from 1.10.0 to 1.11.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/326
+* Bump github.com/stretchr/testify from 1.11.0 to 1.11.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/327
+
+## Ruby
+### Other changes
+* Bump rubocop from 1.79.2 to 1.80.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/328
+* Bump rubocop from 1.80.1 to 1.80.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/332
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Other changes
+* Bump actions/upload-pages-artifact from 3 to 4 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/325
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/329
+* Bump actions/setup-go from 5 to 6 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/330
+* Bump actions/labeler from 5 to 6 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/331
+* Run govulncheck on CI by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/333
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.8.0...v0.9.0
 
 # [v0.8.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.8.0) - 2025-08-17
 ## Go
