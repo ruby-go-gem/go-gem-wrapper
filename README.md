@@ -14,7 +14,7 @@
 | [/_gem/](/_gem/) | [go_gem](https://rubygems.org/gems/go_gem) (Ruby gem) | https://ruby-go-gem.github.io/go-gem-wrapper/            |
 
 ## Requirements
-* Go 1.23+
+* Go 1.24+
 * Ruby 3.3+
 * glibc
   * musl (often used in alpine) isn't supported
