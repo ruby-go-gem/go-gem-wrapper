@@ -1,6 +1,6 @@
 module github.com/ruby-go-gem/example
 
-go 1.23
+go 1.24
 
 require github.com/ruby-go-gem/go-gem-wrapper v0.0.0
 
