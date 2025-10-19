@@ -163,7 +163,7 @@ GEM
     unparser (0.7.0)
       diff-lcs (~> 1.6)
       parser (>= 3.3.0)
-    uri (1.0.3)
+    uri (1.0.4)
     yard (0.9.37)
 
 PLATFORMS
