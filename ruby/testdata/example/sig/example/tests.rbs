@@ -40,6 +40,7 @@ module Example
     def self.rb_define_const: (string name, untyped val) -> void
 
     private
+
     def nop_rb_define_private_method: () -> void
   end
 end
