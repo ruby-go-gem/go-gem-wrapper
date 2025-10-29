@@ -2,7 +2,9 @@
 
 require "rubocop/rake_task"
 
-RuboCop::RakeTask.new("ruby:rubocop")
+RuboCop::RakeTask.new("ruby:rubocop") do |task|
+  task.plugins << "rubocop-on-rbs"
+end
 
 namespace :ruby do
   namespace :example do

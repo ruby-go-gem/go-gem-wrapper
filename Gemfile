@@ -6,6 +6,7 @@ group :development do
   gem "rake"
   gem "rubocop", require: false
   gem "rubocop_auto_corrector", require: false
+  gem "rubocop-on-rbs", require: false
   gem "ruby_header_parser", ">= 0.4.2"
   gem "yard"
 end

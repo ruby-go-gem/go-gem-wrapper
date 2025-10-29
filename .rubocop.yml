@@ -1,3 +1,6 @@
+plugins:
+  - rubocop-on-rbs
+
 AllCops:
   TargetRubyVersion: 3.3
   NewCops: enable
