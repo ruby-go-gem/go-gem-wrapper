@@ -18,6 +18,7 @@ jobs:
           bundler-cache: true
 
       - run: bundle exec rbs collection update
+      - run: bundle exec rbs collection install
 
       - uses: actions/create-github-app-token@v2
         id: app-token
@@ -30,8 +31,10 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
           committer: GitHub <noreply@github.com>
           title: "Update rbs_collection.lock.yaml"
-          commit-message: "Run `bundle exe rbs collection update`"
+          commit-message: "Run `bundle exe rbs collection update && bundle exec rbs collection install`"
           labels: rbs-collection-updater
+          branch: rbs-collection-updater
+          branch-suffix: short-commit-hash
 
       - name: Slack Notification
         uses: act10ns/slack@v2
