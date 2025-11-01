@@ -35,6 +35,7 @@ jobs:
           labels: rbs-collection-updater
           branch: rbs-collection-updater
           branch-suffix: short-commit-hash
+          assignees: "sue445"
 
       - name: Slack Notification
         uses: act10ns/slack@v2
