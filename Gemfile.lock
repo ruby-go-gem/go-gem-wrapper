@@ -36,7 +36,7 @@ GEM
     fileutils (1.7.3)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    json (2.15.0)
+    json (2.15.2)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     listen (3.9.0)
@@ -51,11 +51,11 @@ GEM
     net-ssh (7.3.0)
     net-telnet (0.2.0)
     parallel (1.27.0)
-    parser (3.3.9.0)
+    parser (3.3.10.0)
       ast (~> 2.4.1)
       racc
     power_assert (2.0.5)
-    prism (1.5.1)
+    prism (1.6.0)
     proc_to_ast (0.2.0)
       parser
       rouge
@@ -102,7 +102,7 @@ GEM
     rspec-support (3.13.4)
     rspec-temp_dir (1.1.1)
       rspec (>= 3.0)
-    rubocop (1.81.1)
+    rubocop (1.81.6)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
