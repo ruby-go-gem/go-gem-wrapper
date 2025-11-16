@@ -54,7 +54,7 @@ GEM
     parser (3.3.10.0)
       ast (~> 2.4.1)
       racc
-    power_assert (2.0.5)
+    power_assert (3.0.1)
     prism (1.6.0)
     proc_to_ast (0.2.0)
       parser
@@ -158,7 +158,7 @@ GEM
     strscan (3.1.2)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
-    test-unit (3.7.0)
+    test-unit (3.7.1)
       power_assert
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
