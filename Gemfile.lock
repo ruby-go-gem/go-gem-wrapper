@@ -168,7 +168,7 @@ GEM
     unparser (0.7.0)
       diff-lcs (~> 1.6)
       parser (>= 3.3.0)
-    uri (1.1.0)
+    uri (1.1.1)
     yard (0.9.37)
     zlib (3.2.2)
 
