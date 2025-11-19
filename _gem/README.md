@@ -53,6 +53,7 @@ Following tasks are generated
 * `rake go:testrace`
 * `rake go:fmt`
 * `rake go:build_envs`
+* `rake go:mod_tidy`
 
 #### Example (With config)
 ```ruby
@@ -73,6 +74,7 @@ Following tasks are generated
 * `rake go5:testrace`
 * `rake go5:fmt`
 * `rake go5:build_envs`
+* `rake go5:mod_tidy`
 
 #### Example (Add additional tasks)
 ```ruby

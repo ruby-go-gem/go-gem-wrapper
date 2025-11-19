@@ -96,6 +96,7 @@ module GoGem
         define_go_fmt_task
         define_go_build_envs_task
         define_go_build_tag_task
+        define_go_mod_tidy_task
       end
     end
 
@@ -177,6 +178,15 @@ module GoGem
       desc "Print build tag"
       task(:build_tag) do
         puts GoGem::Util.ruby_minor_version_build_tag
+      end
+    end
+
+    def define_go_mod_tidy_task
+      desc "Run #{go_bin_path} mod tidy"
+      task(:mod_tidy) do
+        within_target_dir do
+          sh "#{go_bin_path} mod tidy"
+        end
       end
     end
   end
