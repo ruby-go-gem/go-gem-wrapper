@@ -7,7 +7,7 @@
 
 ## Ruby
 ### New Features
-* Add `mod_tidy` task `go_gem/rake_task` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/350
+* Add `mod_tidy` task to `go_gem/rake_task` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/350
 
 ### Other changes
 * Bump rubocop from 1.80.2 to 1.81.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/336
