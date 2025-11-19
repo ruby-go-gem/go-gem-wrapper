@@ -42,6 +42,8 @@ module GoGem
 
     def define_go_build_tag_task: () -> void
 
+    def define_go_mod_tidy_task: () -> void
+
     def within_target_dir: () { () -> void } -> void
 
     def ext_dir: () -> String
