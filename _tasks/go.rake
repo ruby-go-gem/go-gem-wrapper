@@ -6,7 +6,7 @@ go_task = GoGem::RakeTask.new("") do |t|
 end
 
 namespace :go do
-  desc "Run golangci-lint"
+  desc "Run `golangci-lint`"
   task :lint do
     go_task.within_target_dir do
       sh "which golangci-lint" do |ok, _|
