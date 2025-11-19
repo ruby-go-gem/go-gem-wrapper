@@ -134,7 +134,7 @@ module GoGem
     private
 
     def define_go_test_task
-      desc "Run #{go_bin_path} test"
+      desc "Run `#{go_bin_path} test`"
       task(:test) do
         within_target_dir do
           sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} ./..."
@@ -143,7 +143,7 @@ module GoGem
     end
 
     def define_go_testrace_task
-      desc "Run #{go_bin_path} test -race"
+      desc "Run `#{go_bin_path} test -race`"
       task(:testrace) do
         within_target_dir do
           sh RakeTask.build_env_vars, "#{go_bin_path} test #{go_test_args} -race ./..."
@@ -152,7 +152,7 @@ module GoGem
     end
 
     def define_go_fmt_task
-      desc "Run #{go_bin_path} fmt"
+      desc "Run `#{go_bin_path} fmt`"
       task(:fmt) do
         within_target_dir do
           sh "#{go_bin_path} fmt ./..."
@@ -182,7 +182,7 @@ module GoGem
     end
 
     def define_go_mod_tidy_task
-      desc "Run #{go_bin_path} mod tidy"
+      desc "Run `#{go_bin_path} mod tidy`"
       task(:mod_tidy) do
         within_target_dir do
           sh "#{go_bin_path} mod tidy"
