@@ -1,5 +1,37 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.9.0...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.10.0...main
+
+# [v0.10.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.10.0) - 2025-11-19
+## Go
+* No changes
+
+## Ruby
+### New Features
+* Add `mod_tidy` task `go_gem/rake_task` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/350
+
+### Other changes
+* Bump rubocop from 1.80.2 to 1.81.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/336
+* Bump uri from 1.0.3 to 1.0.4 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/337
+* Bump rubocop from 1.81.1 to 1.81.6 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/340
+* Bump rspec from 3.13.1 to 3.13.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/341
+* Bump rubocop from 1.81.6 to 1.81.7 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/342
+* Bump rake from 13.3.0 to 13.3.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/344
+* Bump uri from 1.0.4 to 1.1.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/343
+* Bump uri from 1.1.0 to 1.1.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/347
+* Bump test-unit from 3.7.0 to 3.7.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/346
+* Tweak task desc in `go_gem/rake_task` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/351
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Other changes
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/335
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/339
+* Bump golangci/golangci-lint-action from 8 to 9 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/345
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/349
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.9.0...v0.10.0
 
 # [v0.9.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.9.0) - 2025-09-28
 ## Go
