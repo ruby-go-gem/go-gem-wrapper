@@ -23,20 +23,11 @@
 See [.github/workflows/matrix.json](.github/workflows/matrix.json) for details
 
 ## Getting started
-At first, patch to make a gem into a Go gem right after `bundle gem`
+Run followings
 
-See [_tools/patch_for_go_gem/](_tools/patch_for_go_gem/)
-
-Please also add the following depending on the CI you are using.
-
-### GitHub Actions
-e.g.
-
-```yml
-- uses: actions/setup-go@v5
-  with:
-    go-version-file: ext/GEM_NAME/go.mod
-```
+1. `bundle gem <GEM_NAME> --ext=go` **(Requires bundler v4.0.0.beta1+)**
+2. `bundle install`
+3. `bundle exec rake go:mod_tidy`
 
 ## Implementing Ruby methods in Go
 For example, consider the following Ruby method implemented in Go

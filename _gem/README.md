@@ -10,10 +10,6 @@ Add below.
 spec.add_dependency "go_gem"
 ```
 
-See below for details.
-
-[/_tools/patch_for_go_gem/](/_tools/patch_for_go_gem/)
-
 ## Usage
 ### [`create_go_makefile`](https://ruby-go-gem.github.io/go-gem-wrapper/GoGem/Mkmf.html#create_go_makefile-instance_method)
 `create_go_makefile` is an extension of `create_makefile`.
