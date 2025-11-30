@@ -10,11 +10,6 @@ jobs:
     if: github.repository == 'ruby-go-gem/go-gem-wrapper'
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        shell: bash
-        working-directory: _gem/
-
     environment:
       name: rubygems.org
       url: https://rubygems.org/gems/go_gem
