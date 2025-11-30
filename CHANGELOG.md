@@ -16,8 +16,9 @@
 * Removed patch_for_go_gem and updated "Getting started" with `bundle gem --ext=go` by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/353
 * pinning :pushpin: by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/354
 * Release gem from GitHub Actions by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/355
+* Revert "Release gem from GitHub Actions" by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/356
 
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.10.0...v0.10.1
+* **Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.10.0...v0.10.1
 
 # [v0.10.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.10.0) - 2025-11-19
 ## Go
