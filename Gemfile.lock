@@ -124,7 +124,7 @@ GEM
     rubocop_auto_corrector (0.5.0)
       rubocop (>= 1.30.0)
     ruby-progressbar (1.13.0)
-    ruby_header_parser (0.4.2)
+    ruby_header_parser (0.4.3)
     securerandom (0.4.1)
     serverspec (2.43.0)
       multi_json
