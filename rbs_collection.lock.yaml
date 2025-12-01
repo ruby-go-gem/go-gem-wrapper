@@ -82,7 +82,7 @@ gems:
   source:
     type: rubygems
 - name: ruby_header_parser
-  version: 0.4.2
+  version: 0.4.3
   source:
     type: rubygems
 - name: uri
