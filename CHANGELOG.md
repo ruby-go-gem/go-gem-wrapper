@@ -1,5 +1,24 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.10.1...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.10.2...main
+
+# [v0.10.2](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.10.2) - 2025-12-06
+
+## Go
+* No changes
+
+## Ruby
+### Other changes
+* Bump ruby_header_parser from 0.4.2 to 0.4.3 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/358
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Other changes
+* Bump actions/checkout from 5.0.1 to 6.0.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/357
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/359
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.10.1...v0.10.2
 
 # [v0.10.1](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.10.1) - 2025-11-30
 ## Go
