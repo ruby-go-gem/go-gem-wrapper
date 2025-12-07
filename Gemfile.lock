@@ -100,7 +100,7 @@ GEM
       binding_of_caller
       rspec-parameterized-core (>= 2, < 3)
     rspec-support (3.13.6)
-    rspec-temp_dir (1.1.1)
+    rspec-temp_dir (1.1.2)
       rspec (>= 3.0)
     rubocop (1.81.7)
       json (~> 2.3)
@@ -246,7 +246,7 @@ CHECKSUMS
   rspec-parameterized-core (2.0.0) sha256=8b97a48de7941dd263171204fdff30387d4d4af5604a9d04865482944f944afc
   rspec-parameterized-table_syntax (2.0.0) sha256=5829e9b8c6dddd2d6861dbca638b0d07b66aa18966b52675d73da444be330ac5
   rspec-support (3.13.6) sha256=2e8de3702427eab064c9352fe74488cc12a1bfae887ad8b91cba480ec9f8afb2
-  rspec-temp_dir (1.1.1) sha256=2ed0e466f26e197987b91bfeb093ba9a4a45e0bf7090e72069655f02c3900f5e
+  rspec-temp_dir (1.1.2) sha256=92ccd30b8f4c80632a67cc4bbd6701b7b9d34b410d5bfc1fb6a095c5e6d8ce0a
   rubocop (1.81.7) sha256=6fb5cc298c731691e2a414fe0041a13eb1beed7bab23aec131da1bcc527af094
   rubocop-ast (1.48.0) sha256=22df9bbf3f7a6eccde0fad54e68547ae1e2a704bf8719e7c83813a99c05d2e76
   rubocop-on-rbs (1.8.0) sha256=ee8b734cd5bc0371fae32c8ff95082440cde562f52e1b74b5dfbe488de004643
