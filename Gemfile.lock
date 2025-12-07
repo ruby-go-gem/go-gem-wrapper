@@ -36,7 +36,7 @@ GEM
     fileutils (1.7.3)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    json (2.16.0)
+    json (2.17.1)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     listen (3.9.0)
@@ -121,7 +121,7 @@ GEM
       rbs (~> 3.5)
       rubocop (>= 1.72.1, < 2.0)
       zlib
-    rubocop_auto_corrector (0.5.0)
+    rubocop_auto_corrector (0.5.1)
       rubocop (>= 1.30.0)
     ruby-progressbar (1.13.0)
     ruby_header_parser (0.4.3)
@@ -212,7 +212,7 @@ CHECKSUMS
   fileutils (1.7.3) sha256=57271e854b694a87755d76f836f5c57b2c9538ebbaf4b2154bb66addf15eb5da
   go_gem (0.10.2)
   i18n (1.14.7) sha256=ceba573f8138ff2c0915427f1fc5bdf4aa3ab8ae88c8ce255eb3ecf0a11a5d0f
-  json (2.16.0) sha256=ca5630320bb5ca23ebfd0bac84532fab56eb357575653b815b9df42c051e1525
+  json (2.17.1) sha256=e0e4824541336a44915436f53e7ea74c687314fb8f88080fa1456f6a34ead92e
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
   listen (3.9.0) sha256=db9e4424e0e5834480385197c139cb6b0ae0ef28cc13310cfd1ca78377d59c67
@@ -250,7 +250,7 @@ CHECKSUMS
   rubocop (1.81.7) sha256=6fb5cc298c731691e2a414fe0041a13eb1beed7bab23aec131da1bcc527af094
   rubocop-ast (1.48.0) sha256=22df9bbf3f7a6eccde0fad54e68547ae1e2a704bf8719e7c83813a99c05d2e76
   rubocop-on-rbs (1.8.0) sha256=ee8b734cd5bc0371fae32c8ff95082440cde562f52e1b74b5dfbe488de004643
-  rubocop_auto_corrector (0.5.0) sha256=e2079177928b63b157402da966aba73e342247f83fd14dee7a981e2e14a7e152
+  rubocop_auto_corrector (0.5.1) sha256=c15bc11fea8ae2dc723079e1850639ac75a8cc92a0bfd69ca6daa28f4d861bdb
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby_header_parser (0.4.3) sha256=1e804044f67ba64163ed914b90831081ff584bcb253a6816b42cb4f8b3c4a64e
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
