@@ -71,7 +71,7 @@ GEM
     rbs (3.9.0)
       logger
     regexp_parser (2.11.3)
-    rouge (4.5.2)
+    rouge (4.6.1)
     rspec (3.13.2)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -87,16 +87,16 @@ GEM
     rspec-mocks (3.13.7)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-parameterized (2.0.0)
+    rspec-parameterized (2.0.1)
       rspec-parameterized-core (>= 2, < 3)
       rspec-parameterized-table_syntax (>= 2, < 3)
-    rspec-parameterized-core (2.0.0)
+    rspec-parameterized-core (2.0.1)
       parser
       prism
       proc_to_ast (>= 0.2.0)
       rspec (>= 2.13, < 4)
       unparser
-    rspec-parameterized-table_syntax (2.0.0)
+    rspec-parameterized-table_syntax (2.0.1)
       binding_of_caller
       rspec-parameterized-core (>= 2, < 3)
     rspec-support (3.13.6)
@@ -165,9 +165,10 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.1.0)
-    unparser (0.7.0)
+    unparser (0.8.1)
       diff-lcs (~> 1.6)
       parser (>= 3.3.0)
+      prism (>= 1.5.1)
     uri (1.1.1)
     yard (0.9.37)
     zlib (3.2.2)
@@ -236,15 +237,15 @@ CHECKSUMS
   rb-inotify (0.11.1) sha256=a0a700441239b0ff18eb65e3866236cd78613d6b9f78fea1f9ac47a85e47be6e
   rbs (3.9.0) sha256=0e37ae82d8145e700c830ab24d99a2606b914fa46a8a725675f1268b8b4d3a37
   regexp_parser (2.11.3) sha256=ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4
-  rouge (4.5.2) sha256=034233fb8a69d0ad0e0476943184e04cb971b68e3c2239724e02f428878b68a3
+  rouge (4.6.1) sha256=5075346d5797d6864be93f7adc75a16047a7dbfa572c63c502419ffa582c77de
   rspec (3.13.2) sha256=206284a08ad798e61f86d7ca3e376718d52c0bc944626b2349266f239f820587
   rspec-core (3.13.6) sha256=a8823c6411667b60a8bca135364351dda34cd55e44ff94c4be4633b37d828b2d
   rspec-expectations (3.13.5) sha256=33a4d3a1d95060aea4c94e9f237030a8f9eae5615e9bd85718fe3a09e4b58836
   rspec-its (2.0.0) sha256=a88e8bc38149f2835e93533591ec4f5c829aacbfd41269a2e6f9f5b82f5260df
   rspec-mocks (3.13.7) sha256=0979034e64b1d7a838aaaddf12bf065ea4dc40ef3d4c39f01f93ae2c66c62b1c
-  rspec-parameterized (2.0.0) sha256=58e1838217ae96dd2c919be019413a7b4032248bd1e5a6b828e24df2f0b22635
-  rspec-parameterized-core (2.0.0) sha256=8b97a48de7941dd263171204fdff30387d4d4af5604a9d04865482944f944afc
-  rspec-parameterized-table_syntax (2.0.0) sha256=5829e9b8c6dddd2d6861dbca638b0d07b66aa18966b52675d73da444be330ac5
+  rspec-parameterized (2.0.1) sha256=5507c3bde0e0f1d6c7183e4936ddf1646a898c00db20c12d03984a8ea25a567c
+  rspec-parameterized-core (2.0.1) sha256=4f93067b89b8043357e0589d9302a9c856f100e498faf7e49df9094aa3e5211a
+  rspec-parameterized-table_syntax (2.0.1) sha256=a5d3effa92fc01542b031a80acafd1b96de55f937517017f618488aa74f1c6d1
   rspec-support (3.13.6) sha256=2e8de3702427eab064c9352fe74488cc12a1bfae887ad8b91cba480ec9f8afb2
   rspec-temp_dir (1.1.1) sha256=2ed0e466f26e197987b91bfeb093ba9a4a45e0bf7090e72069655f02c3900f5e
   rubocop (1.81.7) sha256=6fb5cc298c731691e2a414fe0041a13eb1beed7bab23aec131da1bcc527af094
@@ -264,7 +265,7 @@ CHECKSUMS
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   unicode-display_width (3.2.0) sha256=0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42
   unicode-emoji (4.1.0) sha256=4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5
-  unparser (0.7.0) sha256=a8fc1361fdf55a3f3bdd1a62800686d7f213c7aab5c55cb42b0d173b389adc5f
+  unparser (0.8.1) sha256=a0139c9bfc4fa12132278632ebb2bc202abf9a1f630f51710905efcb46698428
   uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
   yard (0.9.37) sha256=a6e910399e78e613f80ba9add9ba7c394b1a935f083cccbef82903a3d2a26992
   zlib (3.2.2) sha256=908e61263f99c1371b5422581e2d6663bd37c6b04ae13b5f8cb10b0d09379f40
