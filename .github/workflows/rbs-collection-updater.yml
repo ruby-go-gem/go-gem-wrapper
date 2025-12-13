@@ -7,40 +7,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
-
-      - uses: ruby/setup-ruby@8aeb6ff8030dd539317f8e1769a044873b56ea71 # v1.268.0
-        with:
-          ruby-version: ruby
-          bundler-cache: true
-
-      - run: bundle exec rbs collection update
-      - run: bundle exec rbs collection install
-
-      - uses: actions/create-github-app-token@7e473efe3cb98aa54f8d4bac15400b15fad77d94 # v2.2.0
-        id: app-token
-        with:
-          app-id: ${{ secrets.RUBY_GO_GEM_BOT_APP_ID }}
-          private-key: ${{ secrets.RUBY_GO_GEM_BOT_PRIVATE_KEY }}
-
-      - uses: peter-evans/create-pull-request@84ae59a2cdc2258d6fa0732dd66352dddae2a412 # v7.0.9
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-          committer: GitHub <noreply@github.com>
-          title: "Update rbs_collection.lock.yaml"
-          commit-message: "Run `bundle exe rbs collection update && bundle exec rbs collection install`"
-          labels: rbs-collection-updater
-          branch: rbs-collection-updater
-          branch-suffix: short-commit-hash
-          assignees: "sue445"
-
-      - name: Slack Notification
-        uses: act10ns/slack@cfcc30955fe9377f4f55e1079e5419ee1014269f # v2
-        if: always()
-        continue-on-error: true
-        with:
-          status: ${{ job.status }}
-          webhook-url: ${{ secrets.SLACK_WEBHOOK }}
+    uses: sue445/workflows/.github/workflows/rbs-collection-updater.yml@main
+    with:
+      assignees: sue445
+      auto-merge: true
+    secrets:
+      app-id: ${{ secrets.RUBY_GO_GEM_BOT_APP_ID }}
+      private-key: ${{ secrets.RUBY_GO_GEM_BOT_PRIVATE_KEY }}
+      slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
