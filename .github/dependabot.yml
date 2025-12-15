@@ -13,6 +13,8 @@ updates:
       timezone: Asia/Tokyo
     cooldown:
       default-days: 7
+      exclude:
+        - ruby/setup-ruby
     assignees:
       - sue445
 
@@ -24,7 +26,6 @@ updates:
       timezone: Asia/Tokyo
     cooldown:
       default-days: 7
-    open-pull-requests-limit: 99
     assignees:
       - sue445
     labels:
@@ -40,7 +41,6 @@ updates:
       timezone: Asia/Tokyo
     cooldown:
       default-days: 7
-    open-pull-requests-limit: 99
     assignees:
       - sue445
     labels:
@@ -58,7 +58,6 @@ updates:
       default-days: 7
       exclude:
         - "ruby_header_parser"
-    open-pull-requests-limit: 99
     assignees:
       - sue445
     versioning-strategy: lockfile-only
