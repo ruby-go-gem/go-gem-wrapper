@@ -21,9 +21,6 @@ env:
   GO_TEST_ARGS: -coverprofile coverage.out -covermode atomic
   TEST_GEM_DIR: ruby/testdata/example/
 
-  # c.f. https://github.com/golangci/golangci-lint/blob/main/CHANGELOG.md
-  GOLANGCI_LINT_VERSION: v2.4
-
 jobs:
   generate-matrix:
     runs-on: ubuntu-latest
@@ -137,7 +134,7 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@1e7e51e771db61008b38414a730f564565cf7c20 # v9.2.0
         with:
-          version: ${{ env.GOLANGCI_LINT_VERSION }}
+          version-file: .golangci-lint-version
           args: --build-tags ${{ env.BUILD_TAG }} --modules-download-mode=readonly
 
       - name: Slack Notification (not success)
