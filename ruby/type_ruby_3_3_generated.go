@@ -5,7 +5,7 @@
 
 // FIXME: https://pkg.go.dev/ doesn't support custom build tag.
 //        Therefore, if no build tag is passed, treat it as the default tag
-//go:build ruby_3_3 || !ruby_3_4
+//go:build ruby_3_3 || (!ruby_3_4 && !ruby_4_0)
 
 package ruby
 
