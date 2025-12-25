@@ -124,7 +124,7 @@ GEM
     rubocop_auto_corrector (0.5.1)
       rubocop (>= 1.30.0)
     ruby-progressbar (1.13.0)
-    ruby_header_parser (0.4.3)
+    ruby_header_parser (0.5.0)
     securerandom (0.4.1)
     serverspec (2.43.0)
       multi_json
@@ -253,7 +253,7 @@ CHECKSUMS
   rubocop-on-rbs (1.8.0) sha256=ee8b734cd5bc0371fae32c8ff95082440cde562f52e1b74b5dfbe488de004643
   rubocop_auto_corrector (0.5.1) sha256=c15bc11fea8ae2dc723079e1850639ac75a8cc92a0bfd69ca6daa28f4d861bdb
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
-  ruby_header_parser (0.4.3) sha256=1e804044f67ba64163ed914b90831081ff584bcb253a6816b42cb4f8b3c4a64e
+  ruby_header_parser (0.5.0) sha256=f625b1d1278d8595ef12571292078f593030c8f01918d98c45206b0e7811a960
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   serverspec (2.43.0) sha256=0207ed5f4066a63767ea7332211e6aaf793c047bb33ad1f7946aa5983d4b8e77
   sfl (2.3) sha256=99739e51c33062e3964e1802a700ee9cd8d0f9c389b2a07f8a5fdf84e186a4e2
