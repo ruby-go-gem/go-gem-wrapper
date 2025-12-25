@@ -4,3 +4,4 @@ default_tag: ruby_3_3
 available_tags:
   - ruby_3_3
   - ruby_3_4
+  - ruby_4_0
