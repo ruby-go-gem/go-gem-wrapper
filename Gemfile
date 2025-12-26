@@ -23,6 +23,10 @@ group :test do
   gem "steep"
   gem "test-unit"
   gem "uri", ">= 1.0.3"
+
+  # FIXME: Workaround for Ruby 4.0+
+  # ref. https://github.com/banister/binding_of_caller/pull/90
+  gem "binding_of_caller", github: "kivikakk/binding_of_caller", branch: "push-yrnnzolypxun"
 end
 
 gemspec path: "./_gem/"
