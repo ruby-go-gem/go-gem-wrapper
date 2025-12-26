@@ -159,7 +159,7 @@ jobs:
 
       - uses: ruby/setup-ruby@ae195bbe749a7cef685ac729197124a48305c1cb # v1.276.0
         with:
-          ruby-version: ruby
+          ruby-version: .tool-versions
           bundler-cache: true
 
       - name: export CGO_CFLAGS for govulncheck
@@ -205,7 +205,7 @@ jobs:
 
       - uses: ruby/setup-ruby@ae195bbe749a7cef685ac729197124a48305c1cb # v1.276.0
         with:
-          ruby-version: ruby
+          ruby-version: .tool-versions
           bundler-cache: true
 
       - run: bundle exec rake ruby:rubocop
@@ -226,7 +226,7 @@ jobs:
 
       - uses: ruby/setup-ruby@ae195bbe749a7cef685ac729197124a48305c1cb # v1.276.0
         with:
-          ruby-version: ruby
+          ruby-version: .tool-versions
           bundler-cache: true
 
       - run: bundle exec rbs collection install
