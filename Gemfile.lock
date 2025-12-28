@@ -97,7 +97,7 @@ GEM
       proc_to_ast (>= 0.2.0)
       rspec (>= 2.13, < 4)
       unparser
-    rspec-parameterized-table_syntax (2.0.1)
+    rspec-parameterized-table_syntax (2.1.0)
       binding_of_caller
       rspec-parameterized-core (>= 2, < 3)
     rspec-support (3.13.6)
@@ -246,7 +246,7 @@ CHECKSUMS
   rspec-mocks (3.13.7) sha256=0979034e64b1d7a838aaaddf12bf065ea4dc40ef3d4c39f01f93ae2c66c62b1c
   rspec-parameterized (2.0.1) sha256=5507c3bde0e0f1d6c7183e4936ddf1646a898c00db20c12d03984a8ea25a567c
   rspec-parameterized-core (2.0.1) sha256=4f93067b89b8043357e0589d9302a9c856f100e498faf7e49df9094aa3e5211a
-  rspec-parameterized-table_syntax (2.0.1) sha256=a5d3effa92fc01542b031a80acafd1b96de55f937517017f618488aa74f1c6d1
+  rspec-parameterized-table_syntax (2.1.0) sha256=3507d0217110a29d208f9f0a7432e9cd875587c4325d9b3478a99a2351953c3e
   rspec-support (3.13.6) sha256=2e8de3702427eab064c9352fe74488cc12a1bfae887ad8b91cba480ec9f8afb2
   rspec-temp_dir (1.1.2) sha256=92ccd30b8f4c80632a67cc4bbd6701b7b9d34b410d5bfc1fb6a095c5e6d8ce0a
   rubocop (1.82.0) sha256=237b7dc24952d7ec469a9593c7a5283315515e2e7dc24ac91532819c254fc4ec
