@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/kivikakk/binding_of_caller.git
-  revision: c590ef401ab8311d9e6c2b55cb8a7fa4553c18ab
-  branch: push-yrnnzolypxun
-  specs:
-    binding_of_caller (1.0.1)
-      debug_inspector (>= 1.2.0)
-
 PATH
   remote: _gem
   specs:
@@ -31,6 +23,8 @@ GEM
     base64 (0.2.0)
     benchmark (0.4.0)
     bigdecimal (3.1.9)
+    binding_of_caller (1.0.1)
+      debug_inspector (>= 1.2.0)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.0)
     csv (3.3.3)
@@ -103,7 +97,7 @@ GEM
       proc_to_ast (>= 0.2.0)
       rspec (>= 2.13, < 4)
       unparser
-    rspec-parameterized-table_syntax (2.0.1)
+    rspec-parameterized-table_syntax (2.1.0)
       binding_of_caller
       rspec-parameterized-core (>= 2, < 3)
     rspec-support (3.13.6)
@@ -185,7 +179,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  binding_of_caller!
   go_gem!
   rake
   rake-compiler
@@ -209,7 +202,7 @@ CHECKSUMS
   base64 (0.2.0) sha256=0f25e9b21a02a0cc0cea8ef92b2041035d39350946e8789c562b2d1a3da01507
   benchmark (0.4.0) sha256=0f12f8c495545e3710c3e4f0480f63f06b4c842cc94cec7f33a956f5180e874a
   bigdecimal (3.1.9) sha256=2ffc742031521ad69c2dfc815a98e426a230a3d22aeac1995826a75dabfad8cc
-  binding_of_caller (1.0.1)
+  binding_of_caller (1.0.1) sha256=2b2902abff4246ddcfbc4da9b69bc4a019e22aeb300c2ff6289a173d4b90b29a
   concurrent-ruby (1.3.5) sha256=813b3e37aca6df2a21a3b9f1d497f8cbab24a2b94cab325bffe65ee0f6cbebc6
   connection_pool (2.5.0) sha256=233b92f8d38e038c1349ccea65dd3772727d669d6d2e71f9897c8bf5cd53ebfc
   csv (3.3.3) sha256=7e2966befb7bdaf7d5e9b36e1de73e6a5e7a72f584f180a1726aec88a1b0a900
@@ -253,7 +246,7 @@ CHECKSUMS
   rspec-mocks (3.13.7) sha256=0979034e64b1d7a838aaaddf12bf065ea4dc40ef3d4c39f01f93ae2c66c62b1c
   rspec-parameterized (2.0.1) sha256=5507c3bde0e0f1d6c7183e4936ddf1646a898c00db20c12d03984a8ea25a567c
   rspec-parameterized-core (2.0.1) sha256=4f93067b89b8043357e0589d9302a9c856f100e498faf7e49df9094aa3e5211a
-  rspec-parameterized-table_syntax (2.0.1) sha256=a5d3effa92fc01542b031a80acafd1b96de55f937517017f618488aa74f1c6d1
+  rspec-parameterized-table_syntax (2.1.0) sha256=3507d0217110a29d208f9f0a7432e9cd875587c4325d9b3478a99a2351953c3e
   rspec-support (3.13.6) sha256=2e8de3702427eab064c9352fe74488cc12a1bfae887ad8b91cba480ec9f8afb2
   rspec-temp_dir (1.1.2) sha256=92ccd30b8f4c80632a67cc4bbd6701b7b9d34b410d5bfc1fb6a095c5e6d8ce0a
   rubocop (1.82.0) sha256=237b7dc24952d7ec469a9593c7a5283315515e2e7dc24ac91532819c254fc4ec
