@@ -101,8 +101,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
@@ -114,7 +114,7 @@ jobs:
         run: echo "BUILD_TAG=$(bundle exec rake go:build_tag)" >> $GITHUB_ENV
 
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v9
         with:
           args: --build-tags ${{ env.BUILD_TAG }} --modules-download-mode=readonly
 ```
