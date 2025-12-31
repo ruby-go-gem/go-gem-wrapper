@@ -159,7 +159,9 @@ open http://localhost:6060/pkg/github.com/ruby-go-gem/go-gem-wrapper/ruby/
 4. Update `spec.required_ruby_version` in [_gem/go_gem.gemspec](_gem/go_gem.gemspec)
 5. Add new version to [_tools/ruby_h_to_go/config.yml](_tools/ruby_h_to_go/config.yml)
 6. Run `bundle exec rake ruby_h_to_go` in latest ruby version
-7. Run `bundle exec rake ruby_h_to_go` in [`default_tag`](_tools/ruby_h_to_go/config.yml) ruby version 
+7. Run `bundle exec rake ruby_h_to_go` in [`default_tag`](_tools/ruby_h_to_go/config.yml) ruby version
+8. [Release new version](#release)
+9. Update ruby version in [.tool-versions](.tool-versions)
 
 ## Original idea
 [Ruby meets Go - RubyKaigi 2015](https://rubykaigi.org/2015/presentations/mmasaki/)
