@@ -25,6 +25,14 @@ gems:
     revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: date
+  version: '0'
+  source:
+    type: stdlib
+- name: dbm
+  version: '0'
+  source:
+    type: stdlib
 - name: diff-lcs
   version: '1.5'
   source:
@@ -33,7 +41,15 @@ gems:
     revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: erb
+  version: '0'
+  source:
+    type: stdlib
 - name: fileutils
+  version: '0'
+  source:
+    type: stdlib
+- name: io-console
   version: '0'
   source:
     type: stdlib
@@ -57,10 +73,26 @@ gems:
     revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: pp
+  version: '0'
+  source:
+    type: stdlib
+- name: prettyprint
+  version: '0'
+  source:
+    type: stdlib
 - name: prism
   version: 1.7.0
   source:
     type: rubygems
+- name: pstore
+  version: '0'
+  source:
+    type: stdlib
+- name: psych
+  version: '0'
+  source:
+    type: stdlib
 - name: rake
   version: '13.0'
   source:
@@ -89,6 +121,14 @@ gems:
   version: 0.5.0
   source:
     type: rubygems
+- name: stringio
+  version: '0'
+  source:
+    type: stdlib
+- name: tsort
+  version: '0'
+  source:
+    type: stdlib
 - name: uri
   version: '0'
   source:
