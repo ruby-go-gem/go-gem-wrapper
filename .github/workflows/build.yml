@@ -241,6 +241,31 @@ jobs:
           status: ${{ job.status }}
           webhook-url: ${{ secrets.SLACK_WEBHOOK }}
 
+  ruby-yard:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - uses: ruby/setup-ruby@ae195bbe749a7cef685ac729197124a48305c1cb # v1.276.0
+        with:
+          ruby-version: .tool-versions
+          bundler-cache: true
+
+      - name: yard generating test
+        run: |
+          set -xe
+          bundle exec yard
+          ls -ld doc/
+
+      - name: Slack Notification (not success)
+        uses: act10ns/slack@cfcc30955fe9377f4f55e1079e5419ee1014269f # v2
+        if: "! success()"
+        continue-on-error: true
+        with:
+          status: ${{ job.status }}
+          webhook-url: ${{ secrets.SLACK_WEBHOOK }}
+
   go_gem:
     name: "go_gem (Ruby ${{ matrix.ruby }})"
 
@@ -283,6 +308,7 @@ jobs:
       - go-govulncheck
       - ruby-lint
       - ruby-rbs
+      - ruby-yard
       - go_gem
 
     runs-on: ubuntu-latest
