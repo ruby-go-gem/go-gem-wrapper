@@ -9,3 +9,4 @@ _gem/**/*.rb
 CHANGELOG.md
 LICENSE
 .yard/go_gem_README.md
+.yard/ruby_h_to_go_README.md
