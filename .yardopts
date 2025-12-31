@@ -6,6 +6,8 @@ _tools/ruby_h_to_go/*.rb
 _tools/ruby_h_to_go/lib/**/*.rb
 _gem/**/*.rb
 -
+README.md
 CHANGELOG.md
 LICENSE
 .yard/go_gem_README.md
+.yard/ruby_h_to_go_README.md
