@@ -1,6 +1,7 @@
 --markup markdown
 --no-private
 --hide-void-return
+--readme .yard/go_gem_README.md
 _tools/ruby_h_to_go/*.rb
 _tools/ruby_h_to_go/lib/**/*.rb
 _gem/**/*.rb
