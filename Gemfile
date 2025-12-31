@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 
 group :development do
+  gem "irb"
   gem "rake"
   gem "rdoc"
   gem "rubocop", require: false
