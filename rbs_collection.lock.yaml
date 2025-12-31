@@ -6,7 +6,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3a33fa6f8e486f880c80ca401f2be1c1f621cf11
+    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: base64
@@ -14,7 +14,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3a33fa6f8e486f880c80ca401f2be1c1f621cf11
+    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: binding_of_caller
@@ -22,7 +22,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3a33fa6f8e486f880c80ca401f2be1c1f621cf11
+    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: diff-lcs
@@ -30,7 +30,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3a33fa6f8e486f880c80ca401f2be1c1f621cf11
+    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: fileutils
@@ -54,11 +54,11 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3a33fa6f8e486f880c80ca401f2be1c1f621cf11
+    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: prism
-  version: 1.6.0
+  version: 1.7.0
   source:
     type: rubygems
 - name: rake
@@ -66,9 +66,13 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3a33fa6f8e486f880c80ca401f2be1c1f621cf11
+    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: rdoc
+  version: '0'
+  source:
+    type: stdlib
 - name: ripper
   version: '0'
   source:
@@ -78,11 +82,11 @@ gems:
   source:
     type: rubygems
 - name: rspec-parameterized-table_syntax
-  version: 2.0.1
+  version: 2.1.0
   source:
     type: rubygems
 - name: ruby_header_parser
-  version: 0.4.3
+  version: 0.5.0
   source:
     type: rubygems
 - name: uri
@@ -94,7 +98,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3a33fa6f8e486f880c80ca401f2be1c1f621cf11
+    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 gemfile_lock_path: Gemfile.lock
