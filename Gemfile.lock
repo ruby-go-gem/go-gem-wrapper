@@ -179,7 +179,7 @@ GEM
     strscan (3.1.2)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
-    test-unit (3.7.3)
+    test-unit (3.7.5)
       power_assert
     tsort (0.2.0)
     tzinfo (2.0.6)
@@ -295,7 +295,7 @@ CHECKSUMS
   stringio (3.2.0) sha256=c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1
   strscan (3.1.2) sha256=5529ff36c95fe752b8489f2e6c7f4f230fd9904e0b24fdc6e0833436c63ee2e3
   terminal-table (4.0.0) sha256=f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2
-  test-unit (3.7.3) sha256=242e22c6df990f11fb6abc2507a238f80810a903291f90d8573261554488175e
+  test-unit (3.7.5) sha256=f36c28b6c13bb974dd3553bb9f2b25534e62baf8e55960d4481b27f2b4d10295
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   unicode-display_width (3.2.0) sha256=0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42
