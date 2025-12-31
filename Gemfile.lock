@@ -28,9 +28,11 @@ GEM
     concurrent-ruby (1.3.5)
     connection_pool (2.5.0)
     csv (3.3.3)
+    date (3.5.1)
     debug_inspector (1.2.0)
     diff-lcs (1.6.2)
     drb (2.2.1)
+    erb (6.0.1)
     ffi (1.17.1)
     ffi (1.17.1-arm64-darwin)
     fileutils (1.7.3)
@@ -61,6 +63,9 @@ GEM
       parser
       rouge
       unparser
+    psych (5.3.1)
+      date
+      stringio
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.3.1)
@@ -71,6 +76,10 @@ GEM
       ffi (~> 1.0)
     rbs (3.9.0)
       logger
+    rdoc (7.0.3)
+      erb
+      psych (>= 4.0.0)
+      tsort
     regexp_parser (2.11.3)
     rouge (4.6.1)
     rspec (3.13.2)
@@ -156,11 +165,13 @@ GEM
       strscan (>= 1.0.0)
       terminal-table (>= 2, < 5)
       uri (>= 0.12.0)
+    stringio (3.2.0)
     strscan (3.1.2)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
     test-unit (3.7.3)
       power_assert
+    tsort (0.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.2.0)
@@ -182,6 +193,7 @@ DEPENDENCIES
   go_gem!
   rake
   rake-compiler
+  rdoc
   rspec
   rspec-its
   rspec-parameterized
@@ -206,9 +218,11 @@ CHECKSUMS
   concurrent-ruby (1.3.5) sha256=813b3e37aca6df2a21a3b9f1d497f8cbab24a2b94cab325bffe65ee0f6cbebc6
   connection_pool (2.5.0) sha256=233b92f8d38e038c1349ccea65dd3772727d669d6d2e71f9897c8bf5cd53ebfc
   csv (3.3.3) sha256=7e2966befb7bdaf7d5e9b36e1de73e6a5e7a72f584f180a1726aec88a1b0a900
+  date (3.5.1) sha256=750d06384d7b9c15d562c76291407d89e368dda4d4fff957eb94962d325a0dc0
   debug_inspector (1.2.0) sha256=9bdfa02eebc3da163833e6a89b154084232f5766087e59573b70521c77ea68a2
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
   drb (2.2.1) sha256=e9d472bf785f558b96b25358bae115646da0dbfd45107ad858b0bc0d935cb340
+  erb (6.0.1) sha256=28ecdd99c5472aebd5674d6061e3c6b0a45c049578b071e5a52c2a7f13c197e5
   ffi (1.17.1) sha256=26f6b0dbd1101e6ffc09d3ca640b2a21840cc52731ad8a7ded9fb89e5fb0fc39
   ffi (1.17.1-arm64-darwin) sha256=a8e04f79d375742c54ee7f9fff4b4022b87200a4ec0eb082128d3b6559e67b4d
   fileutils (1.7.3) sha256=57271e854b694a87755d76f836f5c57b2c9538ebbaf4b2154bb66addf15eb5da
@@ -230,6 +244,7 @@ CHECKSUMS
   power_assert (3.0.1) sha256=8ce9876716cc74e863fcd4cdcdc52d792bd983598d1af3447083a3a9a4d34103
   prism (1.7.0) sha256=10062f734bf7985c8424c44fac382ac04a58124ea3d220ec3ba9fe4f2da65103
   proc_to_ast (0.2.0) sha256=4bb446419c3878c21d8792f8a129616690168f636b9e460b5a0ed26dd6680bbe
+  psych (5.3.1) sha256=eb7a57cef10c9d70173ff74e739d843ac3b2c019a003de48447b2963d81b1974
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
   rake (13.3.1) sha256=8c9e89d09f66a26a01264e7e3480ec0607f0c497a861ef16063604b1b08eb19c
@@ -237,6 +252,7 @@ CHECKSUMS
   rb-fsevent (0.11.2) sha256=43900b972e7301d6570f64b850a5aa67833ee7d87b458ee92805d56b7318aefe
   rb-inotify (0.11.1) sha256=a0a700441239b0ff18eb65e3866236cd78613d6b9f78fea1f9ac47a85e47be6e
   rbs (3.9.0) sha256=0e37ae82d8145e700c830ab24d99a2606b914fa46a8a725675f1268b8b4d3a37
+  rdoc (7.0.3) sha256=dfe3d0981d19b7bba71d9dbaeb57c9f4e3a7a4103162148a559c4fc687ea81f9
   regexp_parser (2.11.3) sha256=ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4
   rouge (4.6.1) sha256=5075346d5797d6864be93f7adc75a16047a7dbfa572c63c502419ffa582c77de
   rspec (3.13.2) sha256=206284a08ad798e61f86d7ca3e376718d52c0bc944626b2349266f239f820587
@@ -260,9 +276,11 @@ CHECKSUMS
   sfl (2.3) sha256=99739e51c33062e3964e1802a700ee9cd8d0f9c389b2a07f8a5fdf84e186a4e2
   specinfra (2.94.0) sha256=d2f025970de2a25977110f93e5e15c3db4890c7bff582363ad80036e3abdfbd4
   steep (1.10.0) sha256=1b295b55f9aaff1b8d3ee42453ee55bc2a1078fda0268f288edb2dc014f4d7d1
+  stringio (3.2.0) sha256=c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1
   strscan (3.1.2) sha256=5529ff36c95fe752b8489f2e6c7f4f230fd9904e0b24fdc6e0833436c63ee2e3
   terminal-table (4.0.0) sha256=f504793203f8251b2ea7c7068333053f0beeea26093ec9962e62ea79f94301d2
   test-unit (3.7.3) sha256=242e22c6df990f11fb6abc2507a238f80810a903291f90d8573261554488175e
+  tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   unicode-display_width (3.2.0) sha256=0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42
   unicode-emoji (4.2.0) sha256=519e69150f75652e40bf736106cfbc8f0f73aa3fb6a65afe62fefa7f80b0f80f

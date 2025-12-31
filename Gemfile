@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 group :development do
   gem "rake"
+  gem "rdoc"
   gem "rubocop", require: false
   gem "rubocop_auto_corrector", require: false
   gem "rubocop-on-rbs", require: false
