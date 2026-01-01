@@ -6,7 +6,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
+    revision: 57196ee070a59a2dfd64f9f91a3f974a9a5afea8
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: base64
@@ -14,7 +14,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
+    revision: 57196ee070a59a2dfd64f9f91a3f974a9a5afea8
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: binding_of_caller
@@ -22,29 +22,17 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
+    revision: 57196ee070a59a2dfd64f9f91a3f974a9a5afea8
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
-- name: date
-  version: '0'
-  source:
-    type: stdlib
-- name: dbm
-  version: '0'
-  source:
-    type: stdlib
 - name: diff-lcs
   version: '1.5'
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
+    revision: 57196ee070a59a2dfd64f9f91a3f974a9a5afea8
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
-- name: erb
-  version: '0'
-  source:
-    type: stdlib
 - name: fileutils
   version: '0'
   source:
@@ -70,7 +58,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
+    revision: 57196ee070a59a2dfd64f9f91a3f974a9a5afea8
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: pp
@@ -85,20 +73,12 @@ gems:
   version: 1.7.0
   source:
     type: rubygems
-- name: pstore
-  version: '0'
-  source:
-    type: stdlib
-- name: psych
-  version: '0'
-  source:
-    type: stdlib
 - name: rake
   version: '13.0'
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
+    revision: 57196ee070a59a2dfd64f9f91a3f974a9a5afea8
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: rdoc
@@ -121,14 +101,6 @@ gems:
   version: 0.5.0
   source:
     type: rubygems
-- name: stringio
-  version: '0'
-  source:
-    type: stdlib
-- name: tsort
-  version: '0'
-  source:
-    type: stdlib
 - name: uri
   version: '0'
   source:
@@ -138,7 +110,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 3da8055018aeb72066c98e745bcf1342ca826fc4
+    revision: 57196ee070a59a2dfd64f9f91a3f974a9a5afea8
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 gemfile_lock_path: Gemfile.lock
