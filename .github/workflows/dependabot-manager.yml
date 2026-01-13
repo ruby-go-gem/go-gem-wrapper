@@ -1,0 +1,24 @@
+name: dependabot-auto-merge
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize # PR branch is rebased
+
+jobs:
+  dependabot-auto-merge:
+    uses: sue445/workflows/.github/workflows/dependabot-manager.yml@main
+    secrets:
+      # TODO: Set secrets to Dependabot secrets
+      app-id: ${{ secrets.RUBY_GO_GEM_BOT_APP_ID }}
+      private-key: ${{ secrets.RUBY_GO_GEM_BOT_PRIVATE_KEY }}
+      slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
+
+  dependabot-security-alert:
+    uses: sue445/workflows/.github/workflows/dependabot-security-alert.yml@main
+    secrets:
+      # TODO: Set secrets to Dependabot secrets
+      app-id: ${{ secrets.RUBY_GO_GEM_BOT_APP_ID }}
+      private-key: ${{ secrets.RUBY_GO_GEM_BOT_PRIVATE_KEY }}
+      slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
