@@ -60,7 +60,7 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
 
-      - uses: ruby/setup-ruby@4fc31e1c823882afd7ef55985266a526c589de90 # v1.282.0
+      - uses: ruby/setup-ruby@8d27f39a5e7ad39aebbcbd1324f7af020229645c # v1.287.0
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
@@ -116,7 +116,7 @@ jobs:
         with:
           go-version-file: "go.mod"
 
-      - uses: ruby/setup-ruby@4fc31e1c823882afd7ef55985266a526c589de90 # v1.282.0
+      - uses: ruby/setup-ruby@8d27f39a5e7ad39aebbcbd1324f7af020229645c # v1.287.0
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
@@ -157,7 +157,7 @@ jobs:
           cache: true
       - run: go install golang.org/x/vuln/cmd/govulncheck@latest
 
-      - uses: ruby/setup-ruby@4fc31e1c823882afd7ef55985266a526c589de90 # v1.282.0
+      - uses: ruby/setup-ruby@8d27f39a5e7ad39aebbcbd1324f7af020229645c # v1.287.0
         with:
           ruby-version: .tool-versions
           bundler-cache: true
@@ -203,7 +203,7 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - uses: ruby/setup-ruby@4fc31e1c823882afd7ef55985266a526c589de90 # v1.282.0
+      - uses: ruby/setup-ruby@8d27f39a5e7ad39aebbcbd1324f7af020229645c # v1.287.0
         with:
           ruby-version: .tool-versions
           bundler-cache: true
@@ -224,7 +224,7 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - uses: ruby/setup-ruby@4fc31e1c823882afd7ef55985266a526c589de90 # v1.282.0
+      - uses: ruby/setup-ruby@8d27f39a5e7ad39aebbcbd1324f7af020229645c # v1.287.0
         with:
           ruby-version: .tool-versions
           bundler-cache: true
@@ -247,7 +247,7 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - uses: ruby/setup-ruby@4fc31e1c823882afd7ef55985266a526c589de90 # v1.282.0
+      - uses: ruby/setup-ruby@8d27f39a5e7ad39aebbcbd1324f7af020229645c # v1.287.0
         with:
           ruby-version: .tool-versions
           bundler-cache: true
@@ -283,7 +283,7 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - uses: ruby/setup-ruby@4fc31e1c823882afd7ef55985266a526c589de90 # v1.282.0
+      - uses: ruby/setup-ruby@8d27f39a5e7ad39aebbcbd1324f7af020229645c # v1.287.0
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
