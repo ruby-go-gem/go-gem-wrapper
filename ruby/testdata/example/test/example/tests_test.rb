@@ -164,11 +164,11 @@ module Example
     end
 
     test "#nop_rb_define_private_method" do
-      assert { Example::Tests.private_instance_methods(false).include?(:nop_rb_define_private_method) }
+      assert { Example::Tests.private_method_defined?(:nop_rb_define_private_method, false) }
     end
 
     test "#nop_rb_define_protected_method" do
-      assert { Example::Tests.protected_instance_methods(false).include?(:nop_rb_define_protected_method) }
+      assert { Example::Tests.protected_method_defined?(:nop_rb_define_protected_method, false) }
     end
 
     # rubocop:disable Style/GlobalVars -- this is test for global variable
