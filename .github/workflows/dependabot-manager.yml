@@ -9,6 +9,9 @@ on:
 jobs:
   dependabot-auto-merge:
     uses: sue445/workflows/.github/workflows/dependabot-auto-merge.yml@main
+    inputs:
+      repo-name: ruby-go-gem/go-gem-wrapper
+
     secrets:
       # TODO: Set secrets to Dependabot secrets
       app-id: ${{ secrets.RUBY_GO_GEM_BOT_APP_ID }}
@@ -17,6 +20,9 @@ jobs:
 
   dependabot-security-alert:
     uses: sue445/workflows/.github/workflows/dependabot-security-alert.yml@main
+    inputs:
+      repo-name: ruby-go-gem/go-gem-wrapper
+
     secrets:
       # TODO: Set secrets to Dependabot secrets
       app-id: ${{ secrets.RUBY_GO_GEM_BOT_APP_ID }}
