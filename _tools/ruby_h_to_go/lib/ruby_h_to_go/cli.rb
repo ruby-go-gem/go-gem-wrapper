@@ -119,11 +119,8 @@ module RubyHToGo
     end
 
     def remove_unused_imports
-      ret = system("which goimports")
-      raise "goimports isn't installed. Run `go install golang.org/x/tools/cmd/goimports@latest`" unless ret
-
       Dir.chdir(dist_dir) do
-        system("goimports -w *.go", exception: true)
+        system("go tool goimports -w *.go", exception: true)
       end
     end
 
