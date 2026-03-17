@@ -7,8 +7,6 @@ Convert Ruby C function definition in `ruby.h` to Go source and dump to `dist/`.
 * ctags
   * macOS: `brew install universal-ctags`
   * Ubuntu: `apt-get install -y universal-ctags`
-* [goimports](https://pkg.go.dev/golang.org/x/tools/cmd/goimports)
-  * `go install golang.org/x/tools/cmd/goimports@latest`
 
 ## Usage
 Output binding to [/ruby/](/ruby/) using Ruby available in current context **(recommended)**

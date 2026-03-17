@@ -19,6 +19,10 @@ RSpec.describe RubyHToGo::Cli do
 
     before do
       FileUtils.cp(File.join(project_root_dir, "go.mod"), temp_dir)
+
+      Dir.chdir(temp_dir) do
+        system("go mod tidy", exception: true)
+      end
     end
 
     it { expect { subject }.not_to raise_error }
