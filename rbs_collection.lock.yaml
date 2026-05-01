@@ -6,23 +6,19 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 1acc2fda1726ddac0bd60c4da369ce7266479413
+    revision: d7090c40bcea7011ad2ebaaa46bdd7d7ac3136a7
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: base64
-  version: '0.1'
+  version: 0.3.0
   source:
-    type: git
-    name: ruby/gem_rbs_collection
-    revision: 1acc2fda1726ddac0bd60c4da369ce7266479413
-    remote: https://github.com/ruby/gem_rbs_collection.git
-    repo_dir: gems
+    type: rubygems
 - name: binding_of_caller
   version: '1.0'
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 1acc2fda1726ddac0bd60c4da369ce7266479413
+    revision: d7090c40bcea7011ad2ebaaa46bdd7d7ac3136a7
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: diff-lcs
@@ -30,7 +26,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 1acc2fda1726ddac0bd60c4da369ce7266479413
+    revision: d7090c40bcea7011ad2ebaaa46bdd7d7ac3136a7
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: fileutils
@@ -42,9 +38,13 @@ gems:
   source:
     type: stdlib
 - name: logger
-  version: '0'
+  version: '1.7'
   source:
-    type: stdlib
+    type: git
+    name: ruby/gem_rbs_collection
+    revision: d7090c40bcea7011ad2ebaaa46bdd7d7ac3136a7
+    remote: https://github.com/ruby/gem_rbs_collection.git
+    repo_dir: gems
 - name: monitor
   version: '0'
   source:
@@ -58,7 +58,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 1acc2fda1726ddac0bd60c4da369ce7266479413
+    revision: d7090c40bcea7011ad2ebaaa46bdd7d7ac3136a7
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: pp
@@ -78,7 +78,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 1acc2fda1726ddac0bd60c4da369ce7266479413
+    revision: d7090c40bcea7011ad2ebaaa46bdd7d7ac3136a7
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: rdoc
@@ -110,7 +110,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: 1acc2fda1726ddac0bd60c4da369ce7266479413
+    revision: d7090c40bcea7011ad2ebaaa46bdd7d7ac3136a7
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 gemfile_lock_path: Gemfile.lock
