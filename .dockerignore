@@ -1,0 +1,8 @@
+.bundle/
+.gem_rbs_collection/
+.git/
+.yardoc/
+doc/
+vendor/
+**/*.so
+**/*.bundle

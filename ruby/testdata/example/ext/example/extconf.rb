@@ -12,5 +12,5 @@ require "go_gem/mkmf"
 append_cflags("-fvisibility=hidden")
 
 ############ Appended for go native extension
-create_go_makefile("example/example")
+create_go_makefile("example/example", go_build_args: "-gcflags='all=-N -l'")
 ############ Appended for go native extension
