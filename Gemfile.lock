@@ -25,7 +25,7 @@ GEM
       prism (>= 1.3.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    json (2.19.8)
+    json (2.20.0)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     listen (3.9.0)
@@ -103,7 +103,7 @@ GEM
     rspec-support (3.13.6)
     rspec-temp_dir (1.1.2)
       rspec (>= 3.0)
-    rubocop (1.87.0)
+    rubocop (1.88.0)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -214,7 +214,7 @@ CHECKSUMS
   go_gem (0.11.0)
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
-  json (2.19.8) sha256=6354310fd76ef69b87d5bd1f38b40d730613baf90b6803d2d0a48f618d32dfaa
+  json (2.20.0) sha256=9362bc6e55a952b056abf9167cf053358181c904cb70cd6eee0808ea830fc32b
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
   listen (3.9.0) sha256=db9e4424e0e5834480385197c139cb6b0ae0ef28cc13310cfd1ca78377d59c67
@@ -252,7 +252,7 @@ CHECKSUMS
   rspec-parameterized-table_syntax (2.1.0) sha256=3507d0217110a29d208f9f0a7432e9cd875587c4325d9b3478a99a2351953c3e
   rspec-support (3.13.6) sha256=2e8de3702427eab064c9352fe74488cc12a1bfae887ad8b91cba480ec9f8afb2
   rspec-temp_dir (1.1.2) sha256=92ccd30b8f4c80632a67cc4bbd6701b7b9d34b410d5bfc1fb6a095c5e6d8ce0a
-  rubocop (1.87.0) sha256=b9d9ddf55116a513f8ef2c7ae660662d8b49301f118d3f0df61865b33a5c188d
+  rubocop (1.88.0) sha256=e420ddf1662d0ef34bc8a2910ac4b396a7ddda0b51a708264405241734b08e0b
   rubocop-ast (1.49.1) sha256=4412f3ee70f6fe4546cc489548e0f6fcf76cafcfa80fa03af67098ffed755035
   rubocop-on-rbs (2.0.0) sha256=ce74d1b3d5daead19f4b611623656c185821dfc9aed9c7079bb1e5d7d7c464be
   rubocop_auto_corrector (0.5.1) sha256=c15bc11fea8ae2dc723079e1850639ac75a8cc92a0bfd69ca6daa28f4d861bdb
