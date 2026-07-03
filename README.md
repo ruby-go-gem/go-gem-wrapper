@@ -4,7 +4,6 @@
 [![GitHub Tag](https://img.shields.io/github/v/tag/ruby-go-gem/go-gem-wrapper)](https://github.com/ruby-go-gem/go-gem-wrapper/releases)
 [![build](https://github.com/ruby-go-gem/go-gem-wrapper/actions/workflows/build.yml/badge.svg)](https://github.com/ruby-go-gem/go-gem-wrapper/actions/workflows/build.yml)
 [![Coverage Status](https://coveralls.io/repos/github/ruby-go-gem/go-gem-wrapper/badge.svg)](https://coveralls.io/github/ruby-go-gem/go-gem-wrapper)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ruby-go-gem/go-gem-wrapper)](https://goreportcard.com/report/github.com/ruby-go-gem/go-gem-wrapper)
 [![Go Reference](https://pkg.go.dev/badge/github.com/ruby-go-gem/go-gem-wrapper.svg)](https://pkg.go.dev/github.com/ruby-go-gem/go-gem-wrapper)
 
 ## Overview
