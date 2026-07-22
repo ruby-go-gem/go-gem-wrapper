@@ -138,7 +138,7 @@ ruby_h_to_go_prs = all_prs.find_all { |pr| pr["label_names"].include?("ruby_h_to
 changelog_body << generate_category_changelog(ruby_h_to_go_prs)
 
 changelog_body << "## Other\n"
-other_prs = all_prs.reject { |pr| pr["label_names"].any? { |label| %w[go ruby ruby_h_to_go chore].include?(label) } }
+other_prs = all_prs.reject { |pr| pr["label_names"].intersect?(%w[go ruby ruby_h_to_go chore]) }
 changelog_body << generate_category_changelog(other_prs)
 
 changelog_body << "**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/#{before}...#{after}"
