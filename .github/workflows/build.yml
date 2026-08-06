@@ -95,6 +95,80 @@ jobs:
           webhook-url: ${{ secrets.SLACK_WEBHOOK }}
           matrix: ${{ toJson(matrix) }}
 
+  build-and-test-alpine:
+    name: "build-and-test-alpine (Go ${{ matrix.go }}, Ruby ${{ matrix.ruby }})"
+
+    needs:
+      - generate-matrix
+
+    runs-on: ubuntu-latest
+
+    container: "ruby:${{ matrix.ruby }}-alpine"
+
+    strategy:
+      fail-fast: false
+
+      matrix: ${{ fromJSON(needs.generate-matrix.outputs.matrix) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+
+      - run: apk update
+      - run: apk add git alpine-sdk libffi-dev
+
+      - name: bundle install
+        run: |
+          set -xe
+          bundle config --local path vendor/bundle/
+          bundle install --jobs 4
+
+      - name: Cache vendor/bundle
+        uses: actions/cache@v4
+        with:
+          path: vendor/bundle
+          key: v1-alpine-${{ matrix.ruby }}-${{ github.sha }}
+          restore-keys: |
+            v1-alpine-${{ matrix.ruby }}-
+
+      - name: build and test (Go)
+        run: |
+          set -xe
+          bundle exec rake go:test
+          bundle exec rake go:testrace
+
+      - name: build and test (Ruby)
+        run: bundle exec rake
+        working-directory: ${{ env.TEST_GEM_DIR }}
+
+      # FIXME: workaround for gcov2lcov warning
+      - run: rm -rf vendor/
+
+      - name: Convert coverage to lcov
+        uses: jandelgado/gcov2lcov-action@v1
+        with:
+          infile: coverage.out
+          outfile: coverage.lcov
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage.lcov
+        continue-on-error: true # NOTE: secrets cannot be obtained with forked repository PR
+
+      - name: Slack Notification (not success)
+        uses: act10ns/slack@v2
+        if: "! success()"
+        continue-on-error: true
+        with:
+          status: ${{ job.status }}
+          webhook-url: ${{ secrets.SLACK_WEBHOOK }}
+          matrix: ${{ toJson(matrix) }}
+
   go-lint:
     name: "go-lint (Ruby ${{ matrix.ruby }})"
 
@@ -304,6 +378,7 @@ jobs:
 
     needs:
       - build-and-test
+      - build-and-test-alpine
       - go-lint
       - go-govulncheck
       - ruby-lint
