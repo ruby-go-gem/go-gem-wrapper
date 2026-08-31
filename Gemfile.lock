@@ -119,7 +119,7 @@ GEM
       rbs (~> 4.0)
       rubocop (>= 1.72.1, < 2.0)
       zlib
-    rubocop_auto_corrector (0.5.1)
+    rubocop_auto_corrector (0.5.2)
       rubocop (>= 1.30.0)
     ruby-progressbar (1.13.0)
     ruby_header_parser (0.5.1)
@@ -249,7 +249,7 @@ CHECKSUMS
   rubocop (1.89.0) sha256=4dee8e3ee9c45e474834efd9e8d6fd031e8331c8dacdff0de4ad65ae0a6faae7
   rubocop-ast (1.50.0) sha256=b9ca88300da0803ee222ad20cdb30494c0a784eed06fdc35d254b06d662788db
   rubocop-on-rbs (2.0.0) sha256=ce74d1b3d5daead19f4b611623656c185821dfc9aed9c7079bb1e5d7d7c464be
-  rubocop_auto_corrector (0.5.1) sha256=c15bc11fea8ae2dc723079e1850639ac75a8cc92a0bfd69ca6daa28f4d861bdb
+  rubocop_auto_corrector (0.5.2) sha256=1fa492d5455aa5a64085774c89b33bc9cefb51b1857d7f334f6ae6ab9c2e8227
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby_header_parser (0.5.1) sha256=4db36bfcad5d60a62540b68bddde9ce1fd7163e361d7047c3c5db22783aecd7d
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
