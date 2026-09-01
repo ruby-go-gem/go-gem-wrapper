@@ -171,14 +171,13 @@ module Example
       assert { Example::Tests.protected_method_defined?(:nop_rb_define_protected_method, false) }
     end
 
-    # rubocop:disable Style/GlobalVars -- this is test for global variable
+    # rubocop:disable-next Style/GlobalVars -- this is test for global variable
     test ".rb_define_variable" do
       Example::Tests.rb_define_variable("$global_var", 1)
       assert { $global_var == 1 }
     ensure
       $global_var = nil
     end
-    # rubocop:enable Style/GlobalVars
 
     test ".rb_define_const" do
       Example::Tests.rb_define_const("RB_DEFINE_CONST", 1)
