@@ -6,7 +6,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: bc8394e60b1d20e2332104e60b64b283d025be57
+    revision: fab0baffe7dc4c7306137372fe9f0e2a53c14e12
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: base64
@@ -18,7 +18,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: bc8394e60b1d20e2332104e60b64b283d025be57
+    revision: fab0baffe7dc4c7306137372fe9f0e2a53c14e12
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: diff-lcs
@@ -26,7 +26,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: bc8394e60b1d20e2332104e60b64b283d025be57
+    revision: fab0baffe7dc4c7306137372fe9f0e2a53c14e12
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: fileutils
@@ -42,7 +42,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: bc8394e60b1d20e2332104e60b64b283d025be57
+    revision: fab0baffe7dc4c7306137372fe9f0e2a53c14e12
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: monitor
@@ -58,7 +58,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: bc8394e60b1d20e2332104e60b64b283d025be57
+    revision: fab0baffe7dc4c7306137372fe9f0e2a53c14e12
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: pp
@@ -78,7 +78,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: bc8394e60b1d20e2332104e60b64b283d025be57
+    revision: fab0baffe7dc4c7306137372fe9f0e2a53c14e12
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 - name: rdoc
@@ -98,7 +98,7 @@ gems:
   source:
     type: rubygems
 - name: ruby_header_parser
-  version: 0.5.0
+  version: 0.5.1
   source:
     type: rubygems
 - name: uri
@@ -110,7 +110,7 @@ gems:
   source:
     type: git
     name: ruby/gem_rbs_collection
-    revision: bc8394e60b1d20e2332104e60b64b283d025be57
+    revision: fab0baffe7dc4c7306137372fe9f0e2a53c14e12
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
 gemfile_lock_path: Gemfile.lock
