@@ -37,7 +37,7 @@ GEM
       net-ssh (>= 2.6.5, < 8.0.0)
     net-ssh (7.3.0)
     net-telnet (0.2.0)
-    parallel (2.1.0)
+    parallel (2.2.0)
     parser (3.3.12.0)
       ast (~> 2.4.1)
       racc
@@ -120,8 +120,8 @@ GEM
       rbs (~> 4.0)
       rubocop (>= 1.72.1, < 2.0)
       zlib
-    rubocop_auto_corrector (0.5.2)
-      rubocop (>= 1.30.0)
+    rubocop_auto_corrector (1.0.0)
+      rubocop (>= 1.51.0)
     ruby-progressbar (1.13.0)
     ruby_header_parser (0.5.1)
     securerandom (0.4.1)
@@ -219,7 +219,7 @@ CHECKSUMS
   net-scp (4.1.0) sha256=a99b0b92a1e5d360b0de4ffbf2dc0c91531502d3d4f56c28b0139a7c093d1a5d
   net-ssh (7.3.0) sha256=172076c4b30ce56fb25a03961b0c4da14e1246426401b0f89cba1a3b54bf3ef0
   net-telnet (0.2.0) sha256=253007c0f8dc3fd66e569d53ebbce5ef6e94d6246ab9c04d73a7629b0eebd39a
-  parallel (2.1.0) sha256=b35258865c2e31134c5ecb708beaaf6772adf9d5efae28e93e99260877b09356
+  parallel (2.2.0) sha256=e1059c5fd7b649558a0aec38a769f06a42942bdb40503d005a59c352fe011cd8
   parser (3.3.12.0) sha256=21a6d7f755d5a24dfbdc6e6b772e4e879a52e7631a88bc5a3a134606052c9828
   power_assert (3.0.1) sha256=8ce9876716cc74e863fcd4cdcdc52d792bd983598d1af3447083a3a9a4d34103
   pp (0.6.3) sha256=2951d514450b93ccfeb1df7d021cae0da16e0a7f95ee1e2273719669d0ab9df6
@@ -250,7 +250,7 @@ CHECKSUMS
   rubocop (1.90.0) sha256=9eb4c065b5c5154e4ef554c547972f3905a9eb6b53e657e580b6796b54bf8242
   rubocop-ast (1.50.0) sha256=b9ca88300da0803ee222ad20cdb30494c0a784eed06fdc35d254b06d662788db
   rubocop-on-rbs (2.0.0) sha256=ce74d1b3d5daead19f4b611623656c185821dfc9aed9c7079bb1e5d7d7c464be
-  rubocop_auto_corrector (0.5.2) sha256=1fa492d5455aa5a64085774c89b33bc9cefb51b1857d7f334f6ae6ab9c2e8227
+  rubocop_auto_corrector (1.0.0) sha256=f2effc78ace9ec12d40564aff982c4b960a988c1d82ace4245c604975e555b57
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby_header_parser (0.5.1) sha256=4db36bfcad5d60a62540b68bddde9ce1fd7163e361d7047c3c5db22783aecd7d
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
