@@ -1,4 +1,4 @@
-name: Create releases with manual
+name: Release new version
 
 on:
   workflow_dispatch:
@@ -44,6 +44,8 @@ jobs:
 
       - name: Publish to RubyGems
         uses: rubygems/release-gem@v1.4.1
+        with:
+          working-directory: _gem/
 
   create-release:
     name: Create Release
@@ -71,6 +73,7 @@ jobs:
         id: changelog
         run: |
           version=$(bundle exec ruby -e 'puts GoGem::VERSION')
+          echo "version=$version" >> "$GITHUB_OUTPUT"
           ruby -r rubygems -e 'puts "prerelease=#{Gem::Version.new(ARGV.fetch(0)).prerelease?}"' "$version" >> "$GITHUB_OUTPUT"
           bundle exec rake changelog[,v${version}] > /tmp/changelog.md
           cat /tmp/changelog.md
@@ -82,6 +85,7 @@ jobs:
         with:
           body_path: /tmp/changelog.md
           prerelease: ${{ steps.changelog.outputs.prerelease == 'true' }}
+          tag_name: v${{ steps.changelog.outputs.version }}
 
       - name: Slack Notification (not success)
         uses: act10ns/slack@v2.2.0
