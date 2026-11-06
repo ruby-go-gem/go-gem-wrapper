@@ -84,6 +84,7 @@ jobs:
         with:
           body_path: /tmp/changelog.md
           prerelease: ${{ steps.changelog.outputs.prerelease == 'true' }}
+          tag_name: v${{ steps.changelog.outputs.version }}
 
       - name: Slack Notification (not success)
         uses: act10ns/slack@v2.2.0
