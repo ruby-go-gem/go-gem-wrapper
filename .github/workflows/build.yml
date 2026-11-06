@@ -52,7 +52,12 @@ jobs:
         ruby: ${{ fromJSON(needs.generate-matrix.outputs.matrix).ruby }}
         runner:
           - ubuntu-latest
-          - macos-latest
+        include:
+          # Test macOS only with the oldest Go and Ruby versions to limit runner concurrency.
+          # https://docs.github.com/en/actions/reference/limits#job-concurrency-limits-for-github-hosted-runners
+          - go: ${{ fromJSON(needs.generate-matrix.outputs.matrix).go[0] }}
+            ruby: ${{ fromJSON(needs.generate-matrix.outputs.matrix).ruby[0] }}
+            runner: macos-latest
 
     steps:
       - uses: actions/checkout@v7.0.1
