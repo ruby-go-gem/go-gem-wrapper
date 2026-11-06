@@ -73,6 +73,7 @@ jobs:
         id: changelog
         run: |
           version=$(bundle exec ruby -e 'puts GoGem::VERSION')
+          echo "version=$version" >> "$GITHUB_OUTPUT"
           ruby -r rubygems -e 'puts "prerelease=#{Gem::Version.new(ARGV.fetch(0)).prerelease?}"' "$version" >> "$GITHUB_OUTPUT"
           bundle exec rake changelog[,v${version}] > /tmp/changelog.md
           cat /tmp/changelog.md
