@@ -1,5 +1,120 @@
 # [Unreleased]
-**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.11.0...main
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.11.1...main
+
+# [v0.11.1](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.11.1) - 2026-11-07
+## Go
+### Other changes
+* Bump rubocop from 1.82.1 to 1.84.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/406
+* Bump github.com/stretchr/testify from 1.11.1 to 1.12.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/465
+* Bump github.com/stretchr/testify from 1.12.0 to 1.12.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/469
+* Bump rubocop from 1.89.0 to 1.90.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/474
+
+## Ruby
+### Other changes
+* Bump action major version in example by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/385
+* Bump test-unit from 3.7.3 to 3.7.5 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/392
+* Bump rubocop from 1.82.0 to 1.82.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/393
+* Bump test-unit from 3.7.5 to 3.7.7 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/396
+* Bump rdoc from 7.0.3 to 7.1.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/400
+* Bump rubocop-on-rbs from 1.8.0 to 1.9.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/401
+* Bump rubocop from 1.82.1 to 1.84.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/406
+* Bump irb from 1.16.0 to 1.17.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/408
+* Bump rdoc from 7.1.0 to 7.2.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/411
+* Bump rubocop from 1.84.1 to 1.84.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/412
+* Bump rubocop-on-rbs from 1.9.0 to 1.9.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/413
+* Bump rubocop from 1.84.2 to 1.85.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/416
+* Bump rubocop from 1.85.0 to 1.85.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/417
+* [CVE-2026-33210] Bump json from 2.19.1 to 2.19.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/420
+* [CVE-2026-33946] Bump mcp from 0.8.0 to 0.9.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/421
+* Bump rubocop from 1.85.1 to 1.86.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/422
+* [CVE-2026-33169] Bump activesupport from 8.0.2 to 8.0.4.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/423
+* [GHSA-3jfp-46x4-xgfj] Bump yard from 0.9.38 to 0.9.40 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/430
+* Bump rubocop from 1.86.0 to 1.86.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/432
+* Bump rubocop-on-rbs from 1.9.1 to 2.0.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/431
+* [CVE-2026-41316] Bump erb from 6.0.2 to 6.0.4 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/433
+* Bump rake from 13.3.1 to 13.4.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/434
+* [CVE-2026-41493] Bump yard from 0.9.40 to 0.9.43 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/435
+* Bump irb from 1.17.0 to 1.18.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/439
+* Bump rubocop from 1.86.1 to 1.86.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/440
+* Bump yard from 0.9.43 to 0.9.44 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/445
+* Bump rubocop from 1.86.2 to 1.87.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/446
+* Bump test-unit from 3.7.7 to 3.7.8 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/447
+* Bump rubocop from 1.87.0 to 1.88.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/448
+* [CVE-2026-54906] Bump concurrent-ruby from 1.3.6 to 1.3.7 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/454
+* Bump rdoc from 7.2.0 to 8.0.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/455
+* Bump rubocop from 1.88.0 to 1.88.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/456
+* Bump rubocop from 1.88.1 to 1.88.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/457
+* Bump yard from 0.9.44 to 0.9.45 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/458
+* Bump rubocop from 1.88.2 to 1.89.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/466
+* Bump ruby_header_parser from 0.5.0 to 0.5.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/470
+* Bump rubocop_auto_corrector from 0.5.1 to 0.5.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/472
+* Bump rspec-temp_dir from 1.1.2 to 1.1.3 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/476
+* Bump rubocop from 1.89.0 to 1.90.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/474
+* Bump steep from 2.0.0 to 2.1.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/479
+* Bump rubocop_auto_corrector from 0.5.2 to 1.0.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/478
+* Bump rubocop from 1.90.0 to 1.91.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/480
+* Bump rubocop-on-rbs from 2.0.0 to 2.2.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/486
+* Bump rdoc from 8.0.0 to 8.1.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/487
+* Bump uri from 1.1.1 to 1.1.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/489
+* Bump rake-compiler from 1.3.1 to 1.3.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/490
+* Bump rubocop from 1.91.0 to 1.92.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/488
+* Bump rubocop from 1.92.0 to 1.92.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/494
+
+## ruby_h_to_go
+* No changes
+
+## Other
+### Other changes
+* Fix yard error at ruby 4.0 by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/386
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/388
+* Add _gem/README.md to yard by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/389
+* Change default page displayed to the go_gem's README by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/390
+* Tweak yard doc by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/391
+* Bump ruby/setup-ruby from 1.276.0 to 1.277.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/394
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/395
+* Bump ruby/setup-ruby from 1.277.0 to 1.282.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/399
+* Bump ruby/setup-ruby from 1.282.0 to 1.287.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/403
+* Bump actions/checkout from 6.0.1 to 6.0.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/404
+* Bump actions/setup-go from 6.1.0 to 6.2.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/402
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/405
+* Bump ruby/setup-ruby from 1.287.0 to 1.288.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/414
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/415
+* Bump ruby/setup-ruby from 1.288.0 to 1.299.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/425
+* Bump act10ns/slack from cfcc30955fe9377f4f55e1079e5419ee1014269f to 2f01f46db9f41c75a04d93c6ce310bc51db7cb50 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/427
+* Bump softprops/action-gh-release from 2.5.0 to 2.6.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/426
+* Bump actions/setup-go from 6.2.0 to 6.4.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/424
+* Bump ruby/setup-ruby from 1.299.0 to 1.306.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/436
+* Bump softprops/action-gh-release from 2.6.1 to 3.0.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/437
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/438
+* Bump ruby/setup-ruby from 1.306.0 to 1.310.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/442
+* Bump golangci/golangci-lint-action from 9.2.0 to 9.2.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/441
+* Bump actions/labeler from 6.0.1 to 6.1.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/443
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/444
+* Bump ruby/setup-ruby from 1.310.0 to 1.315.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/452
+* Bump actions/checkout from 6.0.2 to 7.0.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/451
+* Bump actions/setup-go from 6.4.0 to 6.5.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/450
+* Bump softprops/action-gh-release from 3.0.0 to 3.0.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/449
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/453
+* Bump actions/checkout from 7.0.0 to 7.0.1 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/463
+* Bump actions/setup-go from 6.5.0 to 7.0.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/461
+* Bump softprops/action-gh-release from 3.0.1 to 3.0.2 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/462
+* Bump golangci/golangci-lint-action from 9.2.1 to 9.3.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/459
+* Bump actions/labeler from 6.1.0 to 7.0.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/460
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/464
+* CI against for Go 1.27 by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/468
+* Bump ruby/setup-ruby from 1.315.0 to 1.321.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/475
+* Bump re-actors/alls-green from 1.2.2 to 1.3.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/473
+* Bump coverallsapp/github-action from 2.3.7 to 2.3.8 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/471
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/477
+* Bump ruby/setup-ruby from 1.321.0 to 1.327.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/484
+* Bump softprops/action-gh-release from 3.0.2 to 3.0.3 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/483
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/485
+* Bump ruby/setup-ruby from 1.327.0 to 1.336.0 by @dependabot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/491
+* Update rbs_collection.lock.yaml by @ruby-go-gem-bot in https://github.com/ruby-go-gem/go-gem-wrapper/pull/492
+* Publish gem from GitHub Actions by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/495
+* Remove legacy release workflow by @sue445 in https://github.com/ruby-go-gem/go-gem-wrapper/pull/499
+
+**Full Changelog**: https://github.com/ruby-go-gem/go-gem-wrapper/compare/v0.11.0...v0.11.1
 
 # [v0.11.0](https://github.com/ruby-go-gem/go-gem-wrapper/releases/tag/v0.11.0) - 2025-12-26
 ## Go
