@@ -22,6 +22,10 @@ env:
   GO_TEST_ARGS: -coverprofile coverage.out -covermode atomic
   TEST_GEM_DIR: ruby/testdata/example/
 
+concurrency:
+  group: ci-${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   generate-matrix:
     runs-on: ubuntu-latest
