@@ -16,11 +16,6 @@ workflows:
         - 'actions/labeler@v7.0.0'
     '.github/workflows/pages.yml': []
     '.github/workflows/rbs-collection-updater.yml': []
-    '.github/workflows/release.yml':
-        - 'act10ns/slack@v2.2.0'
-        - 'actions/checkout@v7.0.1'
-        - 'ruby/setup-ruby@v1.336.0'
-        - 'softprops/action-gh-release@v3.0.3'
     '.github/workflows/release_manual.yml':
         - 'act10ns/slack@v2.2.0'
         - 'actions/checkout@v7.0.1'
