@@ -21,6 +21,13 @@ workflows:
         - 'actions/checkout@v7.0.1'
         - 'ruby/setup-ruby@v1.336.0'
         - 'softprops/action-gh-release@v3.0.3'
+    '.github/workflows/release_manual.yml':
+        - 'act10ns/slack@v2.2.0'
+        - 'actions/checkout@v7.0.1'
+        - 'ruby/setup-ruby@v1.336.0'
+        - 'rubygems/release-gem@v1.4.1'
+        - 'softprops/action-gh-release@v3.0.3'
+        - 'step-security/harden-runner@v2.22.2'
     '.github/workflows/ruby_h_to_go.yml':
         - 'act10ns/slack@v2.2.0'
         - 'actions/checkout@v7.0.1'
@@ -68,8 +75,25 @@ dependencies:
         commit: 'sha1-de492cf36cbab201753d720ce4f4e336cd688c94'
         owner_id: 210414
         repo_id: 231208785
+    'rubygems/configure-rubygems-credentials@dc5a8d8553e6ee01fc26761a49e99e733d17954a':
+        ref: 'v2.1.0'
+        commit: 'sha1-dc5a8d8553e6ee01fc26761a49e99e733d17954a'
+        owner_id: 208761
+        repo_id: 631633510
+    'rubygems/release-gem@v1.4.1':
+        ref: 'v1.4.1'
+        commit: 'sha1-7f9650160c1a4e7989fdc9855807bdbd421d8b6b'
+        owner_id: 208761
+        repo_id: 731435765
+        uses:
+            - 'rubygems/configure-rubygems-credentials@dc5a8d8553e6ee01fc26761a49e99e733d17954a'
     'softprops/action-gh-release@v3.0.3':
         ref: 'v3.0.3'
         commit: 'sha1-efb35369e0ad2afab669f228072c1b0d510eae64'
         owner_id: 2242
         repo_id: 204253808
+    'step-security/harden-runner@v2.22.2':
+        ref: 'v2.22.2'
+        commit: 'sha1-dc2769abcc0fcfbadfc1df54081c1608579ef6b2'
+        owner_id: 88700172
+        repo_id: 422287306
