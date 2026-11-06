@@ -1,0 +1,92 @@
+name: Create releases with manual
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: read
+
+jobs:
+  publish-gem:
+    name: Publish gem to rubygems.org
+
+    if: github.repository == 'ruby-go-gem/go-gem-wrapper'
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: _gem/
+
+    permissions:
+      contents: write
+      id-token: write
+
+    environment:
+      name: rubygems.org
+      url: https://rubygems.org/gems/go_gem
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2.22.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout repo
+        uses: actions/checkout@v7.0.1
+
+      - uses: ruby/setup-ruby@v1.336.0
+        with:
+          ruby-version: .tool-versions
+          bundler-cache: true
+
+      - name: Publish to RubyGems
+        uses: rubygems/release-gem@v1.4.1
+
+  create-release:
+    name: Create Release
+
+    needs:
+      - publish-gem
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2.22.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout repo
+        uses: actions/checkout@v7.0.1
+
+      - uses: ruby/setup-ruby@v1.336.0
+        with:
+          ruby-version: .tool-versions
+          bundler-cache: true
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          version=$(bundle exec ruby -e 'puts GoGem::VERSION')
+          ruby -r rubygems -e 'puts "prerelease=#{Gem::Version.new(ARGV.fetch(0)).prerelease?}"' "$version" >> "$GITHUB_OUTPUT"
+          bundle exec rake changelog[,v${version}] > /tmp/changelog.md
+          cat /tmp/changelog.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v3.0.3
+        with:
+          body_path: /tmp/changelog.md
+          prerelease: ${{ steps.changelog.outputs.prerelease == 'true' }}
+
+      - name: Slack Notification (not success)
+        uses: act10ns/slack@v2.2.0
+        if: "! success()"
+        continue-on-error: true
+        with:
+          status: ${{ job.status }}
+          webhook-url: ${{ secrets.SLACK_WEBHOOK }}
