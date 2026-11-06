@@ -12,7 +12,6 @@ on:
     paths-ignore:
       - ".github/labeler.yml"
       - ".github/pages.yml"
-      - ".github/release.yml"
       - ".github/release_manual.yml"
       - ".github/workflows/labeler.yml"
       - ".github/workflows/rbs-collection-updater.yml"

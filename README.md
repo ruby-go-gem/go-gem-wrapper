@@ -149,7 +149,8 @@ open http://localhost:6060/pkg/github.com/ruby-go-gem/go-gem-wrapper/ruby/
 1. Run `bundle exec rake changelog`
 2. Add release note to [CHANGELOG.md](CHANGELOG.md)
 3. Update [_gem/lib/go_gem/version.rb](_gem/lib/go_gem/version.rb)
-4. Run `bundle exec rake release`
+4. `git push`
+5. Run https://github.com/ruby-go-gem/go-gem-wrapper/actions/workflows/release_manual.yml
 
 ### Support new ruby version
 1. Run `go mod vendor`
