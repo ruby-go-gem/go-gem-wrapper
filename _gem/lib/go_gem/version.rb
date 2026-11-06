@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module GoGem
-  VERSION = "0.11.1.beta1"
+  VERSION = "0.11.1.beta2"
 end
